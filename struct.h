@@ -11,41 +11,44 @@
 typedef int Eltype;
 typedef int address;
 typedef int keytype;
+typedef char* valuetype;
 
-// Aliaskan struktur Song
-typedef struct {
-    char *namalagu;
-    char *namapenyanyilagu;
-    char *namaalbumlagu;
-} Song;
 
-// Aliaskan struktur MapSong
+
+typedef struct
+{
+    valuetype lagu[NMAX];
+    address Count;
+    valuetype namaalbumlagu;
+    valuetype namapenyanyilagu;
+} SetLagu;
+
 typedef struct {
     keytype KeySong;
-    Song ValueSong;
+    valuetype namalagu;
 } MapSong;
 
-// Aliaskan struktur Album
+
 typedef struct {
-    char *namaalbum;
+    valuetype namaalbum;
     MapSong ElementsAlbum[NMAX];
     address CountSong;
 } Album;
 
-// Aliaskan struktur MapAlbum
+
 typedef struct {
     keytype KeyAlbum;
-    Album ValueAlbum;
+    valuetype namaalbum;
 } MapAlbum;
 
-// Aliaskan struktur Penyanyi
+
 typedef struct {
     char *namapenyanyi;
     MapAlbum ElementsPenyanyi[NMAX];
-    address CountPenyanyi;
+    address CountAlbum;
 } Penyanyi;
 
-// Aliaskan struktur List
+
 typedef struct {
     Penyanyi contents[NMAX];
     Eltype nEff;
