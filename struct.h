@@ -13,29 +13,35 @@ typedef int address;
 typedef int keytype;
 typedef char* valuetype;
 
-
+// /*type bentukan set*/
+// typedef struct
+// {
+//     Song lagu [NMAX];
+//     address Count;
+// } SetSongs;
 
 typedef struct
 {
-    valuetype lagu[NMAX];
-    address Count;
-    valuetype namaalbumlagu;
-    valuetype namapenyanyilagu;
-} SetLagu;
+    valuetype nlagu;
+    valuetype nalbum;
+    valuetype npenyanyi;
+} Song;
 
+
+/*type bentukan list penyanyi dengan albumnya*/
 typedef struct {
     keytype KeySong;
-    valuetype namalagu;
+    valuetype lagu;
 } MapSong;
 
 
 typedef struct {
-    valuetype namaalbum;
+    keytype KeyAlbum;
     MapSong ElementsAlbum[NMAX];
     address CountSong;
 } Album;
 
-
+/*type bentukan list penyanyi dengan albumnya*/
 typedef struct {
     keytype KeyAlbum;
     valuetype namaalbum;
