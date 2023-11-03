@@ -54,4 +54,9 @@ typedef struct {
     Eltype nEff;
 } List;
 
+/*typedef struct {
+    keytype SetLagu;
+    address SetLagu;
+} */
+
 #endif
