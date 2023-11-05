@@ -8,7 +8,7 @@ int main(){
     List Penyanyi;
     MapAlbum Album;
     MapSong Song;
-    ID PasID;
+    //ID PasID;
     //MakeEmpty(&Penyanyi,&Album,&Song);
     
     printf("starting game..\n");

@@ -11,7 +11,7 @@
 typedef int keytype;
 typedef int address;
 typedef char *valuetype;
-typedef int IDs;
+//typedef int IDs;
 
 // typedef struct{
 //     IDs idsong;
@@ -45,11 +45,11 @@ typedef struct{
     int neff;
 } List;
 
-typedef struct{
-    IDs idpenyanyi;
-    IDs idalbum;
-    IDs idlagu;
-} ID;
+// typedef struct{
+//     IDs idpenyanyi;
+//     IDs idalbum;
+//     IDs idlagu;
+// } ID;
 
 void MakeEmpty(List *Penyanyi,MapAlbum *Album,MapSong *Song);
 
