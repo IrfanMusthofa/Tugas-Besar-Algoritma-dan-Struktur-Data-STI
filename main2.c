@@ -7,7 +7,7 @@
 int main(){
     List Penyanyi;
     MapAlbum Album;
-    MapSong Song;
+    SetSong Song;
     //ID PasID;
     //MakeEmpty(&Penyanyi,&Album,&Song);
     printf(">>> ");
@@ -23,11 +23,11 @@ int main(){
         }
 
         for(int i = 0;i<Album.count;i++){
-            printf("  %d. %s\n",Album.Elements[i].keyAlbum+1,Album.Elements[i].valueAlbum);
+            printf("  %d. %s\n",Album.Elements[i].IdPenyanyi,Album.Elements[i].valueAlbum);
         }
 
         for(int i = 0;i<Song.count;i++){
-            printf("    %d. %s\n",Song.Elements[i].keySong,Song.Elements[i].valueSong);
+            printf("    %d. %s\n",Song.Elements[i].IdAlbum,Song.Elements[i].namaS);
         }
     }
 }

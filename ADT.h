@@ -11,7 +11,7 @@
 typedef int keytype;
 typedef int address;
 typedef char *valuetype;
-//typedef int IDs;
+typedef int IDs;
 
 // typedef struct{
 //     IDs idsong;
@@ -19,19 +19,22 @@ typedef char *valuetype;
 // } SetSong;
 
 typedef struct{
-    keytype keySong;
-    valuetype valueSong;
+    IDs IdAlbum;
+    valuetype namaP; 
+    valuetype namaA;
+    valuetype namaS;
 } Song;
 
 typedef struct{
     keytype keyAlbum;
+    IDs IdPenyanyi;
     valuetype valueAlbum;
 } Album;
 
 typedef struct{
     Song Elements[NMAX];
-    address count;
-} MapSong;
+    int count;
+} SetSong;
 
 typedef struct{
     Album Elements[NMAX];
@@ -51,8 +54,8 @@ typedef struct{
 //     IDs idlagu;
 // } ID;
 
-void MakeEmpty(List *Penyanyi,MapAlbum *Album,MapSong *Song);
+void MakeEmpty(List *Penyanyi,MapAlbum *Album,SetSong *Song);
 
-void STARTCOM(List *Penyanyi,MapAlbum *Album,MapSong *Song);
+void STARTCOM(List *Penyanyi,MapAlbum *Album,SetSong *Song);
 
 #endif
