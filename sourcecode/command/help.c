@@ -1,11 +1,11 @@
-void help_awal() //ketika perintah dipanggil sebelum memasuki sesi
+void help_before() //ketika perintah dipanggil sebelum memasuki sesi
 {
     printf("=====[ Menu Help WayangWave ]=====");
     printf("1. START -> Untuk masuk sesi baru");
     printf("2. LOAD -> Untuk memulai sesi berdasarkan file konfigurasi");
 }
 
-void help_akhir() //ketika perintah dipanggil setelah memasuki sesi
+void help_after() //ketika perintah dipanggil setelah memasuki sesi
 {
     printf("=====[ Menu Help WayangWave ]=====");
     printf("1. LIST -> Untuk menampilkan playlist, daftar penyanyi, album, dan daftar lagu yang ada di album.");
