@@ -100,4 +100,6 @@ void capsLock(char* huruf);
 void lowerCase(char* huruf);
 /* Membuat semua huruf menjadi lowercase */
 
+boolean IsEqualString(char* c1, char *c2);
+
 #endif

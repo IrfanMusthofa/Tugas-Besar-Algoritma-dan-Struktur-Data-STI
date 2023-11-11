@@ -97,3 +97,48 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
         }
     }
 }
+
+IDs GetPenyanyiID(ListPenyanyi List, char *input){
+    IDs id;
+    for (int i = 0;i<List.neff;i++){
+        char *compare = List.A[i];
+        if (IsEqualString(input,compare)){
+            id = i+1;
+            break;
+        }
+    }
+    return id;
+}
+
+IDs GetAlbumID (MapAlbum album, char *input){
+    IDs id;
+    for (int i = 0;i<album.count;i++){
+        char *compare = album.Elements[i].valueAlbum;
+        if (IsEqualString(input,compare)){
+            id = i+1;
+            break; 
+        }
+    }
+    return id;
+
+}
+
+int JumlahAlbum (MapAlbum album, IDs idpenyanyi){
+    int count;
+    for (int i = 0;i<album.count;i++){
+        if (idpenyanyi == album.Elements[i].IdPenyanyi){
+            count++;
+        }
+    }
+    return count;
+}
+
+int JumlahLagu (SetSong song, IDs idalbum){
+    int count;
+    for (int i = 0;i<song.count;i++){
+        if (idalbum == song.Elements[i].IdAlbum){
+            count++;
+        }
+    }
+    return count;
+}

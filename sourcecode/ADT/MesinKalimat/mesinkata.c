@@ -327,3 +327,40 @@ void lowerCase(char *huruf)
     }
 }
 /* Membuat semua huruf menjadi uppercase */
+
+boolean IsEqualString(char* c1, char *c2)
+{
+ /*KAMUS LOKAL*/
+ boolean equal = true;
+ int i = 0, ctr1 = 0, ctr2=0 ;
+ /*ALGORITMA*/
+ while (c1[i] != '\0')
+ {
+  i++;
+ }
+ ctr1 = i;
+ i = 0;
+    while (c2[i] != '\0')
+ {
+  i++;
+ }
+ ctr2 = i;
+
+
+ if (ctr1 != ctr2)
+ {
+  equal = false;
+ }
+
+ else
+ {
+  for (i = 0; i < ctr1; i++)
+  {
+   if (c1[i] != c2[i])
+   {
+    equal = false;
+   }
+  }
+ }
+ return equal;
+}

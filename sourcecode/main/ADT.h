@@ -2,6 +2,7 @@
 #define __adt__
 
 #include "boolean.h"
+#include "../ADT/MesinKalimat/mesinkata.h"
 
 
 #define NMAX 100
@@ -26,7 +27,7 @@ typedef struct tElmtlist {
 } ElmtList;
 
 typedef struct{
-    	address First;
+    address First;
 	valuetype namaPlaylist;
 } List;
 typedef struct
@@ -81,5 +82,13 @@ typedef struct{
 void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
 
 void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song, char *file);
+
+IDs GetPenyanyiID(ListPenyanyi List, char *penyanyi);
+
+IDs GetAlbumID (MapAlbum album, char *namaalbum);
+
+int JumlahAlbum (MapAlbum album, IDs idpenyanyi);
+
+int JumlahLagu (SetSong song, IDs idalbum);
 
 #endif
