@@ -11,12 +11,25 @@
 typedef int keytype;
 typedef int address;
 typedef char *valuetype;
-//typedef int IDs;
+typedef int infotype;
+typedef struct tElmtlist *address;
 
-// typedef struct{
-//     IDs idsong;
-//     valuetype lagu;
-// } SetSong;
+typedef struct tElmtlist { 
+	infotype info;
+	address next;
+} ElmtList;
+
+typedef struct{
+    address First;
+} List;
+
+typedef struct
+{
+    List *playlist;
+    int Capacity;
+    int Neff;
+} ArrayDinPlaylist;
+
 typedef struct
 {
     Song T[NMax];
