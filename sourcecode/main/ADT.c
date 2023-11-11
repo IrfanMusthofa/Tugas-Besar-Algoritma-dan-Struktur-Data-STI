@@ -7,9 +7,9 @@
 // Mengubah .txt menjadi ADT
 
 void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
-    Penyanyi->neff = Nil;
-    Album->count = Nil;
-    Song->count = Nil;
+    Penyanyi->neff = 0;
+    Album->count = 0;
+    Song->count = 0;
 
     // for(int i = 0;i<NMAX;i++){
     //     Penyanyi->A[i] = EMPTY;
