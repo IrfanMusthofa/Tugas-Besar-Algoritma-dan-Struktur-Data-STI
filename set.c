@@ -98,7 +98,7 @@ boolean IsMember(Set S, infotype Elmt)
         }
         i++; 
     }
-    return found;
+    return (found);
 }
 
 void PrintSet(Set S)
@@ -108,7 +108,7 @@ void PrintSet(Set S)
     int i;
 
     //ALGORITMA
-    printf("{");
+    printf("[");
     for (i = 0; i < S.Count; i++)
     {
         printf("%d", S.Elements[i]);
@@ -117,5 +117,137 @@ void PrintSet(Set S)
             printf(", ");
         }
     }
-    printf("}\n");
+    printf("]\n");
+}
+
+void SetUnion(Set *S1, Set *S2, Set *S3)
+// Menghasilkan S3 yang merupakan hasil gabungan S1 dan S2
+// Contoh: [1, 2] U [2, 3] = [1, 2, 3]
+{
+    //KAMUS LOKAL
+	Set S3;
+    int i;
+
+    //ALGORITMA
+	CreateEmpty(S3);
+	for (i = 0; i < (*S1).Count; i++)
+	{
+		Insert(S3, (*S1).Elements[i]);
+	}
+	for (i = 0; i < (*S2).Count; i++)
+	{
+		Insert(S3, (*S2).Elements[i]);
+	}
+}
+
+void SetIntersection(Set *S1, Set *S2, Set *S3)
+// Menghasilkan S3 yang merupakan hasil irisan S1 dan S2 
+// Contoh: [1, 2] ∩ [2, 3] = [2]
+{
+    //KAMUS LOKAL
+	Set S3;
+    int i;
+
+    //ALGORITMA
+	CreateEmpty(S3);
+	for (i = 0; i < (*S1).Count; i++)
+	{
+		if (IsMember(*S2, (*S1).Elements[i]))
+			Insert(S3, (*S1).Elements[i]);
+	}
+}
+
+Set SetSymmetricDifference(Set S1, Set S2)
+// Mengembalikan set baru yang berisi elemen yang ada di s1 atau s2, tapi tidak pada keduanya
+// Contoh: [1, 2] ⊖ [2, 3] = [1, 3]
+{
+    //KAMUS LOKAL
+	Set S3;
+    int i;
+
+    //ALGORITMA
+	CreateEmpty(&S3);
+	for (i = 0; i < S1.Count; i++)
+	{
+		if (!IsMember(S2, S1.Elements[i]))
+			Insert(&S3, (*S1).Elements[i]);
+	}
+	for (i = 0; i < S2.Count; i++)
+	{
+		if (!IsMember(S1, (*S2).Elements[i]))
+			Insert(&S3, (*S2).Elements[i]);
+	}
+}
+
+void SetSubtract(Set *S1, Set *S2, Set *S3)
+// Menghasilkan S3 yang merupakan hasil selisih S1 dan S2 
+// Contoh:
+// s1 = [1, 2] s2 = [2, 3]
+// s1 - s2 = [1]
+{
+    //KAMUS LOKAL
+	Set S3;
+    int i;
+
+    //ALGORITMA
+	CreateEmpty(S3);
+	for (i = 0; i < (*S1).Count; i++)
+	{
+		if (!IsMember(*S2, (*S1).Elements[i]))
+			Insert(S3, (*S1).Elements[i]);
+	}
+}
+
+void CopySet(Set Sin, Set *Sout)
+/* Menyalin Sin ke Sout */
+{
+    //KAMUS LOKAL
+    int i;
+
+    //ALGORITMA
+    i = 0;
+    while (i < Sin.Count)
+    {
+        Insert(Sout, Sin.Elements[i]);
+        i++;
+    }
+}
+
+boolean IsSubset(Set S1, Set S2)
+/* Menghasilkan true jika S1 merupakan subset dari S2 */
+{
+    //KAMUS LOKAL
+    int i;
+    boolean found;
+
+    //ALGORITMA
+    i = 0;
+    found = true;
+    while (i < S1.Count && found == true)
+    {
+        if (!IsMember(S2, S1.Elements[i]))
+        {
+            found = false;
+        }
+        i++;
+    }
+    return (found);
+}
+
+boolean IsEqual(Set S1, Set S2)
+/* Menghasilkan true jika S1 sama dengan S2 */
+{
+    //KAMUS LOKAL
+
+    //ALGORITMA
+    return (IsSubset(S1, S2) && IsSubset(S2, S1));
+}
+
+int length(Set S)
+/* Mengirimkan banyaknya elemen Set S, mungkin 0 */
+{
+    //KAMUS LOKAL
+    
+    //ALGORITMA
+    return (S.Count);
 }

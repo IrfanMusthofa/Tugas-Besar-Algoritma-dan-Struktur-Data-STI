@@ -10,7 +10,7 @@ Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
 #define Nil 0
 #define NMax 100
 
-typedef int infotype;
+typedef char *infotype;
 typedef int address;
 
 typedef struct
@@ -58,5 +58,35 @@ boolean IsMember(Set S, infotype Elmt);
 
 void PrintSet(Set S);
 /* Mencetak set S ke layar */
+
+void SetUnion(Set *S1, Set *S2, Set *S3);
+// Menghasilkan S3 yang merupakan hasil gabungan S1 dan S2
+// Contoh: [1, 2] U [2, 3] = [1, 2, 3]
+
+void SetIntersection(Set *S1, Set *S2, Set *S3);
+// Menghasilkan S3 yang merupakan hasil irisan S1 dan S2 
+// Contoh: [1, 2] ∩ [2, 3] = [2]
+
+Set SetSymmetricDifference(Set S1, Set S2);
+// Mengembalikan set baru yang berisi elemen yang ada di s1 atau s2, tapi tidak pada keduanya
+// Contoh: [1, 2] ⊖ [2, 3] = [1, 3]
+
+void SetSubtract(Set *S1, Set *S2, Set *S3);
+// Menghasilkan S3 yang merupakan hasil selisih S1 dan S2 
+// Contoh:
+// s1 = [1, 2] s2 = [2, 3]
+// s1 - s2 = [1]
+
+void CopySet(Set Sin, Set *Sout);
+/* Menyalin Sin ke Sout */
+
+boolean IsSubset(Set S1, Set S2);
+/* Menghasilkan true jika S1 merupakan subset dari S2 */
+
+boolean IsEqual(Set S1, Set S2);
+/* Menghasilkan true jika S1 sama dengan S2 */
+
+int length(Set S);
+/* Mengirimkan banyaknya elemen Set S, mungkin 0 */
 
 #endif
