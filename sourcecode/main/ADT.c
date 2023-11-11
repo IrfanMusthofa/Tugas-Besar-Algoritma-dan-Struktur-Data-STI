@@ -26,7 +26,7 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
 
 void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
     printf("init");
-    char *file = "./sourcode/config/config.txt";
+    char *file = "./sourcecode/config/config.txt";
     STARTWORD(file);
     printf("ialize\n");
     int jlhPenyanyi=0;
