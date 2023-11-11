@@ -364,3 +364,40 @@ boolean IsEqualString(char* c1, char *c2)
  }
  return equal;
 }
+Word takewordsemicolon(Word command, int ke)
+{
+	/*KAMUS LOKAL*/
+	Word w;
+	int i = 0;
+	int j = 0;
+	/*ALGORITMA*/
+	while (j != ke - 1 && i < command.Length)
+	{
+		if (command.TabWord[i] == ';')
+		{
+			j++;
+		}
+		i++;
+		if (i == command.Length)
+		{
+			j++;
+		}
+	}
+	boolean cek = false;
+	int length = 0;
+	while (i < command.Length && !cek)
+	{
+		if (command.TabWord[i] == ';')
+		{
+			cek = true;
+		}
+		else
+		{
+			w.TabWord[length] = command.TabWord[i];
+			length++;
+			i++;
+		}
+	}
+	w.Length = length;
+	return w;
+}

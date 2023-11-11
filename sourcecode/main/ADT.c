@@ -87,7 +87,7 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
                 // Ambil nama lagu
                 valuetype namaL = WordToString(currentWord);
 
-                // Masukkan ke 
+                // Masukkan ke Song
                 Song->Elements[count2].IdAlbum = count1;
                 Song->Elements[count2].namaP = namaP;
                 Song->Elements[count2].namaA = namaA;

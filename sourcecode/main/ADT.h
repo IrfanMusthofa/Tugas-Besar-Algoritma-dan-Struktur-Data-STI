@@ -30,6 +30,7 @@ typedef struct{
     address First;
 	valuetype namaPlaylist;
 } List;
+
 typedef struct
 {
     List *playlist;

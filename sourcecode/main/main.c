@@ -1,12 +1,15 @@
 #include "../ADT/MesinKalimat/mesinkarakter.h"
 #include "../ADT/MesinKalimat/mesinkata.h"
+#include "../ADT/Queue/queue.h"
+#include "../ADT/Stack/stack.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "../command/Help/help.h"
+#include "../command/Load/load.h"
 
 
-int main(){
+int main() {
     ListPenyanyi Penyanyi;
     MapAlbum Album;
     SetSong Song;
