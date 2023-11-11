@@ -40,7 +40,7 @@ void STARTCOM(List *Penyanyi,MapAlbum *Album,MapSong *Song){
     Album->count = 0;
     Song->count = 0;
 
-    int j=0,k=0;
+    int count1=0,count2=0;
     for (int i = 0;i<Penyanyi->neff;i++){
         ADVWORD();
         int jlhalbum = WordToInt(takeword(currentWord,1));
@@ -49,20 +49,22 @@ void STARTCOM(List *Penyanyi,MapAlbum *Album,MapSong *Song){
         valuetype namaP = WordToString(takekata(currentWord));
         Penyanyi->A[i] = namaP;
         // printf("%d. %s\n",i+1,Penyanyi->A[i]);
-        for (j;j<Album->count;j++){
+        for (int j = count1;j<Album->count;j++){
             ADVWORD();
             int jlhlagu = WordToInt(takeword(currentWord,1));
             Song->count+=jlhlagu;
 
             valuetype namaA = WordToString(takekata(currentWord));
-            Album->Elements[j].keyAlbum = i;
-            Album->Elements[j].valueAlbum = namaA;
+            Album->Elements[count1].keyAlbum = i;
+            Album->Elements[count1].valueAlbum = namaA;
+            count1++;
 
-            for (k;k<Song->count;k++){
+            for (int k=count2;k<Song->count;k++){
                 ADVWORD();
                 valuetype namaL = WordToString(currentWord);
-                Song->Elements[k].keySong = j;
-                Song->Elements[k].valueSong = namaL;
+                Song->Elements[count2].keySong = count1;
+                Song->Elements[count2].valueSong = namaL;
+                count2++;
                 // printf("    %d. %s\n",Song->Elements[k].keySong+1,Song->Elements[k].valueSong);
             }
         }
