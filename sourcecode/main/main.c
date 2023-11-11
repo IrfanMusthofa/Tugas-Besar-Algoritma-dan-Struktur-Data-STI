@@ -3,7 +3,8 @@
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "../command/help.h"
+#include "../command/Help/help.h"
+
 
 int main(){
     ListPenyanyi Penyanyi;
