@@ -9,7 +9,6 @@
 #define EMPTY ""
 
 typedef int keytype;
-typedef int address;
 typedef char *valuetype;
 typedef int infotype;
 typedef struct tElmtlist *address;
@@ -55,12 +54,12 @@ typedef struct{
 
 typedef struct{
     Song Elements[NMAX];
-    address count;
+    int count;
 } MapSong;
 
 typedef struct{
     Album Elements[NMAX];
-    address count;
+    int count;
 } MapAlbum;
 
 typedef char* Eltype;
