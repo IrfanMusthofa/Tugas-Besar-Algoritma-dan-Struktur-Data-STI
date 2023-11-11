@@ -8,19 +8,25 @@ boolean checkload(char *file) {
     char p = fopen(file, "r");
     if (p == NULL) return false;
     else true;
+
 }
 
-void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file, Queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
+void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, Queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
 
     //dijalankan pertama sebelum queue & playlist
-    STARTCOM(Penyanyi, Album, Song, file);
-    ADVWORD();
+    STARTCOM(Penyanyi, Album, SetSong, file);
 
+
+    // Lanjut baca Queue, history, playlist
+
+    // BACA QUEUE
+    ADVWORD();
+    CreateQueue(QueueSong);
     // Masukkan banyak songs ke Queue
-    QueueSong->idxTail = WordToInt(takekata(currentWord)) - 1;
+    int banyakSongs = WordToInt(takekata(currentWord));
 
     // Masukkan songs ke Queue
-    for (int i = 0; i < QueueSong->idxTail + 1; i++) {
+    for (int i = 0; i < banyakSongs; i++) {
         ADVWORD();
 
 
@@ -30,7 +36,16 @@ void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file, Qu
         valuetype namaS = takewordsemicolon(currentWord, 3);
 
         // Masukkan ke QueueSong
-        
-        
+        Song readyToInput;
+        readyToInput.namaP = namaP;
+        readyToInput.namaA = namaA;
+        readyToInput.namaS = namaS;
+
+        enqueue(QueueSong, readyToInput);
     }
+
+
+    // BACA HISTORY
+    ADVWORD();
+    
 }
