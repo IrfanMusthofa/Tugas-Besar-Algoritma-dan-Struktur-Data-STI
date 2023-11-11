@@ -26,9 +26,10 @@ typedef struct tElmtlist {
 } ElmtList;
 
 typedef struct{
-    	address First;
+    address First;
 	valuetype namaPlaylist;
 } List;
+
 typedef struct
 {
     List *playlist;
