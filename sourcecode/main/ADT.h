@@ -4,8 +4,6 @@
 #include "boolean.h"
 
 
-
-#define Nil 0
 #define NMAX 100
 #define EMPTY ""
 
@@ -14,10 +12,6 @@ typedef char *valuetype;
 typedef char *infotype;
 typedef int IDs;
 typedef struct tElmtlist *address;
-typedef struct tElmtlist { 
-	infotype info;
-	address next;
-} ElmtList;
 
 typedef struct{
     IDs IdAlbum;
@@ -25,6 +19,11 @@ typedef struct{
     valuetype namaA;
     valuetype namaS;
 } Song;
+
+typedef struct tElmtlist { 
+	Song info;
+	address next;
+} ElmtList;
 
 typedef struct{
     address First;

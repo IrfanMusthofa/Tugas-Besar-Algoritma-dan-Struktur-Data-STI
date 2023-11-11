@@ -6,7 +6,7 @@
 List MakeList() {
 	List L;
 	IdxType i;
-	for (i = 0; i < MaxEl; i++) {
+	for (i = 0; i < NMAX; i++) {
 		L.A[i] = Mark;
 	}
 	return L;
@@ -38,14 +38,14 @@ IdxType FirstIdx(List L) {
 
 IdxType LastIdx(List L) {
 	int i = FirstIdx(L);
-	while ((i < MaxEl) && (L.A[i+1] != Mark)) {
+	while ((i < NMAX) && (L.A[i+1] != Mark)) {
 		i += 1;
 	}
 	return i;
 }
 
 boolean IsIdxValid (List L, IdxType i) {
-	return (0 <= i) && (MaxEl >= i);
+	return (0 <= i) && (NMAX >= i);
 }
 
 boolean IsIdxEff (List L, IdxType i) {

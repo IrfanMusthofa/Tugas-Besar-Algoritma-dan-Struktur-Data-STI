@@ -7,15 +7,15 @@
 Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
 */
 
-#define Nil 0
-#define NMax 100
+/*#define Nil 0*/
+#define NMAX 100
 
 typedef int infotype;
 typedef int address;
 
 typedef struct
 {
-    infotype Elements[NMax];
+    infotype Elements[NMAX];
     address Count;
 } Set;
 
