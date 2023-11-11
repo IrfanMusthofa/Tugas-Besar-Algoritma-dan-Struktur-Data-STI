@@ -7,7 +7,7 @@
 Deklarasi stack yang dengan implementasi array eksplisit-statik rata kiri
 */
 
-#define Nil 0
+/*#define Nil 0*/
 #define NMAX 100
 
 typedef int infotype;

@@ -8,7 +8,7 @@ void CreateEmpty(Set *S)
     //KAMUS LOKAL
 
     //ALGORITMA
-    (*S).Count = Nil;
+    (*S).Count = 0;
 }
 
 boolean IsEmpty(Set S)
@@ -18,7 +18,7 @@ boolean IsEmpty(Set S)
     //KAMUS LOKAL
 
     //ALGORITMA
-    return (S.Count == Nil);
+    return (S.Count == 0);
 }
 
 boolean IsFull(Set S)
