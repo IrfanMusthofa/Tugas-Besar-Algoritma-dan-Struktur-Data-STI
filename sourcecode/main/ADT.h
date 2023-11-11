@@ -1,7 +1,8 @@
 #ifndef __adt__
 #define __adt__
 
-#include "./sourcecode/main/boolean.h"
+#include "boolean.h"
+
 
 
 #define Nil 0
@@ -80,6 +81,6 @@ typedef struct{
 
 void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
 
-void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
+void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song, char *file);
 
 #endif

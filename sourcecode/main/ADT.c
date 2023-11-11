@@ -1,5 +1,5 @@
-#include "./sourcecode/ADT/MesinKalimat/mesinkarakter.h"
-#include "./sourcecode/ADT/MesinKalimat/mesinkata.h"
+#include "../ADT/MesinKalimat/mesinkarakter.h"
+#include "../ADT/MesinKalimat/mesinkata.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,9 +24,8 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
     // }
 }
 
-void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
+void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song, char *file){
     printf("init");
-    char *file = "./MAINsrc/Config/config.txt";
     STARTWORD(file);
     printf("ialize\n");
     int jlhPenyanyi=0;

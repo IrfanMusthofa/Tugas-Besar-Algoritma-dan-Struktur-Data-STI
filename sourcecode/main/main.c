@@ -1,5 +1,5 @@
-#include "./sourcecode/ADT/MesinKalimat/mesinkarakter.h"
-#include "./sourcecode/ADT/MesinKalimat/mesinkata.h"
+#include "../ADT/MesinKalimat/mesinkarakter.h"
+#include "../ADT/MesinKalimat/mesinkata.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
