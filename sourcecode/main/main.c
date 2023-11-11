@@ -15,8 +15,8 @@ int main(){
     STARTINPUTKATA();
     if (IsEqual(currentWord,start)){
         printf("starting game..\n");
-
-        STARTCOM(&Penyanyi,&Album,&Song);
+        char *file = "./sourcecode/config/config.txt";
+        STARTCOM(&Penyanyi,&Album,&Song, file);
 
         for(int i = 0;i<Penyanyi.neff;i++){
             printf("%d. %s\n",i+1,Penyanyi.A[i]);
