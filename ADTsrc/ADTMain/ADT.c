@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Mengubah .txt menjadi ADT
+
 void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
     Penyanyi->neff = Nil;
     Album->count = Nil;
