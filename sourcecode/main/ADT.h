@@ -4,7 +4,7 @@
 #include "./sourcecode/main/boolean.h"
 
 
-/*#define Nil 0 */
+
 #define NMAX 100
 #define EMPTY ""
 
