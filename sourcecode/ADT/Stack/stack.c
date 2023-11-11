@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "boolean.h"
 #include "stack.h"
+#include "ADT.h"
 
 /* *** Konstruktor/Kreator *** */
 void CreateEmpty (Stack *S)
@@ -22,11 +23,11 @@ boolean IsEmpty (Stack S)
 boolean IsFull (Stack S)
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 {
-    return (Top(S)==NMAX-1);
+    return (Top(S)==MaxEl-1);
 }
 
 /* ************ Menambahkan sebuah elemen ke Stack ************ */
-void Push (Stack * S, infotype X)
+void Push (Stack * S, Song X)
 /* Menambahkan X sebagai elemen Stack S. */
 /* I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh */
 /* F.S. X menjadi TOP yang baru,TOP bertambah 1 */
@@ -36,7 +37,7 @@ void Push (Stack * S, infotype X)
 }
 
 /* ************ Menghapus sebuah elemen Stack ************ */
-void Pop (Stack * S, infotype* X)
+void Pop (Stack * S, Song* X)
 /* Menghapus X dari Stack S. */
 /* I.S. S  tidak mungkin kosong */
 /* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
