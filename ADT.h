@@ -17,6 +17,18 @@ typedef char *valuetype;
 //     IDs idsong;
 //     valuetype lagu;
 // } SetSong;
+typedef struct
+{
+    Song T[NMax];
+    int TOP;
+} Stack;
+
+
+typedef struct
+{
+    Song buffer [NMAX];
+    int idxTail;
+} Queue;
 
 typedef struct{
     keytype keySong;
