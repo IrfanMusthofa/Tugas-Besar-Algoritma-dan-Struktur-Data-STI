@@ -1,7 +1,7 @@
 #ifndef __adt__
 #define __adt__
 
-#include "./MAINsrc/Main/boolean.h"
+#include "./sourcecode/main/boolean.h"
 
 
 #define Nil 0
