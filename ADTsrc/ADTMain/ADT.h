@@ -1,8 +1,8 @@
 #ifndef __adt__
 #define __adt__
 
-#include "./src/boolean.h"
-// #include "./src/set.h"
+#include "./ADTsrc/ADTMain/boolean.h"
+
 
 #define Nil 0
 #define NMAX 100
