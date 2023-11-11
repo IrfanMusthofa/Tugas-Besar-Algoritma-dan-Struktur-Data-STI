@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int main(){
-    List Penyanyi;
+    ListPenyanyi Penyanyi;
     MapAlbum Album;
     SetSong Song;
     //ID PasID;

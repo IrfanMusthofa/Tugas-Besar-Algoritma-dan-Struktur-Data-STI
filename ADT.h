@@ -9,14 +9,14 @@
 #define EMPTY ""
 
 typedef int keytype;
-typedef int address;
 typedef char *valuetype;
+typedef char *infotype;
 typedef int IDs;
-
-// typedef struct{
-//     IDs idsong;
-//     valuetype lagu;
-// } SetSong;
+typedef struct tElmtlist *address;
+typedef struct tElmtlist { 
+	infotype info;
+	address next;
+} ElmtList;
 
 typedef struct{
     IDs IdAlbum;
@@ -24,6 +24,30 @@ typedef struct{
     valuetype namaA;
     valuetype namaS;
 } Song;
+
+typedef struct{
+    address First;
+} List;
+
+typedef struct
+{
+    List *playlist;
+    int Capacity;
+    int Neff;
+} ArrayDinPlaylist;
+
+typedef struct
+{
+    Song T[NMAX];
+    int TOP;
+} Stack;
+
+
+typedef struct
+{
+    Song buffer [NMAX];
+    int idxTail;
+} Queue;
 
 typedef struct{
     keytype keyAlbum;
@@ -38,7 +62,7 @@ typedef struct{
 
 typedef struct{
     Album Elements[NMAX];
-    address count;
+    int count;
 } MapAlbum;
 
 typedef char* Eltype;
@@ -46,7 +70,7 @@ typedef char* Eltype;
 typedef struct{
     Eltype A[NMAX];
     int neff;
-} List;
+} ListPenyanyi;
 
 // typedef struct{
 //     IDs idpenyanyi;
@@ -54,8 +78,8 @@ typedef struct{
 //     IDs idlagu;
 // } ID;
 
-void MakeEmpty(List *Penyanyi,MapAlbum *Album,SetSong *Song);
+void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
 
-void STARTCOM(List *Penyanyi,MapAlbum *Album,SetSong *Song);
+void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
 
 #endif

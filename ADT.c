@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void MakeEmpty(List *Penyanyi,MapAlbum *Album,SetSong *Song){
+void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
     Penyanyi->neff = Nil;
     Album->count = Nil;
     Song->count = Nil;
@@ -22,7 +22,7 @@ void MakeEmpty(List *Penyanyi,MapAlbum *Album,SetSong *Song){
     // }
 }
 
-void STARTCOM(List *Penyanyi,MapAlbum *Album,SetSong *Song){
+void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
     printf("init");
     char *file = "config.txt";
     STARTWORD(file);
