@@ -28,7 +28,7 @@ boolean IsFull(Set S)
     //KAMUS LOKAL
 
     //ALGORITMA
-    return (S.Count == NMax);
+    return (S.Count == NMAX);
 }
 
 void Insert(Set *S, infotype Elmt)

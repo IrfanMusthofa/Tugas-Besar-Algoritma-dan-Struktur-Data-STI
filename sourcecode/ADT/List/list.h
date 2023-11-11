@@ -8,7 +8,7 @@
 #include "boolean.h"
 
 /* Kamus Umum */
-#define MaxEl 100
+#define NMAX 100
 #define Mark -9999  /* Nilai tak terdefinisi */
 #define InvalidIdx -1  /* Indeks tak terdefinisi */
 
@@ -17,7 +17,7 @@
 #define ElType int
 
 typedef struct {
-	ElType A[MaxEl];  /* Memori tempat penyimpanan elemen (container) */
+	ElType A[NMAX];  /* Memori tempat penyimpanan elemen (container) */
 } List;
 
 #define List(i) L.A(i)
