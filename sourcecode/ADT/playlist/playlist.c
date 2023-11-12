@@ -3,8 +3,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/***********Arraydin************/
+/***********Playlist************/
 
+void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist){
+    int i = array->Neff;
+    address P = NULL;
+    InsertLast(array, P);
+    array->playlist[i].namaplaylist = namaplaylist;
+}
+/** konstruktor
+ * I.S. array terdefinisi, namaplaylist terdefinisi
+ * F.S. Terbentuk playlist di elemen setelah Neff, dengan nama playlist yang terdefinisi dan first kosong
+ */
+
+void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu){
+    InsVLast(&(array->playlist[i]), lagu);
+}
+/** fungsi untuk menambahkan lagu baru pada playlist tertentu
+ * I.S. array terdefinisi, i adalah index playlist, lagu tersefinsi
+ * F.S. lagu berhasil ditambahkan di playlist
+ * */
+
+Song CreateSong(IDs IdxAlbum, valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu){
+    Song lagu;
+    lagu.IdAlbum = IdxAlbum;
+    lagu.namaA = namaalbum;
+    lagu.namaP = namapenyanyi;
+    lagu.namaS = namalagu;
+    return lagu;
+}
+
+
+/***********Arraydin************/
+/** konstruktor
+ * I.S. sembarang
+ * F.S. Terbentuk ArrayDin kosong dengan ukuran InitialSize
+ */
 ArrayDinPlaylist MakeArrayDin(){
     ArrayDinPlaylist array;
     (array).playlist = (List*) malloc (100*sizeof(List));
@@ -17,7 +51,7 @@ ArrayDinPlaylist MakeArrayDin(){
 /**
  * Destruktor
  * I.S. ArrayDin terdefinisi
- * F.S. array->A terdealokasi
+ * F.S. array->playlist terdealokasi
  */
 void DeallocateArrayDin(ArrayDinPlaylist *array){
     free((*array).playlist);
