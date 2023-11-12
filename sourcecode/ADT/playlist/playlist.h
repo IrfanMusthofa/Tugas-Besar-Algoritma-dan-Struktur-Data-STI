@@ -172,6 +172,15 @@ address Search (List L, Song X);
 /* Jika ada, mengirimkan address elemen tersebut. */
 /* Jika tidak ada, mengirimkan Nil */
 
+boolean SearchLaguPlaylist(List L, char* namalagu);
+/* Mencari apakah ada elemen list dengan Lagu(P)= X.namaS */
+/* Jika ada, mengirimkan true */
+/* Jika tidak ada, mengirimkan false */
+
+boolean IsEqualString(char* c1, char *c2);
+/* Membandingkan apakah kedua string sama*/
+/* Jika sama, mengirimkan true */
+/* Jika tidak, mengirimkan false */
 /****************** PRIMITIF BERDASARKAN NILAI ******************/
 /*** PENAMBAHAN ELEMEN ***/
 void InsVFirst (List *L, Song X);
