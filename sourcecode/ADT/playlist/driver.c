@@ -73,6 +73,6 @@ int main()
         printf("%s\n",Penyanyi(R));      
         R = Next(R);
     }
-
+    printf("tes");
     
 }
