@@ -50,14 +50,24 @@ int main()
     InsVLast(&L,A);
     InsVLast(&L,Y);
 
-	ArrayDinPlaylist arr = MakeArrayDin();;
+	ArrayDinPlaylist arr = MakeArrayDin();
 	address P = First(L);
-    int x = 1;
+    int x = 0;
 	InsertAt(&arr, P, x);
-    address Q = arr.playlist[1].First;
+    printf("%d\n", arr.Neff);
+    address Q = arr.playlist[0].First;
     while(Q != NULL){
         printf("%s\n",Penyanyi(Q));      
         Q = Next(Q);
+    }
+    CreatePlaylist(&arr, "kiminogatari");
+    printf("%s\n", arr.playlist[1].namaplaylist);
+    PlaylistAddSong(&arr, 1, song2);
+    PlaylistAddSong(&arr, 1, song3);
+    address R = arr.playlist[1].First;
+    while(R != NULL){
+        printf("%s\n",Penyanyi(R));      
+        R = Next(R);
     }
 
 
