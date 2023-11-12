@@ -44,6 +44,27 @@ typedef struct
 #define Info(P) (P)->info
 #define Next(P) (P)->next
 #define First(L) ((L).First)
+
+/*PLAYLIST*/
+void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist);
+/** konstruktor
+ * I.S. array terdefinisi, namaplaylist terdefinisi
+ * F.S. Terbentuk playlist di elemen setelah Neff, dengan nama playlist yang terdefinisi dan first kosong
+ */
+
+void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu);
+/** fungsi untuk menambahkan lagu baru pada playlist tertentu
+ * I.S. array terdefinisi, i adalah index playlist, lagu tersefinsi
+ * F.S. lagu berhasil ditambahkan di playlist
+ * */
+
+Song CreateSong(IDs IdxAlbum, valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu);
+/** fungsi untuk membentuk lagu
+ * I.S. terdefinisi index album, nama penyanyi, album, dan lagunya
+ * F.S. lagu berhasil terbentuk
+ * */
+
+
 /*ARRAYDIN*/
 /** konstruktor
  * I.S. sembarang
