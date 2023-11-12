@@ -64,11 +64,15 @@ int main()
     printf("%s\n", arr.playlist[1].namaplaylist);
     PlaylistAddSong(&arr, 1, song2);
     PlaylistAddSong(&arr, 1, song3);
+    PlaylistAddSong(&arr, 1, song2);
     address R = arr.playlist[1].First;
+    printf("%d\n", IsEqualString(song2.namaS, Lagu(R)));
+    printf("%d\n", SearchLaguPlaylist(arr.playlist[1], song2.namaS));
+
     while(R != NULL){
         printf("%s\n",Penyanyi(R));      
         R = Next(R);
     }
 
-
+    
 }
