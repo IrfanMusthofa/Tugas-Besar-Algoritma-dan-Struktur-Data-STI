@@ -17,7 +17,9 @@ void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist){
  */
 
 void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu){
-    InsVLast(&(array->playlist[i]), lagu);
+    if (!SearchLaguPlaylist(array->playlist[i], lagu.namaS)){
+        InsVLast(&(array->playlist[i]), lagu);
+    }
 }
 /** fungsi untuk menambahkan lagu baru pada playlist tertentu
  * I.S. array terdefinisi, i adalah index playlist, lagu tersefinsi
@@ -215,6 +217,51 @@ address Search (List L, Song X){
 /* Jika ada, mengirimkan address elemen tersebut. */
 /* Jika tidak ada, mengirimkan Null */
 
+boolean SearchLaguPlaylist(List L, char* namalagu){
+    boolean found = false;
+    address P = First(L);
+    while (P != NULL && found == false){
+        if (IsEqualString(Lagu(P), namalagu)){
+            found = true;
+        } else {
+            P = Next(P);
+        }
+    }
+    return found;
+}
+/* Mencari apakah ada elemen list dengan Lagu(P)= X.namaS */
+/* Jika ada, mengirimkan true */
+/* Jika tidak ada, mengirimkan false */
+
+boolean IsEqualString(char* c1, char *c2) {
+    boolean equal = true;
+    int i = 0, ctr1 = 0, ctr2 = 0;
+
+    while (c1[ctr1] != '\0') {
+        ctr1++;
+    }
+
+    while (c2[ctr2] != '\0') {
+        ctr2++;
+    }
+
+    if (ctr1 != ctr2) {
+        equal = false;
+    } else {
+        for (i = 0; i < ctr1; i++) {
+            if (c1[i] != c2[i]) {
+                equal = false;
+                break; // Keluar dari loop jika karakter tidak sama
+            }
+        }
+    }
+
+    return equal;
+}
+
+/* Membandingkan apakah kedua string sama*/
+/* Jika sama, mengirimkan true */
+/* Jika tidak, mengirimkan false */
 
 /****************** PRIMITIF BERDASARKAN NILAI ******************/
 /*** PENAMBAHAN ELEMEN ***/
