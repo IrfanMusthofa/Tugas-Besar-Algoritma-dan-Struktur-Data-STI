@@ -3,15 +3,15 @@
 #define QUEUE_H
 
 #include "boolean.h"
-#include "ADT.h"
+#include "../../main/ADT.h"
 
-#define NMAX 100
+#define NMAX 20
 #define IDX_UNDEF -999
 
 typedef struct {
     Song buffer[NMAX];
     int idxTail;
-} Queue;
+} queue;
 
 void CreateQueue(Queue *q);
 

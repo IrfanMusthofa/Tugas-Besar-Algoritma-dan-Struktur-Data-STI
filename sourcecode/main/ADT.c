@@ -88,10 +88,8 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
                 valuetype namaL = WordToString(currentWord);
 
                 // Masukkan ke Song
-                Song->Elements[count2].IdAlbum = count1;
-                Song->Elements[count2].namaP = namaP;
-                Song->Elements[count2].namaA = namaA;
-                Song->Elements[count2].namaS = namaL;
+                Song->Elements[count2].Idalbum = count1;
+                Song->Elements[count2].namalagu = namaL;
                 count2++;
             }
         }
@@ -136,7 +134,7 @@ int JumlahAlbum (MapAlbum album, IDs idpenyanyi){
 int JumlahLagu (SetSong song, IDs idalbum){
     int count;
     for (int i = 0;i<song.count;i++){
-        if (idalbum == song.Elements[i].IdAlbum){
+        if (idalbum == song.Elements[i].Idalbum){
             count++;
         }
     }

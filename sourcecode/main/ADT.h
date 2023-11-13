@@ -5,7 +5,7 @@
 #include "../ADT/MesinKalimat/mesinkata.h"
 
 
-#define NMAX 100
+#define NMAX 20
 #define EMPTY ""
 
 typedef int keytype;
@@ -15,7 +15,6 @@ typedef int IDs;
 typedef struct tElmtlist *address;
 
 typedef struct{
-    IDs IdAlbum;
     valuetype namaP; 
     valuetype namaA;
     valuetype namaS;
@@ -44,12 +43,11 @@ typedef struct
     int TOP;
 } Stack;
 
-
 typedef struct
 {
     Song buffer [NMAX];
     int idxTail;
-} Queue;
+} queue;
 
 typedef struct{
     keytype keyAlbum;
@@ -58,12 +56,17 @@ typedef struct{
 } Album;
 
 typedef struct{
-    Song Elements[NMAX];
+    IDs Idalbum;
+    valuetype namalagu;
+} elmtsong;
+
+typedef struct{
+    elmtsong Elements[NMAX*5];
     int count;
 } SetSong;
 
 typedef struct{
-    Album Elements[NMAX];
+    Album Elements[NMAX*3];
     int count;
 } MapAlbum;
 

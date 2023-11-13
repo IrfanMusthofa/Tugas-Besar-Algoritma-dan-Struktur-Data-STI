@@ -6,7 +6,7 @@
 #define stackt_H
 
 #include "boolean.h"
-#include "ADT.h"
+#include "../../main/ADT.h"
 
 #define Nil -1
 #define MaxEl 100

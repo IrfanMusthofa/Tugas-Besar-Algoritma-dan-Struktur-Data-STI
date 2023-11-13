@@ -2,6 +2,8 @@
     "files.associations": {
         "mesinkata.h": "c",
         "mesinkarakter.h": "c",
-        "adt.h": "c"
+        "adt.h": "c",
+        "stack.h": "c",
+        "queue.h": "c"
     }
 }

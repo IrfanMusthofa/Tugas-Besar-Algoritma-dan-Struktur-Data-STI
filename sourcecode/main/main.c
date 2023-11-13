@@ -1,7 +1,7 @@
 #include "../ADT/MesinKalimat/mesinkarakter.h"
 #include "../ADT/MesinKalimat/mesinkata.h"
-#include "../ADT/Queue/queue.h"
-#include "../ADT/Stack/stack.h"
+//#include "../ADT/Queue/queue.h"
+//#include "../ADT/Stack/stack.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,6 @@ int main() {
     ListPenyanyi Penyanyi;
     MapAlbum Album;
     SetSong Song;
-    //ID PasID;
     //MakeEmpty(&Penyanyi,&Album,&Song);
     printf(">>> ");
     char *start = "START;";
@@ -33,7 +32,7 @@ int main() {
         }
 
         for(int i = 0;i<Song.count;i++){
-            printf("    %d. %s\n",Song.Elements[i].IdAlbum,Song.Elements[i].namaS);
+            printf("    %d. %s\n",Song.Elements[i].Idalbum,Song.Elements[i].namalagu);
         }
     }
     else if (IsEqual(currentWord,help)){
