@@ -11,7 +11,7 @@
 typedef struct {
     Song buffer[NMAX];
     int idxTail;
-} queue;
+} Queue;
 
 void CreateQueue(Queue *q);
 
