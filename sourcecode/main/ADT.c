@@ -97,7 +97,7 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
 }
 
 IDs GetPenyanyiID(ListPenyanyi List, char *input){
-    IDs id;
+    IDs id = -1;
     for (int i = 0;i<List.neff;i++){
         char *compare = List.A[i];
         if (IsEqualString(input,compare)){
@@ -109,7 +109,7 @@ IDs GetPenyanyiID(ListPenyanyi List, char *input){
 }
 
 IDs GetAlbumID (MapAlbum album, char *input){
-    IDs id;
+    IDs id = -1;
     for (int i = 0;i<album.count;i++){
         char *compare = album.Elements[i].valueAlbum;
         if (IsEqualString(input,compare)){
@@ -122,7 +122,7 @@ IDs GetAlbumID (MapAlbum album, char *input){
 }
 
 int JumlahAlbum (MapAlbum album, IDs idpenyanyi){
-    int count;
+    int count = 0;
     for (int i = 0;i<album.count;i++){
         if (idpenyanyi == album.Elements[i].IdPenyanyi){
             count++;
@@ -132,7 +132,7 @@ int JumlahAlbum (MapAlbum album, IDs idpenyanyi){
 }
 
 int JumlahLagu (SetSong song, IDs idalbum){
-    int count;
+    int count = 0;
     for (int i = 0;i<song.count;i++){
         if (idalbum == song.Elements[i].Idalbum){
             count++;
