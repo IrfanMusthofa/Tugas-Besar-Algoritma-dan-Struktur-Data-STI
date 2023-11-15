@@ -8,34 +8,59 @@
 #include "../command/Help/help.h"
 #include "../command/Load/load.h"
 
+void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
+    printf(">>> ");
+    STARTINPUTKATA();
+    Word input = takeword(currentWord,1);
+    while(true){
+        if (IsEqual(input,"QUIT;")){
+            break;
+        }
+        printf("masih di dalam mainafter\n");
+        printf("%s\n",input.TabWord);
+        printf(">>> ");
+        STARTINPUTKATA();
+        input = takeword(currentWord,1);
+    }
+    printf("mau di save?\n");
+}
+    
 
-int main() {
+int main(){
     ListPenyanyi Penyanyi;
     MapAlbum Album;
     SetSong Song;
-    //MakeEmpty(&Penyanyi,&Album,&Song);
+    queue antrian;
+    Stack history;
+    ArrayDinPlaylist playlist;
+    MakeEmpty(&Penyanyi,&Album,&Song);
+
+
     printf(">>> ");
-    char *start = "START;";
-    char *help = "HELP;";
     STARTINPUTKATA();
-    if (IsEqual(currentWord,start)){
-        printf("starting game..\n");
-        char *file = "./sourcecode/config/config.txt";
-        STARTCOM(&Penyanyi,&Album,&Song, file);
+    Word input = takeword(currentWord,1);
+    while (true){
+        if (IsEqual(input,"START;")){
+            printf("starting game..\n");
+            char *file = "./sourcecode/config/config.txt";
+            STARTCOM(&Penyanyi,&Album,&Song, file);
 
-        for(int i = 0;i<Penyanyi.neff;i++){
-            printf("%d. %s\n",i+1,Penyanyi.A[i]);
+            printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
+            mainafter(Penyanyi,Album,Song,antrian,history,playlist);
+            break;
         }
-
-        for(int i = 0;i<Album.count;i++){
-            printf("  %d. %s\n",Album.Elements[i].IdPenyanyi,Album.Elements[i].valueAlbum);
+        else if (IsEqual(input,"HELP;")){
+            help_before();
         }
-
-        for(int i = 0;i<Song.count;i++){
-            printf("    %d. %s\n",Song.Elements[i].Idalbum,Song.Elements[i].namalagu);
+        else if (IsEqual(input,"LOAD")){
+            char* filename = WordToString(takeword(currentWord,2));
+            printf("%s\n",filename);
         }
-    }
-    else if (IsEqual(currentWord,help)){
-        help_before();
+        else{
+            printf("command tidak valid\n");
+        }
+        printf(">>> ");
+        STARTINPUTKATA();
+        input = takeword(currentWord,1);
     }
 }
