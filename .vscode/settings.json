@@ -4,6 +4,7 @@
         "mesinkarakter.h": "c",
         "adt.h": "c",
         "stack.h": "c",
-        "queue.h": "c"
+        "queue.h": "c",
+        "boolean.h": "c"
     }
 }

@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include "../command/Help/help.h"
 #include "../command/Load/load.h"
+#include "../ADT/playlist/pick.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
     printf(">>> ");
@@ -15,6 +16,13 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     while(true){
         if (IsEqual(input,"QUIT;")){
             break;
+        }
+        if (IsEqual(input,"LIST")){
+            Word nextinput = takeword(currentWord,2);
+            if (IsEqual(nextinput,"DEFAULT;")){
+                listp(inpenyanyi);
+            }
+
         }
         printf("masih di dalam mainafter\n");
         printf("%s\n",input.TabWord);
