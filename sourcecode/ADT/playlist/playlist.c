@@ -64,6 +64,37 @@ void tukarplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
     
 }
 
+void DeleteLaguPlaylist (ArrayDinPlaylist *array, int idP, int x, Song *lagu){
+    address P = First(array->playlist[idP - 1]);
+    int cek = 0;
+    address prev = NULL;
+    while (P != NULL)
+    {
+        cek ++;
+        if (cek == x){
+            break;
+        }
+        prev = P;
+        P = Next(P);
+    }
+    *lagu = Info(P);
+    if(prev == NULL && Next(P) == NULL){
+        First(array->playlist[idP - 1]) = NULL;
+    } 
+    else if (prev == NULL){
+        First(array->playlist[idP - 1]) = Next(P);
+        Next(P) = NULL;
+    }
+    else{
+        Next(prev) = Next(P);
+        Next(P) = NULL;
+    }
+    Dealokasi(&P);   
+}
+
+void DeletePlaylist (ArrayDinPlaylist *array, int idP){
+    DeleteAt(array, (idP));
+}
 /***********Arraydin************/
 /** konstruktor
  * I.S. sembarang

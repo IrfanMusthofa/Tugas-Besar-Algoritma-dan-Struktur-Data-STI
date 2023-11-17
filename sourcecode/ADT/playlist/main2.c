@@ -26,13 +26,19 @@ int main(){
     // printf("%s", l);
     ArrayDinPlaylist arr = MakeArrayDin();
     playlistcreate(&arr);
+    playlistcreate(&arr);
     tambahalbumplaylist(Penyanyi, Album, song, &arr);
     PrintInfo(arr.playlist[0]);
     printf("\n");
     swapplaylist(&arr, 1, 2, 3);
-    // removeplaylist(&arr, 1, 1);
-    // DeleteLaguPlaylist(&arr, 0, 1);
+    removeplaylist(&arr, 1, 1);
+    hapusplaylist(&arr);
     PrintInfo(arr.playlist[0]);
+    for (int i = 0; i < arr.Neff; i++){
+        printf("%s", arr.playlist[i].namaPlaylist);
+    }
+
+
 
 
 

@@ -103,9 +103,17 @@ void removeplaylist(ArrayDinPlaylist *array, int idP, int x){
             printf("Tidak ada lagu dengan urutan %d di playlist'%s'\n", x, array->playlist[idP - 1].namaPlaylist);
         }
         else{
-            ;
+            Song S;
+            DeleteLaguPlaylist(array, idP, x, &S);
+            printf("Lagu '%s' oleh '%s' telah dihapus dari playlist '%s'\n", S.namaS, S.namaP, array->playlist[idP - 1].namaPlaylist);
         }
     }
 }
 
-void deleteplaylist();
+void hapusplaylist(ArrayDinPlaylist *array){
+    listplaylist(*array);
+    int idplaylist = pickplaylist(*array);
+    printf("Playlist ID %d dengan judul '%s' berhasil dihapus. \n", (idplaylist + 1), array->playlist[idplaylist].namaPlaylist);
+    DeletePlaylist(array, idplaylist);
+
+}

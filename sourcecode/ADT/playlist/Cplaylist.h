@@ -19,6 +19,6 @@ void swapplaylist(ArrayDinPlaylist *array, int idP, int x, int y);
 
 void removeplaylist(ArrayDinPlaylist *array, int idP, int x);
 
-void deleteplaylist();
+void hapusplaylist(ArrayDinPlaylist *array);
 
 #endif

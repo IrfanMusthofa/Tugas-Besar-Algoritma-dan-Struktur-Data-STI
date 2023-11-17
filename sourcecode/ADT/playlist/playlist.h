@@ -33,7 +33,9 @@ void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu);
 
 void tukarplaylist(ArrayDinPlaylist *array, int idP, int x, int y);
 
-void DeleteLaguPlaylist (ArrayDinPlaylist *array, int idP, int x);
+void DeleteLaguPlaylist (ArrayDinPlaylist *array, int idP, int x, Song *lagu);
+
+void DeletePlaylist (ArrayDinPlaylist *array, int idP);
 
 Song CreateSong(valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu);
 /** fungsi untuk membentuk lagu
