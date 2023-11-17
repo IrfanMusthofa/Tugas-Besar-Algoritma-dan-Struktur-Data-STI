@@ -23,7 +23,6 @@
 /* Definisi akses dengan Selektor : Set dan Get */
 #define Top(S) (S).TOP
 #define InfoTop(S) (S).T[(S).TOP]
-#define ID(S) (S).IdAlbum
 #define Lagu(P) (P).namaS
 #define Album(P) (P).namaA
 #define Penyanyi(P) (P).namaP
