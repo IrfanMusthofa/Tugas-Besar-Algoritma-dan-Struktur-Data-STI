@@ -1,6 +1,9 @@
+#include "mesinkarakter.h"
+#include "mesinkata.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 // Mengubah .txt menjadi ADT
 
 void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){

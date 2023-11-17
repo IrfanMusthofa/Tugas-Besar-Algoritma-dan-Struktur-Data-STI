@@ -3,26 +3,26 @@
 
 // Konstruktor
 
-ListStatic MakeList() {
+ListStatic MakeListStatis() {
 	ListStatic L;
 	L.Neff = 0;
 	return L;
 }
 
-boolean IsEmpty(ListStatic L) {
+boolean IsEmptyListStatis(ListStatic L) {
 	return (L.Neff == 0);
 }
 
-int Length(ListStatic L) {
+int LengthListStatis(ListStatic L) {
 	return L.Neff;
 }
 
-ElType Get(ListStatic L, IdxType i) {
+ElType GetListStatis(ListStatic L, IdxType i) {
 	return L.A[i];
 }
 
-void InsertLast(ListStatic *L, ElType X) {
-    IdxType i = Length(*L);
+void InsertLastListStatis(ListStatic *L, ElType X) {
+    IdxType i = LengthListStatis(*L);
 	L->A[i] = X;
 	L->Neff ++;
 }

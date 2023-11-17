@@ -17,5 +17,7 @@ valuetype pickalbum(MapAlbum Album, IDs id);
 void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L);
 valuetype picklagu(ListStatic L);
 
+void listplaylist(ArrayDinPlaylist P);
+IDs pickplaylist(ArrayDinPlaylist P);
 
 #endif

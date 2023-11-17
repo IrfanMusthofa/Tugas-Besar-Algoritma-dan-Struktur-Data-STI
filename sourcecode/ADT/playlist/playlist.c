@@ -9,7 +9,7 @@ void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist){
     int i = array->Neff;
     address P = NULL;
     InsertLast(array, P);
-    array->playlist[i].namaplaylist = namaplaylist;
+    array->playlist[i].namaPlaylist = namaplaylist;
 }
 /** konstruktor
  * I.S. array terdefinisi, namaplaylist terdefinisi
@@ -26,9 +26,8 @@ void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu){
  * F.S. lagu berhasil ditambahkan di playlist
  * */
 
-Song CreateSong(IDs IdxAlbum, valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu){
+Song CreateSong(valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu){
     Song lagu;
-    lagu.IdAlbum = IdxAlbum;
     lagu.namaA = namaalbum;
     lagu.namaP = namapenyanyi;
     lagu.namaS = namalagu;
@@ -36,6 +35,34 @@ Song CreateSong(IDs IdxAlbum, valuetype namapenyanyi, valuetype namaalbum, value
 }
 
 
+void tukarplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
+    address P = First(array->playlist[idP - 1]);
+    int h1 = 0;
+    while (P != NULL)
+    {
+        h1++;
+        if(h1 == x){
+            break;
+        } 
+        P = Next(P);
+    }
+
+    address Q = First(array->playlist[idP - 1]);
+    int h2 = 0;
+    while (Q != NULL)
+    {
+        h2++;
+        if(h2 == y){
+            break;
+        } 
+        Q = Next(P);
+    }
+
+    Song temp = Info(P);
+    Info(P) = Info(Q);
+    Info(Q) = temp;
+    
+}
 
 /***********Arraydin************/
 /** konstruktor
@@ -178,7 +205,6 @@ address Alokasi (Song X){
         Lagu(P) = X.namaS;
         Album(P) = X.namaA;
         Penyanyi(P) = X.namaP;
-        IdxAlbum(P) = X.IdAlbum;
         Next(P)= NULL;
         return P;
     }
@@ -233,32 +259,6 @@ boolean SearchLaguPlaylist(List L, char* namalagu){
 /* Mencari apakah ada elemen list dengan Lagu(P)= X.namaS */
 /* Jika ada, mengirimkan true */
 /* Jika tidak ada, mengirimkan false */
-
-boolean IsEqualString(char* c1, char *c2) {
-    boolean equal = true;
-    int i = 0, ctr1 = 0, ctr2 = 0;
-
-    while (c1[ctr1] != '\0') {
-        ctr1++;
-    }
-
-    while (c2[ctr2] != '\0') {
-        ctr2++;
-    }
-
-    if (ctr1 != ctr2) {
-        equal = false;
-    } else {
-        for (i = 0; i < ctr1; i++) {
-            if (c1[i] != c2[i]) {
-                equal = false;
-                break; // Keluar dari loop jika karakter tidak sama
-            }
-        }
-    }
-
-    return equal;
-}
 
 /* Membandingkan apakah kedua string sama*/
 /* Jika sama, mengirimkan true */
@@ -336,7 +336,7 @@ void PrintInfo (List L){
         printf("[");
         address P = First(L);
         while (P != NULL) {
-            printf("%s", Penyanyi(P));
+            printf("%s", Lagu(P));
             P = Next(P);
             if (P != NULL) {
                 printf(",");

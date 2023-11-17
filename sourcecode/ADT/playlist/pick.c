@@ -18,6 +18,7 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
     while(! found){
         printf("Masukkan nama penyanyi yang dipilih : ");
         STARTINPUTKATA();
+        hapustikom(&currentWord);
         printf("\n");
         singer = WordToString(currentWord);
         for (int i = 0; i < Penyanyi.neff; i++){
@@ -55,6 +56,7 @@ valuetype pickalbum(MapAlbum Album, IDs id){
     while(! found){
         printf("Masukkan nama album yang dipilih : ");
         STARTINPUTKATA();
+        hapustikom(&currentWord);
         printf("\n");
         album = WordToString(currentWord);
         for (int i = 0; i < Album.count; i++){
@@ -80,7 +82,7 @@ void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L){
     for (int i = 0; i < song.count; i++){
         if (song.Elements[i].Idalbum == id){
             printf("%d. %s\n", j, song.Elements[i].namalagu);
-            InsertLast(L, song.Elements[i].namalagu);
+            InsertLastListStatis(L, song.Elements[i].namalagu);
             j ++;
         }
     }
@@ -92,6 +94,7 @@ valuetype picklagu(ListStatic L){
     while(! found){
         printf("Masukkan ID lagu yang dipilih : ");
         STARTINPUTKATA();
+        hapustikom(&currentWord);
         printf("\n");
         int ID = WordToInt(currentWord);
         if (ID > 0 && ID <= L.Neff){
@@ -103,4 +106,31 @@ valuetype picklagu(ListStatic L){
         }   
     }  
     return lagu;
+}
+
+void listplaylist(ArrayDinPlaylist P){
+    printf("Daftar Playlist :\n");
+    for (int i = 0;i < P.Neff; i++){
+        printf("%d. %s\n", i + 1, P.playlist[i].namaPlaylist);
+    }
+}
+
+IDs pickplaylist(ArrayDinPlaylist P){
+    boolean found = false;
+    IDs indexPlaylist;
+    while(! found){
+        printf("Masukkan ID Playlist yang dipilih : ");
+        STARTINPUTKATA();
+        printf("\n");
+        hapustikom(&currentWord);
+        int ID = WordToInt(currentWord);
+        if (ID > 0 && ID <= P.Neff){
+            found = true;
+            indexPlaylist = ID - 1;
+        }
+        if (!found){
+            printf("ID %d tidak ada dalam daftar, silakan coba lagi\n", ID);
+        }   
+    }  
+    return indexPlaylist;
 }

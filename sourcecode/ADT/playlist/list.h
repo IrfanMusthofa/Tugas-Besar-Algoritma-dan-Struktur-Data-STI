@@ -30,28 +30,28 @@ typedef struct {
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor: create list kosong */
-ListStatic MakeList();
+ListStatic MakeListStatis();
 /* I.S. sembarang */
 /* F.S. Terbentuk list L kosong dengan kapasitas MaxEl */
 
 /* ********** TEST KOSONG/PENUH ********** */
 /* *** Test list kosong *** */
-boolean IsEmpty(ListStatic L);
+boolean IsEmptyListStatis(ListStatic L);
 /* Mengirimkan true jika list L kosong, mengirimkan false jika tidak */
 
 /* *** Menghasilkan sebuah elemen *** */
-ElType Get(ListStatic L, IdxType i);
+ElType GetListStatis(ListStatic L, IdxType i) ;
 /* Prekondisi : list tidak kosong, i antara FirstIdx(T)..LastIdx(T) */
 /* Mengirimkan elemen list yang ke-i */
 
 
 /* ********** SELEKTOR ********** */
 /* *** Banyaknya elemen *** */
-int Length(ListStatic L);
+int LengthListStatis(ListStatic L);
 /* Mengirimkan banyaknya elemen efektif list */
 /* Mengirimkan nol jika list kosong */
 
-void InsertLast(ListStatic *L, ElType X);
+void InsertLastListStatis(ListStatic *L, ElType X) ;
 /* I.S. L terdefinisi, mungkin kosong. */
 /* F.S. v menjadi elemen terakhir L. */
 
