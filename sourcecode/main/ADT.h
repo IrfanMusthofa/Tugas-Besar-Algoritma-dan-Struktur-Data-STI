@@ -14,7 +14,7 @@ typedef char *infotype;
 typedef int IDs;
 typedef struct tElmtlist *address;
 
-
+// ==============*** STRUCT AFTER DEFAULT ***==============
 //struct pada queue, stack dan playlist
 typedef struct{
     valuetype namaP; 
@@ -40,7 +40,7 @@ typedef struct
     int Neff;
 } ArrayDinPlaylist;
 
-//stack
+//stack buat history
 typedef struct
 {
     Song T[NMAX];
@@ -48,7 +48,7 @@ typedef struct
 } Stack;
 
 
-//queue
+//queue buat queue
 typedef struct
 {
     Song buffer [NMAX];
@@ -56,6 +56,8 @@ typedef struct
 } queue;
 
 
+
+// ==============*** STRUCT DEFAULT ***==============
 //struct pada setsong
 typedef struct{
     IDs Idalbum;
