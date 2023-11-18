@@ -1,9 +1,8 @@
 #include "boolean.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "ADT.h"
-#include <stdio.h>
-#include "list.h"
+#include "../../ADT/MesinKalimat/mesinkata.h"
+#include "../../ADT/MesinKalimat/mesinkarakter.h"
+#include "../../main/ADT.h"
+#include "../List/list.h"
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */
@@ -42,7 +41,7 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
 }
 /* Menampilkan list album */
 /* IS : list penyanyi, mapalbum terdefinisi, penyanyi yang ingin ditampilkan albumnya */
-/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id  */
+/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id penyanyi */
 void listalbum(ListPenyanyi list, MapAlbum album, valuetype penyanyi, IDs *id){
     *id = GetPenyanyiID(list, penyanyi);
     int j = 1; //ini buat nomor aja sebenarnya;
