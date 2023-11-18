@@ -116,14 +116,6 @@ int main(){
             printf("%s\n",filename);
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
-                printf("%s-",LaguSkrg.NamaP);
-                printf("%s-",LaguSkrg.NamaA);
-                printf("%s\n",LaguSkrg.NamaS);
-                for (int i =0;i<=antrian.idxTail;i++){
-                    printf("%s-",antrian.buffer[i].namaP);
-                    printf("%s-",antrian.buffer[i].namaA);
-                    printf("%s\n",antrian.buffer[i].namaS);
-                }
             }
             else{
                 printf("tidak ada file dengan nama tersebut\n");
