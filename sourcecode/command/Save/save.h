@@ -1,5 +1,5 @@
-#ifndef __load__
-#define __load__
+#ifndef __save__
+#define __save__
 
 #include "../../main/ADT.h"
 #include <stdio.h>
@@ -12,8 +12,6 @@
 #include "../../ADT/Queue/queue.h"
 #include "../../ADT/Stack/stack.h"
 
-boolean checkload(char *file);
-
-void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist, CurrentSong *LaguSekarang);
+void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, queue *anrian, Stack history, ArrayDinPlaylist playlist);
 
 #endif
