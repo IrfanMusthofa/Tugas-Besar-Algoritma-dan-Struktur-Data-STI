@@ -30,15 +30,8 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
     printf("\nINI YG BENER%d\n", currentWord.Length);
     printf("ialize\n");
     printf("starting game STARTCOM..\n");
-    int jlhPenyanyi=0;
-    char *tes = currentWord.TabWord;
-    while ((*tes)!='\0'){
-        if (((*tes=='0') || (*tes=='1') || (*tes=='2') || (*tes=='3') || (*tes=='4') || (*tes=='5') || (*tes=='6') || (*tes=='7') || (*tes=='8') ||(*tes=='9'))){
-            jlhPenyanyi *= 10;
-            jlhPenyanyi += (*tes) - '0'; // String to int
-        }
-        tes++;
-    }
+    int jlhPenyanyi=WordToInt(currentWord);
+
     Penyanyi->neff = jlhPenyanyi; // Banyak Penyanyi
     Album->count = 0;
     Song->count = 0;
