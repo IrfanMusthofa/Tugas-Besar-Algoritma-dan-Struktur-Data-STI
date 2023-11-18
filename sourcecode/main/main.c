@@ -1,16 +1,18 @@
-#include "../ADT/MesinKalimat/mesinkarakter.h"
-#include "../ADT/MesinKalimat/mesinkata.h"
-#include "../ADT/Queue/queue.h"
-#include "../ADT/Stack/stack.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "../command/Help/help.h"
-//#include "../command/Load/load.h"
-#include "../command/Pick/pick.h"
+
 #include "../ADT/List/list.h"
+#include "../ADT/MesinKalimat/mesinkarakter.h"
+#include "../ADT/MesinKalimat/mesinkata.h"
+#include "../ADT/Playlist/playlist.h"
+#include "../ADT/Queue/queue.h"
+#include "../ADT/Stack/stack.h"
+
+#include "../command/Help/help.h"
+#include "../command/Load/load.h"
+#include "../command/Pick/pick.h"
 #include "../command/Playlist/Cplaylist.h"
-#include "../ADT/playlist/playlist.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
     printf(">>> ");
