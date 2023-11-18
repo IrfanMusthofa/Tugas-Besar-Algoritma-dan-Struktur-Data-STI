@@ -174,12 +174,24 @@ Word StringtoWord(char *string)
 }
 
 /* ********** SELEKTOR ********** */
+/* Fungsi untuk mengambil kalimat selain kata pertama*/
 Word takekata(Word w){
 	Word w2;
-	for (int i = 2; i < w.Length; i++){
-		w2.TabWord[i-2] = w.TabWord[i];
+	int j = 0;
+	int x = 0;
+	for (int i = 0; i < w.Length; i++){
+		x ++;
+		if(w.TabWord[i] == ' '){
+			break;
+		}
+
 	}
-	w2.Length = w.Length - 2;
+	x = x;
+	for(int y = x; y < w.Length; y++){
+		w2.TabWord[j] = w.TabWord[y];
+		j++;
+	}
+	w2.Length = j;
 	return w2;
 }
 
