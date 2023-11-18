@@ -4,14 +4,18 @@
 #include "ADT.h"
 #include <stdio.h>
 #include "list.h"
-
+/* Menampilkan list penyanyi */
+/* IS : list penyanyi terdefinisi */
+/* FS : akan ditampilkan list penyanyi yang ada */
 void listp(ListPenyanyi Penyanyi){
     printf("Daftar Penyanyi :\n");
     for (int i = 0;i < Penyanyi.neff; i++){
         printf("%d. %s\n", i + 1, Penyanyi.A[i]);
     }
 }
-
+/* memilih penyanyi, input dari user */
+/* IS : list penyanyi terdefinisi */
+/* FS : akan mengembalikan penyanyi yang diinputkan dengan benar */
 valuetype pickpenyanyi(ListPenyanyi Penyanyi){
     valuetype singer;
     boolean found = false;
@@ -36,7 +40,9 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
     }  
     return singer;
 }
-
+/* Menampilkan list album */
+/* IS : list penyanyi, mapalbum terdefinisi, penyanyi yang ingin ditampilkan albumnya */
+/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id  */
 void listalbum(ListPenyanyi list, MapAlbum album, valuetype penyanyi, IDs *id){
     *id = GetPenyanyiID(list, penyanyi);
     int j = 1; //ini buat nomor aja sebenarnya;
@@ -47,9 +53,11 @@ void listalbum(ListPenyanyi list, MapAlbum album, valuetype penyanyi, IDs *id){
             j ++;
         }
     }
-
 }
 
+/* memilih album, input dari user */
+/* IS : map album terdefinisi, id album terdefinisi */
+/* FS : akan mengembalikan album yang diinputkan dengan benar */
 valuetype pickalbum(MapAlbum Album, IDs id){
     valuetype album;
     boolean found = false;
@@ -75,6 +83,9 @@ valuetype pickalbum(MapAlbum Album, IDs id){
     }  
     return album;
 }
+/* Menampilkan list lagu */
+/* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
+/* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
 void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L){
     IDs id = GetAlbumID(album, namaA);
     int j = 1; //ini buat nomor aja sebenarnya;
@@ -88,6 +99,9 @@ void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L){
     }
 }
 
+/* memilih lagu, input dari user */
+/* IS : list static terdefinisi */
+/* FS : akan mengembalikan lagu yang diinputkan dengan benar */
 valuetype picklagu(ListStatic L){
     valuetype lagu;
     boolean found = false;
@@ -108,6 +122,9 @@ valuetype picklagu(ListStatic L){
     return lagu;
 }
 
+/* Menampilkan listplaylist */
+/* IS : Arraydinplaylist terdefinisi */
+/* FS : akan ditampilkan  list playlist yang ada*/
 void listplaylist(ArrayDinPlaylist P){
     printf("Daftar Playlist :\n");
     for (int i = 0;i < P.Neff; i++){
@@ -115,6 +132,9 @@ void listplaylist(ArrayDinPlaylist P){
     }
 }
 
+/* memilih playlist */
+/* IS : Arraydinplaylist terdefinisi */
+/* FS : memilih playlist, akan mengambalikan id*/
 IDs pickplaylist(ArrayDinPlaylist P){
     boolean found = false;
     IDs indexPlaylist;

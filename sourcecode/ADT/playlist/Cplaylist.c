@@ -6,6 +6,9 @@
 #include "playlist.h"
 #include "pick.h"
 
+/* Membuat playlist baru */
+/* IS : arraydinplaylist terdefinisi */
+/* FS : akan terbentuk playlist dengan nama tertentu */
 void playlistcreate(ArrayDinPlaylist *array){
     boolean hasil = false;
     valuetype namaPlaylist;
@@ -33,6 +36,9 @@ void playlistcreate(ArrayDinPlaylist *array){
     printf("Silakan masukkan lagu - lagu artis terkini kesayangan Anda!\n");
 }
 
+/* Menambahkan lagu pada playlist tertentu */
+/* IS : arraydinplaylist terdefinisi, mapalbum, set song, dan listpenyanyi  */
+/* FS : akan terbentuk playlist dengan nama tertentu */
 void tambahlaguplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, ArrayDinPlaylist *array){
     listp(Penyanyi);
     valuetype namaP = pickpenyanyi(Penyanyi);
@@ -52,6 +58,9 @@ void tambahlaguplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, Arr
 
 }
 
+/* Menambahkan album pada playlist tertentu, apabila lagu sudah ada, tidak dimasukkan */
+/* IS : arraydinplaylist terdefinisi, mapalbum, set song, dan listpenyanyi  */
+/* FS : album ditambahkan pada playlist */
 void tambahalbumplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, ArrayDinPlaylist *array){
     listp(Penyanyi);
     valuetype namaP = pickpenyanyi(Penyanyi);
@@ -77,6 +86,9 @@ void tambahalbumplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, Ar
 
 }
 
+/* Menukar urutan lagu pada playlist tertentu */
+/* IS : arraydinplaylist terdefinisi, idP adalah ID playlist yang ingin ditukar, x dan y adalah urutan lagu  */
+/* FS : lagu akan ditukar dengan urutan x dan y apabila IDp, x, dan y valid*/
 void swapplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
     if (idP > array->Neff || idP <= 0){
         printf("Tidak ada playlist dengan playlist ID %d\n", idP);
@@ -94,6 +106,9 @@ void swapplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
     }
 }
 
+/* menghapus lagu di playlist dengan ID idP, dengan urutan lagu x */
+/* IS : arraydinplaylist terdefinisi, idP adalah ID playlist yang ingin ditukar, x adalah urutan lagu  */
+/* FS : lagu dengan urutan x pada playlist id idP, akan terhapus apabila valid */
 void removeplaylist(ArrayDinPlaylist *array, int idP, int x){
     if (idP > array->Neff || idP <= 0){
         printf("Tidak ada playlist dengan playlist ID %d\n", idP);
@@ -110,6 +125,9 @@ void removeplaylist(ArrayDinPlaylist *array, int idP, int x){
     }
 }
 
+/* menghapus playlist */
+/* IS : arraydinplaylist terdefinisi */
+/* FS : playlist yang dipilih akan terhapus */
 void hapusplaylist(ArrayDinPlaylist *array){
     listplaylist(*array);
     int idplaylist = pickplaylist(*array);
