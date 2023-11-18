@@ -1,7 +1,9 @@
-#include "playlist.h"
-#include "boolean.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "playlist.h"
+#include "boolean.h"
+#include "../../main/ADT.h"
+
 
 /***********Playlist************/
 

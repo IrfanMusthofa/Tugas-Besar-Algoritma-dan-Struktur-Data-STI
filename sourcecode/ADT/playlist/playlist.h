@@ -7,8 +7,6 @@
 #include "boolean.h"
 #include "../../main/ADT.h"
 
-
-
 #define Lagu(P) (P)->info.namaS
 #define Album(P) (P)->info.namaA
 #define Penyanyi(P) (P)->info.namaP

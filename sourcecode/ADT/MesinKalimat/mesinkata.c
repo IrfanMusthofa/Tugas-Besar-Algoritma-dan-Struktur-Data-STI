@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "boolean.h"
-#include "mesinkata.h"
 #include "mesinkarakter.h"
+#include "mesinkata.h"
 
 /*KAMUS*/
 boolean EndWord = false;
