@@ -59,11 +59,7 @@ typedef struct
 } queue;
 
 // struct khusus current song
-typedef struct {
-    Eltype NamaP;
-    Eltype NamaA;
-    Eltype NamaS;
-} CurrentSong;
+typedef Song CurrentSong;
 
 
 
