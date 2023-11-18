@@ -38,19 +38,27 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     char *savefile = ConcateChar("../../src/config/", filename);
     fsave = fopen(savefile, "w+");
 
-    fprintf(fsave, "%d\n", Penyanyi.neff); // Banyak Penyanyi
+    fprintf(fsave, "%d\n", Penyanyi.neff); // Print Out Banyak Penyanyi
 
-    // TIAP ALBUM
-    for (int i = 0; i < Penyanyi.neff; i++) { // Loop sebanyak penyanyi
-        boolean done = false;
+    for (int i = 0; i < Penyanyi.neff - 1; i++) { // Loop sebanyak penyanyi
 
-        for (int j = 0; i < Album.count; j++)
-            if (Album.Elements[j].IdPenyanyi == i + 1) { // Cek untuk IdPenyanyi yang sama
+        // Print Out Banyak Album & Penyanyi
+        int banyakAlbum = 0;
+        for (int j = 0; i < Album.count; j++) {
+            if (Album.Elements[j].IdPenyanyi == i + 1) banyakAlbum++; // Cek untuk IdPenyanyi yang sama
+        } // IdPenyanyi dihitung dari 1
+
+        fprintf(fsave, "%d ", banyakAlbum); // Banyak Album
+        fprintf(fsave, "%s\n", Penyanyi.A[i]); // Nama Penyanyi
+
+
+
+        // Print Out Banyak Lagu dalam Suatu Album & Nama Album
+        for (int j = 0; i < Album.count; j++) {
+            if (Album.Elements[j].IdPenyanyi == i + 1) {
                 
-
-            }
-        }
-
+            } // Cek untuk IdPenyanyi yang sama
+        } // IdPenyanyi dihitung dari 1
     }
 }
 
