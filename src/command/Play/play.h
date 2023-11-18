@@ -1,8 +1,8 @@
-#include "ADT.h"
-#include "pick.h"
-#include "queue.h"
-#include "stack.h"
-#include "playlist.h"
+#include "../../main/ADT.h"
+#include "../Pick/pick.h"
+#include "../../ADT/Queue/queue.h"
+#include "../../ADT/Stack/stack.h"
+#include "../../ADT/Playlist/playlist.h"
 
 /* Memainkan lagu */
 /* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, dan Stack previous terdefinisi */

@@ -1,6 +1,6 @@
 #include "play.h"
 #include <stdio.h>
-#include "ADT.h"
+#include "../../main/ADT.h"
 
 /* Memainkan lagu */
 /* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, dan Stack previous terdefinisi */
