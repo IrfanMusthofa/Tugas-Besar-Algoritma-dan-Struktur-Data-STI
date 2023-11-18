@@ -49,9 +49,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 int validasi = currentWord.Length-14;
                 int IDplaylist = -1, x = -1,y=-1;
                 if(validasi >= 6){
-                    IDplaylist = wordtointmustvalid(takeword(currentWord,3));
-                    x = wordtointmustvalid(takeword(currentWord,4));
-                    y = wordtointmustvalid(takeword(currentWord,5));
+                    IDplaylist = WordToInt(takeword(currentWord,3));
+                    x = WordToInt(takeword(currentWord,4));
+                    y = WordToInt(takeword(currentWord,5));
                 }
                 printf("%s\n",takeword(currentWord,4).TabWord);
                 printf("%d\n%d\n%d\n",IDplaylist,x,y);
