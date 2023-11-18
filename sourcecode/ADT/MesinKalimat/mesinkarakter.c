@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "mesinkarakter.h"
 #include "boolean.h"
+#include "mesinkarakter.h"
 
 /*KAMUS*/
 char currentChar;
