@@ -112,6 +112,9 @@ void CopyWord()
 		i++;
 	}
 	currentWord.Length = i;
+	if (currentWord.TabWord[currentWord.Length-1]=='\r'){
+		currentWord.Length--;
+	}
 }
 
 /* ********** KONVERTER ********** */
