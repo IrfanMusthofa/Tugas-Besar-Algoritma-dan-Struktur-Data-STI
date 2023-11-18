@@ -4,36 +4,51 @@
 #include "../main/ADT.h"
 #include <stdlib.h>
 
-boolean checkload(char *file) {
+boolean CheckLoad(char *file) {
     char check = fopen(file, "r");
     if (check == NULL) return false;
     else true;
 
 }
 
-void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
+void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
 
-    //Dijalankan pertama sebelum queue & playlist
+    // ===== ***Dijalankan pertama sebelum queue & playlist*** =====
+    // ===== Baca default terlebih dahulu =====
     STARTCOM(Penyanyi, Album, SetSong, file);
 
 
-    // Lanjut baca Queue, history, playlist
+    // ***Lanjut baca Current Song, Queue, History, Playlist***
+    // ===== Current Song =====
+    ADVWORD();
+    CurrentSong LaguSekarang;
+    if (IsEqual(currentWord,"-")) {
+        LaguSekarang.NamaP = "-";
+        LaguSekarang.NamaA = "-";
+        LaguSekarang.NamaS = "-";
+    } else {
+        LaguSekarang.NamaP = WordToString(takewordsemicolon(currentWord, 1));
+        LaguSekarang.NamaA = WordToString(takewordsemicolon(currentWord, 2));
+        LaguSekarang.NamaS = WordToString(takewordsemicolon(currentWord, 3));
+    }
 
-    // BACA QUEUE
+
+
+    // ========== Queue for Queue ==========
     ADVWORD();
     CreateQueue(QueueSong);
+
     // Masukkan banyak songs ke Queue queue
-    int banyakQueueSongs = WordToInt(takekata(currentWord));
+    int banyakQueueSongs = WordToInt(currentWord);
 
     // Masukkan songs ke Queue
     for (int i = 0; i < banyakQueueSongs; i++) {
-        ADVWORD();
-
+        ADVWORD(); //Baca 1 kalimat
 
         // Ambil penyanyi, album, song dalam satu baris tsb
-        valuetype namaP = takewordsemicolon(currentWord, 1);
-        valuetype namaA = takewordsemicolon(currentWord, 2);
-        valuetype namaS = takewordsemicolon(currentWord, 3);
+        valuetype namaP = WordToString(takewordsemicolon(currentWord, 1));
+        valuetype namaA = WordToString(takewordsemicolon(currentWord, 2));
+        valuetype namaS = WordToString(takewordsemicolon(currentWord, 3));
 
         // Masukkan ke QueueSong
         Song readyToInput;
@@ -45,36 +60,74 @@ void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     }
 
 
-    // BACA HISTORY
+
+    // ========== Stack for History ==========
     ADVWORD();
     Stack HistoryRAW;
     CreateEmpty(&HistoryRAW); // Sebelum direverse
-    CreateEMpty(History); // Final setelah direverse
+    CreateEmpty(History); // Final setelah direverse
 
     // Masukkan banyak songs riwayat
-    int banyakHistorySongs = WordToInt(takekata(currentWord));
+    int banyakHistorySongs = WordToInt(currentWord);
 
     // Masukkan songs ke Stack History
     for (int j = 0; j < banyakHistorySongs; j++) {
         ADVWORD();
 
         // Ambil penyanyi, album, song dalam satu baris tsb
-        valuetype namaP = takewordsemicolon(currentWord, 1);
-        valuetype namaA = takewordsemicolon(currentWord, 2);
-        valuetype namaS = takewordsemicolon(currentWord, 3);
+        valuetype namaP = WordToString(takewordsemicolon(currentWord, 1));
+        valuetype namaA = WordToString(takewordsemicolon(currentWord, 2));
+        valuetype namaS = WordToString(takewordsemicolon(currentWord, 3));
 
         // Masukkan ke History
-        Song readyToInput;
-        readyToInput.namaP = namaP;
-        readyToInput.namaA = namaA;
-        readyToInput.namaS = namaS;
+        Song readyToHistory;
+        readyToHistory.namaP = namaP;
+        readyToHistory.namaA = namaA;
+        readyToHistory.namaS = namaS;
 
-        Push(HistoryRAW, readyToInput);
+        Push(HistoryRAW, readyToHistory);
     }
 
     for (int j = 0; j < banyakHistorySongs; j++) {
         Song readyToReverse;
         Pop(&HistoryRAW, &readyToReverse);
         Push(History, readyToReverse);
+    }
+
+
+
+    // ========== ArrayDinPLaylist for Playlist ==========
+    ADVWORD();
+    DinPlaylist = MakeArrayDin();
+
+    // Banyak Playlist
+    int banyakDinPlaylist = WordToInt(currentWord);
+    
+    // Masukkan Playlist ke arraydinplaylist
+    for (int k = 0; k < banyakDinPlaylist; k++) {
+        ADVWORD();
+        
+        // Banyak lagu dalam suatu playlist & nama playlist
+        int banyakLaguPlaylist = WordToInt(takeword(currentWord, 1));
+        valuetype namaPlaylist = WordToString(takekata(currentWord));
+        CreatePlaylist (DinPlaylist, namaPlaylist);
+
+        // Masukkan Lagu ke Playlist
+        for (int l = 0; l < banyakLaguPlaylist; l++) {
+            ADVWORD();
+
+            // Ambil penyanyi, album, song dalam satu baris tsb
+            valuetype namaP = WordToString(takewordsemicolon(currentWord, 1));
+            valuetype namaA = WordToString(takewordsemicolon(currentWord, 2));
+            valuetype namaS = WordToString(takewordsemicolon(currentWord, 3));
+            
+            // Masukkan ke playlist
+            Song readyToPlaylist;
+            readyToPlaylist.namaP = namaP;
+            readyToPlaylist.namaA = namaA;
+            readyToPlaylist.namaS = namaS;
+            
+            PlaylistAdddSong(DinPlaylist, k, readyToPlaylist);
+        }
     }
 }

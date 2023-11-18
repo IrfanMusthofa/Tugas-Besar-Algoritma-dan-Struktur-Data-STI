@@ -4,8 +4,8 @@
 #include "boolean.h"
 #include "../../ADT/MesinKalimat/mesinkata.h"
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
+#include "../../ADT/List/list.h"
 #include "../../main/ADT.h"
-#include "../List/list.h"
 
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */

@@ -4,7 +4,7 @@
 #define QUEUE_H
 
 #include "boolean.h"
-#include "ADT.h"
+#include "../../main/ADT.h"
 
 #define NMAX 20
 #define IDX_UNDEF -999

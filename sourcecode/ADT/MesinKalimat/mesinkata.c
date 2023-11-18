@@ -440,3 +440,14 @@ char *commWordToString(Word word)
 	C[i] = '\0';
 	return C;
 }
+
+int wordtointmustvalid(Word tes){
+    int count = 0;
+    for (int i = 0;i<tes.Length;i++){
+        if (((tes.TabWord[i]=='0') || (tes.TabWord[i]=='1') || (tes.TabWord[i]=='2') || (tes.TabWord[i]=='3') || (tes.TabWord[i]=='4') || (tes.TabWord[i]=='5') || (tes.TabWord[i]=='6') || (tes.TabWord[i]=='7') || (tes.TabWord[i]=='8') ||(tes.TabWord[i]=='9'))){
+            count *= 10;
+            count += (tes.TabWord[i]) - '0'; // word to int
+        }
+    }
+    return count;
+}

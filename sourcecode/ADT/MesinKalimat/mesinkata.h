@@ -76,9 +76,9 @@ Word StringtoWord (char*string);
 Word takekata(Word w);
 /* Fungsi untuk mengambil kata ke - {ke} dari suatu kalimat hasil input dari user. 
  * Prekondisi : pemrosesan telah berjalan */
-Word takeword(Word command, int ke);
+Word takeword(Word command, int ke); //Sentinel space kosong
 
-Word takenonspace(Word w);
+Word takenonspace(Word w); 
 void hapustikom(Word *w);
 
 /* ********** OPERASI OPERASI ********** */
@@ -104,8 +104,9 @@ void lowerCase(char* huruf);
 /* Membuat semua huruf menjadi lowercase */
 
 boolean IsEqualString(char* c1, char *c2);
-Word takewordsemicolon(Word command, int ke);
+Word takewordsemicolon(Word command, int ke); //Sentinel ;
 
 char *commWordToString(Word word);
 
+int wordtointmustvalid(Word tes);
 #endif
