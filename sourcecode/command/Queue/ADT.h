@@ -2,7 +2,7 @@
 #define __adt__
 
 #include "boolean.h"
-#include "../ADT/MesinKalimat/mesinkata.h"
+#include "mesinkata.h"
 
 
 #define NMAX 20

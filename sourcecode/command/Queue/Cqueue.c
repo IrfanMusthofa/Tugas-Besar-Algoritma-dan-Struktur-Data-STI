@@ -1,8 +1,9 @@
 #include "ADT.h"
-#include "cqueue.h"
+#include "Cqueue.h"
 #include "queue.h"
 #include <stdio.h>
 #include "pick.h"
+#include "boolean.h"
 
 void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu){
     listp(penyanyi);
@@ -10,7 +11,7 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
     listalbum(penyanyi, map, pickp, &idx);
     valuetype picka = pickalbum(map, idx);
     ListStatic L = MakeListStatis();
-    listlagu(map, lagu, picka, &L);
+    listlagu(map, lagu, picka, &L, pickp);
     valuetype pickl = picklagu(L);
 
     Song pilihan;
@@ -20,7 +21,7 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 
     enqueue(currentqueue, pilihan);
 
-    printf("Berhasil menambahkan lagu “%s” oleh “%s” ke queue.", pickl, picka);
+    printf("Berhasil menambahkan lagu “%s” oleh “%s” ke queue.\n", pickl, picka);
 }
 
 void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue){
@@ -33,27 +34,28 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue){
 }
 
 void swapqueue(int indeks1, int indeks2, queue *currentqueue){
-    if (indeks1 - 1 >= 0 && indeks1 - 1 <= currentqueue->idxTail && indeks2 - 1 >= 0 && indeks2 - 1 <= currentqueue->idxTail && indeks1 != indeks2){
-        swapQueueElements(currentqueue, currentqueue->buffer[indeks1 - 1], currentqueue->buffer[indeks2 - 1]);
-        printf("Lagu “%s” berhasil ditukar dengan “%s”", currentqueue->buffer[indeks1 + 1].namaS, currentqueue->buffer[indeks2 + 1].namaS);
+    if ((indeks1 - 1 >= 0) && (indeks1 - 1 <= currentqueue->idxTail) && (indeks2 - 1 >= 0) && (indeks2 - 1 <= currentqueue->idxTail) && (indeks1 != indeks2)){
+        swapQueueElements(currentqueue, (indeks1-1), (indeks2-1));
+        printf("Lagu “%s” berhasil ditukar dengan “%s”\n", currentqueue->buffer[indeks1 - 1].namaS, currentqueue->buffer[indeks2 - 1].namaS);
     }
     else {
         if (indeks1 - 1 > currentqueue->idxTail && indeks2 - 1 > currentqueue->idxTail) {
-            printf("Lagu dengan urutan ke %d dan ke %d tidak terdapat dalam queue!", indeks1, indeks2);
+            printf("Lagu dengan urutan ke %d dan ke %d tidak terdapat dalam queue!\n", indeks1, indeks2);
         } 
-        else if (indeks1 - 1 > currentqueue->idxTail){
-            printf("Lagu dengan urutan ke %d tidak terdapat dalam queue!", indeks1);
+        else if (((indeks1 - 1) > currentqueue->idxTail) || (indeks1 - 1) < 0){
+            printf("Lagu dengan urutan ke %d tidak terdapat dalam queue!\n", indeks1);
         }
-        else if (indeks2 - 1 > currentqueue->idxTail){
-            printf("Lagu dengan urutan ke %d tidak terdapat dalam queue!", indeks2);
-        }
+        else if (((indeks2 - 1) > currentqueue->idxTail) || (indeks2 - 1 < 0)){
+            printf("Lagu dengan urutan ke %d tidak terdapat dalam queue!\n", indeks2);
+        }   
         else {
-            printf("Lagu dengan urutan ke %d dan ke %d tidak terdapat dalam queue!", indeks1, indeks2);
+            printf("Lagu dengan urutan ke %d dan ke %d tidak terdapat dalam queue!\n", indeks1, indeks2);
         }
     }
 }
 
 void removequeue(queue *currentqueue){
     CreateQueue(currentqueue);
+    printf("Queue berhasil dikosongkan.\n");
 }
 

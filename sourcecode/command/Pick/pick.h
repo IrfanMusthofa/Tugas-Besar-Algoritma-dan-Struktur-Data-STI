@@ -6,7 +6,7 @@
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
 #include "../../ADT/List/list.h"
 #include "../../main/ADT.h"
-#include <stdio.h>
+
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */
@@ -30,7 +30,7 @@ valuetype pickalbum(MapAlbum Album, IDs id);
 /* Menampilkan list lagu */
 /* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
 /* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
-void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L);
+void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L, valuetype namaP);
 
 /* memilih lagu, input dari user */
 /* IS : list static terdefinisi */

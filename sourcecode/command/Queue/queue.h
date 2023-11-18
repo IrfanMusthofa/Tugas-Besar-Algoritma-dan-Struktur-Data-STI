@@ -5,6 +5,7 @@
 #include "boolean.h"
 #include "ADT.h"
 
+#define IDX_UNDEF -1
 
 void CreateQueue(queue *q);
 /* I.S. sembarang */
@@ -35,6 +36,6 @@ void dequeue(queue *q, Song *val);
 void displayQueue(queue q);
 
 
-void swapQueueElements(queue *q, Song song1, Song song2);
+void swapQueueElements(queue *q, int idx1, int idx2);
 
 #endif

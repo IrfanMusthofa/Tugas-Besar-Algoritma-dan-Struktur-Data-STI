@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "boolean.h"
-#include "../../main/ADT.h"
-#include "../../ADT/MesinKalimat/mesinkata.h"
-#include "../../ADT/playlist/playlist.h"
-#include "../Pick/pick.h"
+#include "ADT.h"
+#include "mesinkata.h"
+#include "playlist.h"
+#include "pick.h"
 
 void playlistcreate(ArrayDinPlaylist *array){
     boolean hasil = false;

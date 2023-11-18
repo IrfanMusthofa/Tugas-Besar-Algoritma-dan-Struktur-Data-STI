@@ -1,5 +1,5 @@
-#include "../ADT/MesinKalimat/mesinkarakter.h"
-#include "../ADT/MesinKalimat/mesinkata.h"
+#include "mesinkarakter.h"
+#include "mesinkata.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,9 +25,7 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
 }
 
 void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file){
-    printf("init");
     STARTWORD(file);
-    printf("ialize\n");
     int jlhPenyanyi=0;
     char *tes = currentWord.TabWord;
     while ((*tes)!='\0'){

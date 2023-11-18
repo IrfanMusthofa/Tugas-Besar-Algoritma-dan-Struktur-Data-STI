@@ -2,8 +2,7 @@
 #include "../../ADT/MesinKalimat/mesinkata.h"
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
 #include "../../main/ADT.h"
-#include "../../ADT/List/list.h"
-#include "pick.h"
+#include "../List/list.h"
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */
@@ -42,7 +41,7 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
 }
 /* Menampilkan list album */
 /* IS : list penyanyi, mapalbum terdefinisi, penyanyi yang ingin ditampilkan albumnya */
-/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id penyanyi */
+/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id  */
 void listalbum(ListPenyanyi list, MapAlbum album, valuetype penyanyi, IDs *id){
     *id = GetPenyanyiID(list, penyanyi);
     int j = 1; //ini buat nomor aja sebenarnya;
@@ -86,10 +85,12 @@ valuetype pickalbum(MapAlbum Album, IDs id){
 /* Menampilkan list lagu */
 /* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
 /* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
-void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L){
+void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L, valuetype namaP){
     IDs id = GetAlbumID(album, namaA);
+    boolean found = false;
+
     int j = 1; //ini buat nomor aja sebenarnya;
-    printf("Daftar lagu oleh %s : \n", namaA);
+    printf("Daftar lagu Album %s oleh %s: \n", namaA, namaP);
     for (int i = 0; i < song.count; i++){
         if (song.Elements[i].Idalbum == id){
             printf("%d. %s\n", j, song.Elements[i].namalagu);

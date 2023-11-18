@@ -30,7 +30,7 @@ valuetype pickalbum(MapAlbum Album, IDs id);
 /* Menampilkan list lagu */
 /* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
 /* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
-void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L);
+void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L, valuetype namaP);
 
 /* memilih lagu, input dari user */
 /* IS : list static terdefinisi */
