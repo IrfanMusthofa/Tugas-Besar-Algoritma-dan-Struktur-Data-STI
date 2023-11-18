@@ -1,7 +1,10 @@
 #include <stdio.h>
-#include "listdefault.h"
+#include "Clist.h"
+#include "pick.h"
 
-
+/* Memilih penyanyi di list default */
+/* IS: List penyanyi terdefinisi */
+/* FS: Mengembalikan penyanyi yang dipilih */
 valuetype pickpenyanyilist(ListPenyanyi Penyanyi)
 {
     valuetype singer;
@@ -21,13 +24,15 @@ valuetype pickpenyanyilist(ListPenyanyi Penyanyi)
             }
         }
         if (!found){
-            // ubah current word ke string
             printf("Penyanyi %s tidak ada dalam daftar, silakan coba lagi\n", singer);
         }   
     }  
     return singer;
 }
 
+/* Memilih album di list default */
+/* IS: Album terdefinisi, dan id penyanyi terdefinisi */
+/* FS: Mengembalikan penyanyi yang dipilih */
 valuetype pickalbumlist(MapAlbum Album, IDs id)
 {
     valuetype album;
@@ -55,12 +60,15 @@ valuetype pickalbumlist(MapAlbum Album, IDs id)
     return album;
 }
 
-
-/*void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L)
-{
+/* Menampilkan list lagu */
+/* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
+/* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
+void listlagudefault(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L, valuetype namaP){
     IDs id = GetAlbumID(album, namaA);
+    boolean found = false;
+
     int j = 1; //ini buat nomor aja sebenarnya;
-    printf("Daftar lagu di %s : \n", namaA);
+    printf("Daftar Lagu di %s: \n", namaA);
     for (int i = 0; i < song.count; i++){
         if (song.Elements[i].Idalbum == id){
             printf("%d. %s\n", j, song.Elements[i].namalagu);
@@ -69,63 +77,46 @@ valuetype pickalbumlist(MapAlbum Album, IDs id)
         }
     }
 }
-*/
-/*valuetype picklagulist(ListStatic L);
-{
-    valuetype lagu;
-    boolean found = false;
-    while(! found){
-        printf("Masukkan ID lagu yang dipilih : ");
-        STARTINPUTKATA();
-        hapustikom(&currentWord);
-        printf("\n");
-        int ID = WordToInt(currentWord);
-        if (ID > 0 && ID <= L.Neff){
-            found = true;
-            lagu = L.A[ID-1];
-        }
-        if (!found){
-            printf("ID %d tidak ada dalam daftar, silakan coba lagi\n", ID);
-        }   
-    }  
-    return lagu;
-}
-*/
+
+/* Menampilkan list dari penyanyi, album, dan lagunya */
+/* IS: Penyanyi terdefinisi, map album, dan setsong */
+/* FS: Menampilkan list default */
 void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 {
-    printf("\n");
     listp(Penyanyi);
-
     printf("Ingin melihat album yang ada? (Y/N) : ");
-   
     STARTINPUTKATA(); //diinput dengan 'Y' atau 'N'
-    printf("\n");
+    hapustikom(&currentWord);
+    valuetype salah = "N";
+    valuetype benar = "Y";
 
-    if (IsEqual(currentWord, 'Y'))
+    if (IsEqual(currentWord, benar))
     {
-        //printf("Pilih penyanyi untuk melihat album mereka: ");
-        pickpenyanyilist(Penyanyi);
-        valuetype namap=pickpenyanyilist(Penyanyi);
+        valuetype namap = pickpenyanyilist(Penyanyi);
         IDs idpenyanyi;
+        //menampilkan list album
         listalbum(Penyanyi, album, namap, &idpenyanyi);
-
-        printf("\n");
         printf("Ingin melihat lagu yang ada? (Y/N): ");
         STARTINPUTKATA();
-        printf("\n");
-        if (IsEqual(currentWord, 'Y'))
+        hapustikom(&currentWord);
+        if (IsEqual(currentWord, benar))
         {
-            //printf("Pilih album untuk melihat lagu yang ada di album :");
-            //IDs id;
-            pickalbumlist(album,idpenyanyi);
-        
-            valuetype namaalbum;
-            ListStatic *list;
-            listlagu(album, song, namaalbum, &list);
+            valuetype namaA = pickalbumlist(album,idpenyanyi);
+            ListStatic list = MakeListStatis();
+            listlagudefault(album, song, namaA, &list, namap);
+        } 
+        else if (IsEqual(currentWord, salah)){
+
+        } else{
+            valuetype input = WordToString(currentWord);
+            printf("Input %s tidak terdefinisi\n", input);
         }
     }
-    else if (IsEqual(currentWord, 'N')){
-        printf("");
+    else if (IsEqual(currentWord, salah)){
+        
+    } else{
+        valuetype input = WordToString(currentWord);
+        printf("Input %s tidak terdefinisi\n", input);
     }
 }
 
