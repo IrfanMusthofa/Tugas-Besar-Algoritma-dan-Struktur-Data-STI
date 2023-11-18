@@ -1,6 +1,13 @@
 #ifndef __invalidcommand__
 #define __invalidcommand__
 
-//help sebelum start dan load
-void invalid_command();
+/* Tidak ada command dengan nama berikut*/
+void invalid_command1();
+
+/* Mengeksekusi sesudah memasuki sesi*/
+void invalid_command2();
+
+/*Mengeksekusi sebelum memasuki sesi*/
+void invalid_command3();
+
 #endif

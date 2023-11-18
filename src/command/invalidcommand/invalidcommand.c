@@ -1,10 +1,20 @@
 #include "invalidcommand.h"
 #include <stdio.h>
 
-void invalid_command()
+/* Tidak ada command dengan nama berikut*/
+void invalid_command1()
 {
-    //if (...)
-
-    //else
     printf("Command tidak diketahui!\n");
+}
+
+/* Mengeksekusi sesudah memasuki sesi*/
+void invalid_command2()
+{
+    printf("Command tidak bisa dieksekusi!\n");
+}
+
+/*Mengeksekusi sebelum memasuki sesi*/
+void invalid_command3()
+{
+    printf("Command tidak bisa dieksekusi!\n");
 }
