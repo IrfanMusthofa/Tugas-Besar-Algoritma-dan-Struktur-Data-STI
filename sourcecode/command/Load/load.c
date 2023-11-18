@@ -8,10 +8,9 @@ boolean CheckLoad(char *file) {
     char check = fopen(file, "r");
     if (check == NULL) return false;
     else true;
-
 }
 
-void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
+void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist, CurrentSong *LaguSekarang) {
 
     // ===== ***Dijalankan pertama sebelum queue & playlist*** =====
     // ===== Baca default terlebih dahulu =====
@@ -21,15 +20,14 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     // ***Lanjut baca Current Song, Queue, History, Playlist***
     // ===== Current Song =====
     ADVWORD();
-    CurrentSong LaguSekarang;
     if (IsEqual(currentWord,"-")) {
-        LaguSekarang.NamaP = "-";
-        LaguSekarang.NamaA = "-";
-        LaguSekarang.NamaS = "-";
+        LaguSekarang->NamaP = "-";
+        LaguSekarang->NamaA = "-";
+        LaguSekarang->NamaS = "-";
     } else {
-        LaguSekarang.NamaP = WordToString(takewordsemicolon(currentWord, 1));
-        LaguSekarang.NamaA = WordToString(takewordsemicolon(currentWord, 2));
-        LaguSekarang.NamaS = WordToString(takewordsemicolon(currentWord, 3));
+        LaguSekarang->NamaP = WordToString(takewordsemicolon(currentWord, 1));
+        LaguSekarang->NamaA = WordToString(takewordsemicolon(currentWord, 2));
+        LaguSekarang->NamaS = WordToString(takewordsemicolon(currentWord, 3));
     }
 
 
