@@ -99,7 +99,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     ADVWORD();
     // Masukkan banyak songs ke Queue queue
     int banyakQueueSongs = WordToInt(currentWord);
-
+    printf("Banyaksongnya: %d\n", banyakQueueSongs);
     // Masukkan songs ke Queue
     for (int i = 0; i < banyakQueueSongs; i++) {
         ADVWORD(); //Baca 1 kalimat
