@@ -12,7 +12,7 @@
 #include "../../ADT/Queue/queue.h"
 #include "../../ADT/Stack/stack.h"
 
-boolean checkload(char *file);
+boolean Checkload(char *file);
 
 void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist, CurrentSong *LaguSekarang);
 

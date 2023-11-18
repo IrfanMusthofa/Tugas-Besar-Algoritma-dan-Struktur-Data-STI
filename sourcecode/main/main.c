@@ -84,13 +84,12 @@ int main(){
     SetSong Song;
     queue antrian;
     Stack history;
-    ArrayDinPlaylist playlist;
+    ArrayDinPlaylist playlist = MakeArrayDin();
     MakeEmpty(&Penyanyi,&Album,&Song);
     CreateEmptyS(&history);
     CreateQueue(&antrian);
-    playlist.Neff = 0;
     CurrentSong LaguSkrg;
-    LaguSkrg.NamaP = '-';
+    LaguSkrg.NamaP = "-";
 
     printf(">>> ");
     STARTINPUTKATA();
@@ -115,8 +114,16 @@ int main(){
             char *input2 = commWordToString(takeword(currentWord,2));
             char *filename = ConcateChar("./sourcecode/config/",input2);
             printf("%s\n",filename);
-            if (checkload(filename)){
+            if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
+                printf("%s-",LaguSkrg.NamaP);
+                printf("%s-",LaguSkrg.NamaA);
+                printf("%s\n",LaguSkrg.NamaS);
+                for (int i =0;i<=antrian.idxTail;i++){
+                    printf("%s-",antrian.buffer[i].namaP);
+                    printf("%s-",antrian.buffer[i].namaA);
+                    printf("%s\n",antrian.buffer[i].namaS);
+                }
             }
             else{
                 printf("tidak ada file dengan nama tersebut\n");
