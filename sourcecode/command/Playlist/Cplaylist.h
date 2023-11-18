@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "boolean.h"
-#include "ADT.h"
-#include "mesinkata.h"
-#include "playlist.h"
-#include "pick.h"
+#include "../../main/ADT.h"
+#include "../../ADT/MesinKalimat/mesinkata.h"
+#include "../../ADT/playlist/playlist.h"
+#include "../Pick/pick.h"
 
 /* Membuat playlist baru */
 /* IS : arraydinplaylist terdefinisi */
