@@ -9,7 +9,7 @@
 #include "../../main/ADT.h"
 
 #define Nil -1
-#define MaxEl 100
+//#define MaxEl 100
 /* Nil adalah stack dengan elemen kosong . */
 
 /* Contoh deklarasi variabel bertype stack dengan ciri TOP : */

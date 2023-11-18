@@ -1,12 +1,12 @@
 #include "../ADT/MesinKalimat/mesinkarakter.h"
 #include "../ADT/MesinKalimat/mesinkata.h"
-//#include "../ADT/Queue/queue.h"
-//#include "../ADT/Stack/stack.h"
+#include "../ADT/Queue/queue.h"
+#include "../ADT/Stack/stack.h"
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "../command/Help/help.h"
-#include "../command/Load/load.h"
+//#include "../command/Load/load.h"
 #include "../ADT/playlist/pick.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
@@ -20,8 +20,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         if (IsEqual(input,"LIST")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"DEFAULT;")){
-                listp(inpenyanyi);
+                //listp(inpenyanyi);
             }
+            else if (IsEqual(nextinput,"PLAYLIST;"));
 
         }
         printf("masih di dalam mainafter\n");
@@ -42,6 +43,9 @@ int main(){
     Stack history;
     ArrayDinPlaylist playlist;
     MakeEmpty(&Penyanyi,&Album,&Song);
+    CreateEmpty(&history);
+    CreateQueue(&antrian);
+    playlist.Neff = 0;
 
 
     printf(">>> ");
@@ -61,7 +65,8 @@ int main(){
             help_before();
         }
         else if (IsEqual(input,"LOAD")){
-            char* filename = WordToString(takeword(currentWord,2));
+            char *input2 = commWordToString(takeword(currentWord,2));
+            char *filename = ConcateChar("./sourcecode/config/",input2);
             printf("%s\n",filename);
         }
         else{
