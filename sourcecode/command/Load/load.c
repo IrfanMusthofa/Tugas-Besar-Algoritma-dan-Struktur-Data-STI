@@ -5,15 +5,15 @@
 #include <stdlib.h>
 
 boolean checkload(char *file) {
-    char p = fopen(file, "r");
-    if (p == NULL) return false;
+    char check = fopen(file, "r");
+    if (check == NULL) return false;
     else true;
 
 }
 
-void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, Queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
+void load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file, queue *QueueSong, Stack *History, ArrayDinPlaylist *DinPlaylist) {
 
-    //dijalankan pertama sebelum queue & playlist
+    //Dijalankan pertama sebelum queue & playlist
     STARTCOM(Penyanyi, Album, SetSong, file);
 
 
