@@ -97,7 +97,7 @@ int main(){
     while (true){
         if (IsEqual(input,"START;")){
             printf("starting game..\n");
-            char *file = "./sourcecode/config/config.txt";
+            char *file = "./src/config/config.txt";
             STARTCOM(&Penyanyi,&Album,&Song, file);
 
             for (int i = 0;i<Penyanyi.neff;i++){
@@ -112,7 +112,7 @@ int main(){
         }
         else if (IsEqual(input,"LOAD")){
             char *input2 = commWordToString(takeword(currentWord,2));
-            char *filename = ConcateChar("./sourcecode/config/",input2);
+            char *filename = ConcateChar("./src/config/",input2);
             printf("%s\n",filename);
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
