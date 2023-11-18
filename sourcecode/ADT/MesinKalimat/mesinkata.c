@@ -422,3 +422,21 @@ Word takewordsemicolon(Word command, int ke)
 	w.Length = length;
 	return w;
 }
+
+char *commWordToString(Word word)
+{
+	/*KAMUS LOKAL*/
+	int i;
+	/*ALGORITMA*/
+	char *C = malloc((word.Length-1) * sizeof(char));
+	while (C == NULL)
+	{
+		C = malloc((word.Length-1) * sizeof(char));
+	}
+	for (i = 0; i < word.Length-1; i++)
+	{
+		C[i] = word.TabWord[i];
+	}
+	C[i] = '\0';
+	return C;
+}

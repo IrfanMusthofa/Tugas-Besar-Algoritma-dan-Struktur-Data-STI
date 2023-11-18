@@ -106,4 +106,6 @@ void lowerCase(char* huruf);
 boolean IsEqualString(char* c1, char *c2);
 Word takewordsemicolon(Word command, int ke);
 
+char *commWordToString(Word word);
+
 #endif
