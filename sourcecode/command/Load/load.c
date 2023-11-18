@@ -13,6 +13,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     STARTCOM(Penyanyi, Album, SetSong, file);
 
 
+
     // ***Lanjut baca Current Song, Queue, History, Playlist***
     // ===== Current Song =====
     ADVWORD();
@@ -77,7 +78,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
         readyToHistory.namaA = namaA;
         readyToHistory.namaS = namaS;
 
-        Push(HistoryRAW, readyToHistory);
+        Push(&HistoryRAW, readyToHistory);
     }
 
     for (int j = 0; j < banyakHistorySongs; j++) {
@@ -90,7 +91,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
 
     // ========== ArrayDinPLaylist for Playlist ==========
     ADVWORD();
-    DinPlaylist = MakeArrayDin();
 
     // Banyak Playlist
     int banyakDinPlaylist = WordToInt(currentWord);
