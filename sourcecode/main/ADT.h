@@ -9,20 +9,23 @@
 #define EMPTY ""
 
 typedef int keytype;
-typedef char *valuetype;
-typedef char *infotype;
+typedef char* valuetype;
+typedef char* infotype;
+typedef char* Eltype;
 typedef int IDs;
 typedef struct tElmtlist *address;
 
 // ==============*** STRUCT AFTER DEFAULT ***==============
-//struct pada queue, stack dan playlist
+// struct pada queue, stack dan playlist
+
+// Struct Song
 typedef struct{
     valuetype namaP; 
     valuetype namaA;
     valuetype namaS;
 } Song;
 
-//playlist
+// playlist
 typedef struct tElmtlist { 
 	Song info;
 	address next;
@@ -40,7 +43,7 @@ typedef struct
     int Neff;
 } ArrayDinPlaylist;
 
-//stack buat history
+// stack buat history
 typedef struct
 {
     Song T[NMAX];
@@ -48,12 +51,19 @@ typedef struct
 } Stack;
 
 
-//queue buat queue
+// queue buat queue
 typedef struct
 {
     Song buffer [NMAX];
     int idxTail;
 } queue;
+
+// struct khusus current song
+typedef struct {
+    Eltype NamaP;
+    Eltype NamaA;
+    Eltype NamaS;
+} CurrentSong;
 
 
 
@@ -81,10 +91,7 @@ typedef struct{
     int count;
 } MapAlbum;
 
-
 //struct liststatis penyanyi
-typedef char* Eltype;
-
 typedef struct{
     Eltype A[NMAX];
     int neff;
