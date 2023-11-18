@@ -20,8 +20,12 @@ void songprevious(CurrentSong *play, queue *currentqueue, Stack *previous){
         printf("“%s” oleh “%s”\n", play->NamaS, play->NamaP);
     }
     else {
-        Song previoussong;
+        Song previoussong; Song songcurrent;
+        songcurrent.namaA = play->NamaA;
+        songcurrent.namaP = play->NamaP;
+        songcurrent.namaS = play->NamaS;
         Pop(previous, &previoussong);
+        Push(previous, songcurrent);
         play->NamaA = previoussong.namaA;
         play->NamaP = previoussong.namaP;
         play->NamaS = previoussong.namaS;
