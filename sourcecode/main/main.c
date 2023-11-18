@@ -8,6 +8,9 @@
 #include "../command/Help/help.h"
 //#include "../command/Load/load.h"
 #include "../ADT/playlist/pick.h"
+#include "../ADT/playlist/list.h"
+#include "../ADT/playlist/Cplaylist.h"
+#include "../ADT/playlist/playlist.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
     printf(">>> ");
@@ -20,17 +23,51 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"LIST")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"DEFAULT;")){
-                //listp(inpenyanyi);
+                //run list default
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-
+                //run list playlist
+            }
+        }
+        else if (IsEqual(input,"PLAYLIST")){
+            Word nextinput = takeword(currentWord,2);
+            if (IsEqual(nextinput,"CREATE;")){
+                playlistcreate(&inplaylist);
+            }
+            else if (IsEqual(nextinput,"ADD")){
+                Word inputadd = takeword(currentWord,3);
+                if (IsEqual(nextinput,"SONG;")){
+                    tambahlaguplaylist(inpenyanyi,inalbum,insong,&inplaylist);
+                }
+                else if (IsEqual(nextinput,"ALBUM;")){
+                    tambahalbumplaylist(inpenyanyi,inalbum,insong,&inplaylist);
+                }
+            }
+            else if (IsEqual(nextinput,"SWAP")){
+                int validasi = currentWord.Length-14;
+                int IDplaylist = -1, x = -1,y=-1;
+                if(validasi >= 6){
+                    IDplaylist = wordtointmustvalid(takeword(currentWord,3));
+                    x = wordtointmustvalid(takeword(currentWord,4));
+                    y = wordtointmustvalid(takeword(currentWord,5));
+                }
+                printf("%s\n",takeword(currentWord,4).TabWord);
+                printf("%d\n%d\n%d\n",IDplaylist,x,y);
+                //swapplaylist(&inplaylist,idP,x,y);
+            }
+            else if (IsEqual(nextinput,"SWAP")){
+                int idP = WordToInt(takeword(currentWord,3));
+                int x = WordToInt(takeword(currentWord,4));
             }
         }
         else if (IsEqual(input,"HELP;")){
             help_after();
         }
-        printf("masih di dalam mainafter\n");
-        printf("%s\n",input.TabWord);
+
+
+
+
+
         printf(">>> ");
         STARTINPUTKATA();
         input = takeword(currentWord,1);
@@ -47,7 +84,7 @@ int main(){
     Stack history;
     ArrayDinPlaylist playlist;
     MakeEmpty(&Penyanyi,&Album,&Song);
-    CreateEmpty(&history);
+    CreateEmptyS(&history);
     CreateQueue(&antrian);
     playlist.Neff = 0;
 

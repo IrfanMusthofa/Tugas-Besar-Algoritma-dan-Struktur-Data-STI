@@ -5,6 +5,9 @@
         "adt.h": "c",
         "stack.h": "c",
         "queue.h": "c",
-        "boolean.h": "c"
+        "boolean.h": "c",
+        "cplaylist.h": "c",
+        "playlist.h": "c",
+        "stdio.h": "c"
     }
 }

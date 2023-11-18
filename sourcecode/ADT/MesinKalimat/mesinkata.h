@@ -108,4 +108,5 @@ Word takewordsemicolon(Word command, int ke);
 
 char *commWordToString(Word word);
 
+int wordtointmustvalid(Word tes);
 #endif
