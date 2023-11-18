@@ -28,6 +28,7 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
     printf("init");
     STARTWORD(file);
     printf("ialize\n");
+    printf("starting game STARTCOM..\n");
     int jlhPenyanyi=0;
     char *tes = currentWord.TabWord;
     while ((*tes)!='\0'){
