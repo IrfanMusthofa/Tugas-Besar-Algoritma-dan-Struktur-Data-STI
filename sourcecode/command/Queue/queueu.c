@@ -3,23 +3,6 @@
 #include "queue.h"
 #include <stdio.h>
 
-IDs idpenyanyi(char* penyanyi, ListPenyanyi daftarpenyanyi){
-    for (int i = 0; i < daftarpenyanyi.neff; i++){
-        if (daftarpenyanyi.A[i] == penyanyi){
-            return i;
-        }
-    }
-    return 0;
-}
-
-IDs idalbum(char* album, MapAlbum daftaralbum){
-    for (int i = 0; i < daftaralbum.count; i++){
-        if (daftaralbum.Elements[i].valueAlbum == album){
-            return daftaralbum.Elements[i].keyAlbum;
-        }
-    }
-    return 0;
-}
 
 void queuelagu(Queue currentqueue, ListPenyanyi penyanyi, MapAlbum map, Song lagu){
     // Print list dari penyanyi yang ada
