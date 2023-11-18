@@ -21,7 +21,7 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi);
 
 /* Menampilkan list album */
 /* IS : list penyanyi, mapalbum terdefinisi, penyanyi yang ingin ditampilkan albumnya */
-/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id penyanyi */
+/* FS : akan ditampilkan list album yang ada, dan idS akan menjadi id dari id  */
 void listalbum(ListPenyanyi list, MapAlbum album, valuetype penyanyi, IDs *id);
 
 /* memilih album, input dari user */
