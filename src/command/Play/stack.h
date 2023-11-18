@@ -6,7 +6,7 @@
 #define stackt_H
 
 #include "boolean.h"
-#include "../../main/ADT.h"
+#include "ADT.h"
 
 #define Nil -1
 //#define MaxEl 100
@@ -23,13 +23,13 @@
 /* Definisi akses dengan Selektor : Set dan Get */
 #define Top(S) (S).TOP
 #define InfoTop(S) (S).T[(S).TOP]
-#define Lagu(P) (P).namaS
-#define Album(P) (P).namaA
-#define Penyanyi(P) (P).namaP
+#define LaguS(P) (P).namaS
+#define AlbumS(P) (P).namaA
+#define PenyanyiS(P) (P).namaP
 
 /* ************ Prototype ************ */
 /* *** Konstruktor/Kreator *** */
-void CreateEmpty(Stack *S);
+void CreateEmptyS(Stack *S);
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
 /* jadi indeksnya antara 0.. MaxEl */

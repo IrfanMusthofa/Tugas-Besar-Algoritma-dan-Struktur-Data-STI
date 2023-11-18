@@ -1,48 +1,49 @@
 #include "play.h"
 #include <stdio.h>
+#include "ADT.h"
 
+/* Memainkan lagu */
+/* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, dan Stack previous terdefinisi */
+/* FS: currentsong berisi lagu yang dimasukkan, stack dan queue kosong*/
 void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu, queue *currentqueue, Stack *previous){
     listp(penyanyi);
-    valuetype pickp = pickpenyanyi(penyanyi); int idx;
+    valuetype pickp = pickpenyanyi(penyanyi); 
+    int idx;
     listalbum(penyanyi, map, pickp, &idx);
     valuetype picka = pickalbum(map, idx);
     ListStatic L = MakeListStatis();
-    listlagu(map, lagu, picka, &L);
+    listlagu(map, lagu, picka, &L, pickp);
     valuetype pickl = picklagu(L);
-
+    //define current song
     nowplay->NamaA = picka;
     nowplay->NamaP = pickp;
     nowplay->NamaS = pickl;
-
+    //mengosongkan queue dan stack
     CreateQueue(currentqueue);
-    CreateEmpty(previous);
+    CreateEmptyS(previous);
 
-    previous->T[0].namaA = nowplay->NamaA;
-    previous->T[0].namaP = nowplay->NamaP;
-    previous->T[0].namaS = nowplay->NamaS;
-
-    printf("Memutar lagu “%s” oleh %s.", nowplay->NamaS, nowplay->NamaP);
+    printf("Memutar lagu '%s' oleh '%s'.\n", pickl, pickp);
 }
 
+/* Memainkan playlist */
+/* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, ArrayDinPlaylist dan Stack previous terdefinisi */
+/* FS: currentsong berisi playlist lagu pertama, stack kosong, dan queue berisi lagu playlist kedua dst*/
 void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous){
-    int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
-    nowplay->NamaS = playlist.playlist[0].First->info.namaS;
-    nowplay->NamaP = playlist.playlist[0].First->info.namaP;
-    nowplay->NamaA = playlist.playlist[0].First->info.namaA;
+    int pilihan = pickplaylist(playlist); 
+    address P = playlist.playlist[pilihan].First;
+    nowplay->NamaS = playlist.playlist[pilihan].First->info.namaS;
+    nowplay->NamaP = playlist.playlist[pilihan].First->info.namaP;
+    nowplay->NamaA = playlist.playlist[pilihan].First->info.namaA;
 
     CreateQueue(currentqueue);
 
-    P = P->next;
+    P = Next(P);
     while (P != NULL){
-        enqueue(currentqueue, P->info);
-        P = P->next;
+        enqueue(currentqueue, Info(P));
+        P = Next(P);
     }
 
-    CreateEmpty(previous);
+    CreateEmptyS(previous);
 
-    previous->T[0].namaA = nowplay->NamaA;
-    previous->T[0].namaP = nowplay->NamaP;
-    previous->T[0].namaS = nowplay->NamaS;
-
-    printf("Memutar playlist “%s”.", nowplay->NamaA);
+    printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
 }

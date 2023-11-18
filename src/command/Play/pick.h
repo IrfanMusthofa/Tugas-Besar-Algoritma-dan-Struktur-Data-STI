@@ -1,11 +1,13 @@
 #ifndef __pickadt__
 #define __pickadt__
 
+#include <stdio.h>
 #include "boolean.h"
 #include "mesinkata.h"
 #include "mesinkarakter.h"
-#include "ADT.h"
 #include "list.h"
+#include "ADT.h"
+
 
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
@@ -30,7 +32,7 @@ valuetype pickalbum(MapAlbum Album, IDs id);
 /* Menampilkan list lagu */
 /* IS : MapAlbum, SetSong, namaalbum, dan liststatic terdefinisi */
 /* FS : akan ditampilkan list lagu yang ada, dan list static L akan berisi lagu-lagu dari album tersebut  */
-void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L);
+void listlagu(MapAlbum album, SetSong song, valuetype namaA, ListStatic *L, valuetype namaP);
 
 /* memilih lagu, input dari user */
 /* IS : list static terdefinisi */
