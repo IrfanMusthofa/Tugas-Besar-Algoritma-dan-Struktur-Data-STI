@@ -5,7 +5,6 @@
 #include "boolean.h"
 #include "ADT.h"
 
-#define NMAX 100
 
 void CreateQueue(queue *q);
 /* I.S. sembarang */

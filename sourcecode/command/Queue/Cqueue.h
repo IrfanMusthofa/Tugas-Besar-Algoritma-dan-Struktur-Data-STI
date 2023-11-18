@@ -5,16 +5,12 @@
 #include "queue.h"
 #include <stdio.h>
 
-IDs idpenyanyi(char* penyanyi, ListPenyanyi daftarpenyanyi);
+void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu);
 
-IDs idalbum(char* album, MapAlbum daftaralbum); 
+void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue);
 
-void queuelagu(Queue currentqueue, ListPenyanyi penyanyi, MapAlbum map, Song lagu);
+void swapqueue(int indeks1, int indeks2, queue *currentqueue);
 
-void queueplaylist();
-
-void swapqueue(int indeks1, int indeks2, Queue *currentqueue);
-
-void removequeue(Queue *currentqueue);
+void removequeue(queue *currentqueue);
 
 #endif
