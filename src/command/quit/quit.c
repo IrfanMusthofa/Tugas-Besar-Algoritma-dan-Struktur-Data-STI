@@ -1,5 +1,6 @@
 #include "quit.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void quit()
 {
@@ -13,12 +14,16 @@ void quit()
     }
     if (IsEqual(currentWord, 'Y'))
     {
+        //char *savefile;
+
         save();
+        printf("Thank you for using WayangWave");
+        exit(0);
     }
     else if(IsEqual(currentWord, 'N'))
     {
         printf("\n Kamu keluar dari WayangWave.\n");
         printf("Dadah ^_^/");
     }
-    
+
 }

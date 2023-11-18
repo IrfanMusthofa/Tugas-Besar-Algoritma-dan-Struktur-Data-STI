@@ -8,9 +8,14 @@
 #include "list.h"
 #include "pick.h"
 
-
+/* memilih penyanyi, input dari user */
+/* IS : list penyanyi terdefinisi */
+/* FS : akan mengembalikan penyanyi yang diinputkan dengan benar */
 valuetype pickpenyanyilist(ListPenyanyi Penyanyi);
 
+/* memilih album, input dari user */
+/* IS : map album terdefinisi, id album terdefinisi */
+/* FS : akan mengembalikan album yang diinputkan dengan benar */
 valuetype pickalbumlist(MapAlbum Album, IDs id);
 
 //valuetype picklagulist(ListStatic L);
