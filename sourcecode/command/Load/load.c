@@ -98,7 +98,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     // ========== Queue for Queue ==========
     ADVWORD();
     // Masukkan banyak songs ke Queue queue
-    int banyakQueueSongs = WordToInt(currentWord);
+    int banyakQueueSongs = wordtointmustvalid(currentWord);
     printf("Banyaksongnya: %d\n", banyakQueueSongs);
     // Masukkan songs ke Queue
     for (int i = 0; i < banyakQueueSongs; i++) {
@@ -126,7 +126,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     CreateEmptyS(&HistoryRAW); // Sebelum direverse // Final setelah direverse
 
     // Masukkan banyak songs riwayat
-    int banyakHistorySongs = WordToInt(currentWord);
+    int banyakHistorySongs = wordtointmustvalid(currentWord);
 
     // Masukkan songs ke Stack History
     for (int j = 0; j < banyakHistorySongs; j++) {
@@ -158,7 +158,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     ADVWORD();
 
     // Banyak Playlist
-    int banyakDinPlaylist = WordToInt(currentWord);
+    int banyakDinPlaylist = wordtointmustvalid(currentWord);
     
     // Masukkan Playlist ke arraydinplaylist
     for (int k = 0; k < banyakDinPlaylist; k++) {
