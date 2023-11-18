@@ -14,7 +14,7 @@
 #include "../command/Pick/pick.h"
 #include "../command/Playlist/Cplaylist.h"
 
-void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist){
+void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong){
     printf(">>> ");
     STARTINPUTKATA();
     Word input = takeword(currentWord,1);
@@ -90,7 +90,7 @@ int main(){
     CreateQueue(&antrian);
     playlist.Neff = 0;
     CurrentSong LaguSkrg;
-
+    LaguSkrg.NamaP = '-';
 
     printf(">>> ");
     STARTINPUTKATA();
@@ -105,7 +105,7 @@ int main(){
                 printf("%s\n", Penyanyi.A[i]);
             }
             printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
-            mainafter(Penyanyi,Album,Song,antrian,history,playlist);
+            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
             break;
         }
         else if (IsEqual(input,"HELP;")){
@@ -122,7 +122,7 @@ int main(){
                 printf("tidak ada file dengan nama tersebut\n");
             }
 
-            mainafter(Penyanyi,Album,Song,antrian,history,playlist);
+            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
             break;
         }
         else{
