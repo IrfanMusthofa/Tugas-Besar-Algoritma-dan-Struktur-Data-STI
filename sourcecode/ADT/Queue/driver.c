@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "queue.h"
-#include "ADT.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
+#include "../../main/ADT.h"
 
 
 int main(){

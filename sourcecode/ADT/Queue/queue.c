@@ -1,5 +1,5 @@
 /* File : queue.c */
-#include "queue.h"
+#include "../../main/ADT.h"
 #include <stdio.h>
 
 void CreateQueue(queue *q) {
