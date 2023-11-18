@@ -89,6 +89,7 @@ int main(){
     CreateEmptyS(&history);
     CreateQueue(&antrian);
     playlist.Neff = 0;
+    CurrentSong LaguSkrg;
 
 
     printf(">>> ");
@@ -114,7 +115,12 @@ int main(){
             char *input2 = commWordToString(takeword(currentWord,2));
             char *filename = ConcateChar("./sourcecode/config/",input2);
             printf("%s\n",filename);
-            //panggil load;
+            if (checkload(filename)){
+                Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
+            }
+            else{
+                printf("tidak ada file dengan nama tersebut\n");
+            }
 
             mainafter(Penyanyi,Album,Song,antrian,history,playlist);
             break;

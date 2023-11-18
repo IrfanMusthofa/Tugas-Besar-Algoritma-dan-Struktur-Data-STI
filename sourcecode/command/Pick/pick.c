@@ -2,7 +2,8 @@
 #include "../../ADT/MesinKalimat/mesinkata.h"
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
 #include "../../main/ADT.h"
-#include "../List/list.h"
+#include "../../ADT/List/list.h"
+#include "pick.h"
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */

@@ -6,7 +6,7 @@
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
 #include "../../ADT/List/list.h"
 #include "../../main/ADT.h"
-
+#include <stdio.h>
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */

@@ -1,7 +1,7 @@
 /* File : queue.c */
 #include "../../main/ADT.h"
 #include <stdio.h>
-
+#include "queue.h"
 void CreateQueue(queue *q) {
     q->idxTail = IDX_UNDEF;
 }

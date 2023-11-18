@@ -1,8 +1,4 @@
 #include "load.h"
-#include "../ADT/MesinKalimat/mesinkarakter.h"
-#include "../ADT/MesinKalimat/mesinkata.h"
-#include "../main/ADT.h"
-#include <stdlib.h>
 
 boolean CheckLoad(char *file) {
     char check = fopen(file, "r");
@@ -34,8 +30,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
 
     // ========== Queue for Queue ==========
     ADVWORD();
-    CreateQueue(QueueSong);
-
     // Masukkan banyak songs ke Queue queue
     int banyakQueueSongs = WordToInt(currentWord);
 
