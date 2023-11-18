@@ -1,9 +1,9 @@
-#include "ADT.h"
 #include "Cqueue.h"
-#include "queue.h"
 #include <stdio.h>
-#include "pick.h"
+#include "../Pick/pick.h"
 #include "boolean.h"
+#include "../../main/ADT.h"
+#include "../../ADT/Queue/queue.h"
 
 void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu){
     listp(penyanyi);

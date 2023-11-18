@@ -1,8 +1,8 @@
 #ifndef __queue__
 #define __queue__
 
-#include "ADT.h"
-#include "queue.h"
+#include "../../main/ADT.h"
+#include "../../ADT/Queue/queue.h"
 #include <stdio.h>
 
 void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu);
