@@ -78,6 +78,9 @@ Word takekata(Word w);
  * Prekondisi : pemrosesan telah berjalan */
 Word takeword(Word command, int ke);
 
+Word takenonspace(Word w);
+void hapustikom(Word *w);
+
 /* ********** OPERASI OPERASI ********** */
 /* Fungsi untuk menggabungkan dua buah variabel bertipe char.
  * Dalam program ini, kedua variabel tersebut adalah path dan filename
@@ -101,5 +104,6 @@ void lowerCase(char* huruf);
 /* Membuat semua huruf menjadi lowercase */
 
 boolean IsEqualString(char* c1, char *c2);
+Word takewordsemicolon(Word command, int ke);
 
 #endif

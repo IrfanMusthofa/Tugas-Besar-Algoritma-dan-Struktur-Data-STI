@@ -223,6 +223,27 @@ Word takeword(Word command, int ke)
 	return w;
 }
 
+
+Word takenonspace(Word w){
+	Word kata;
+	int j = 0;
+	for (int i = 0; i < w.Length; i++){
+		if(w.TabWord[i] != ' '){
+			kata.TabWord[j] = w.TabWord[i];
+			j++;
+		}
+	}
+	kata.Length = j;
+	return kata;
+}
+
+void hapustikom(Word *w){
+	int n = w->Length;
+	if(w->TabWord[n-1] == ';'){
+		w->Length --;
+	}
+}
+
 /* ********** OPERASI OPERASI ********** */
 /* Fungsi untuk menggabungkan dua buah variabel bertipe char.
  * Dalam program ini, kedua variabel tersebut adalah path dan filename
