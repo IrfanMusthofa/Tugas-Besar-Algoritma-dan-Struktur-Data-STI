@@ -1,11 +1,13 @@
 #ifndef __pickadt__
 #define __pickadt__
 
+#include <stdio.h>
 #include "boolean.h"
 #include "../../ADT/MesinKalimat/mesinkata.h"
 #include "../../ADT/MesinKalimat/mesinkarakter.h"
 #include "../../ADT/List/list.h"
 #include "../../main/ADT.h"
+
 
 /* Menampilkan list penyanyi */
 /* IS : list penyanyi terdefinisi */

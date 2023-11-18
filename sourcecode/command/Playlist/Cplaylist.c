@@ -3,7 +3,7 @@
 #include "boolean.h"
 #include "../../main/ADT.h"
 #include "../../ADT/MesinKalimat/mesinkata.h"
-#include "../../ADT/playlist/playlist.h"
+#include "../../ADT/Playlist/playlist.h"
 #include "../Pick/pick.h"
 
 void playlistcreate(ArrayDinPlaylist *array){
