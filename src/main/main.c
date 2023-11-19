@@ -13,7 +13,7 @@
 #include "../command/Load/load.h"
 #include "../command/Pick/pick.h"
 #include "../command/Playlist/Cplaylist.h"
-#include "../command/Quit/quit.h"
+// #include "../command/Quit/quit.h"
 #include "../command/invalidcommand/invalidcommand.h"
 #include "../command/Song/song.h"
 #include "../command/ListC/Clist.h"
@@ -135,7 +135,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         STARTINPUTKATA();
         input = takeword(currentWord,1);
     }
-    quit();
+    // quit();
 }
     
 
@@ -198,9 +198,24 @@ int main(){
         // load
         else if (IsEqual(input,"LOAD")){
             hapustikom(&currentWord);
+            char *checkCWord = WordToString(currentWord);
+            printf("Current Word setelah hapustikom: %s\n",checkCWord);
             char *input2 = WordToString(takeword(currentWord,2));
+            Word inputke2 = StringtoWord (input2);
+            printf("Banyak char input: %d\n", inputke2.Length);
+
+
+
+            printf("Banyak char word takeword (1 kalimat): %d\n", currentWord.Length);
+            printf("Banyak char word ke 1: %d\n", takeword(currentWord, 1).Length);
+            printf("Banyak char word ke 2: %d\n", takeword(currentWord, 2).Length);
+
             char *filename = ConcateChar("src/config/",input2);
-            printf("%s\n",filename);
+            printf("Hasil concate src dir + input filename: %s\n",filename);
+
+            Word hasilconcate = StringtoWord(filename);
+            printf("Banyak char hasil concate src dir + input filename: %d\n", hasilconcate.Length);
+
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
                 mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
