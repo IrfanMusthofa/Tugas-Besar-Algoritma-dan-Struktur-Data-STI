@@ -33,4 +33,6 @@ void displayQueue(queue q);
 
 void swapQueueElements(queue *q, int idx1, int idx2);
 
+void removeAtIndex(queue *q, int index) ;
+
 #endif
