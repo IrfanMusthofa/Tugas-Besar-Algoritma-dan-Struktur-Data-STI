@@ -54,7 +54,7 @@ void swapqueue(int indeks1, int indeks2, queue *currentqueue){
     }
 }
 
-void removequeue(queue *currentqueue){
+void clearqueue(queue *currentqueue){
     CreateQueue(currentqueue);
     printf("Queue berhasil dikosongkan.\n");
 }
