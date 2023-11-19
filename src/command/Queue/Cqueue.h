@@ -11,6 +11,8 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue);
 
 void swapqueue(int indeks1, int indeks2, queue *currentqueue);
 
+void removequeue(int indeks, queue* currentqueue);
+
 void clearqueue(queue *currentqueue);
 
 #endif

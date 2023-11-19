@@ -62,3 +62,12 @@ void swapQueueElements(queue *q, int idx1, int idx2) {
         q->buffer[idx2] = temp;
     }
 }
+
+void removeAtIndex(queue *q, int index) {
+    if (index >= 0 && index <= q->idxTail) {
+        for (int i = index; i < q->idxTail; ++i) {
+            q->buffer[i] = q->buffer[i + 1];
+        }
+        q->idxTail--;
+    }
+}

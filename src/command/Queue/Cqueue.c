@@ -54,6 +54,17 @@ void swapqueue(int indeks1, int indeks2, queue *currentqueue){
     }
 }
 
+void removequeue(int indeks, queue* currentqueue){
+    if ((indeks - 1) >= 0 && (indeks - 1) <= currentqueue->idxTail){
+        Song removed = currentqueue->buffer[indeks - 1];
+        removeAtIndex(currentqueue, indeks - 1);
+        printf("Lagu “%s” oleh “%s” telah dihapus dari queue!\n", removed.namaS, removed.namaP);
+    }
+    else {
+        printf("Lagu dengan urutan ke %d tidak ada.\n", indeks);
+    }
+}
+
 void clearqueue(queue *currentqueue){
     CreateQueue(currentqueue);
     printf("Queue berhasil dikosongkan.\n");
