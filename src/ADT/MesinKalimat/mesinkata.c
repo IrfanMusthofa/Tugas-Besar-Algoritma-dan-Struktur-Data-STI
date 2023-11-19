@@ -238,7 +238,10 @@ Word takeword(Word command, int ke)
 	return w;
 }
 
-
+/* ngilangin spasi */
+/* IS : word sudah terdefinisi */
+/* FS : spasi bakal ilang */
+/* buat ngitung length kalo gak ada spasi berapa */
 Word takenonspace(Word w){
 	Word kata;
 	int j = 0;
@@ -252,6 +255,7 @@ Word takenonspace(Word w){
 	return kata;
 }
 
+/* Menghapus titik koma atau semicolon di belakang */
 void hapustikom(Word *w){
 	int n = w->Length;
 	if(w->TabWord[n-1] == ';'){
@@ -400,6 +404,7 @@ boolean IsEqualString(char* c1, char *c2)
  }
  return equal;
 }
+
 Word takewordsemicolon(Word command, int ke)
 {
 	/*KAMUS LOKAL*/
