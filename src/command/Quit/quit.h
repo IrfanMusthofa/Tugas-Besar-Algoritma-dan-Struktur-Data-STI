@@ -7,8 +7,8 @@
 #include "ADT.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+#include "save.h"
 
-void quit();
+void quit(ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, Stack history, ArrayDinPlaylist playlist);
 
 #endif

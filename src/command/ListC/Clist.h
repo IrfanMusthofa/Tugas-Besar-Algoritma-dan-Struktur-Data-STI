@@ -7,6 +7,7 @@
 #include "ADT.h"
 #include "list.h"
 #include "pick.h"
+#include "playlist2.h"
 
 /* Memilih penyanyi di list default */
 /* IS: List penyanyi terdefinisi */
@@ -28,6 +29,10 @@ void listlagudefault(MapAlbum album, SetSong song, valuetype namaA, ListStatic *
 /* FS: Menampilkan list default */
 void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song);
 
+/* Menampilkan listplaylist */
+/* IS : Arraydinplaylist terdefinisi */
+/* FS : akan ditampilkan  list playlist yang ada*/
+void listplaylist(ArrayDinPlaylist A);
 
 #endif
 

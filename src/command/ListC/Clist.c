@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Clist.h"
 #include "pick.h"
+#include "playlist2.h"
 
 /* Memilih penyanyi di list default */
 /* IS: List penyanyi terdefinisi */
@@ -118,6 +119,24 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
         valuetype input = WordToString(currentWord);
         printf("Input %s tidak terdefinisi\n", input);
     }
+
 }
 
+/* Menampilkan listplaylist */
+/* IS : Arraydinplaylist terdefinisi */
+/* FS : akan ditampilkan  list playlist yang ada*/
+void listplaylist(ArrayDinPlaylist B)
+{
+    printf("Daftar playlist yang kamu miliki:\n");
+    if (IsEmptyArrayDin(B))
+    {
+        printf("Kamu tidak memiliki playlist.");
+    }
+    else
+    {
+        for (int i = 0;i < B.Neff; i++){
+        printf("    %d. %s\n", i + 1, B.playlist[i].namaPlaylist);
+        }
 
+    }
+}
