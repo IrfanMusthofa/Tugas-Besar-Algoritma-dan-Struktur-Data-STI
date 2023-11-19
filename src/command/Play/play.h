@@ -1,3 +1,5 @@
+#ifndef __playcom__
+#define __playcom__
 #include "../../main/ADT.h"
 #include "../Pick/pick.h"
 #include "../../ADT/Queue/queue.h"
@@ -14,3 +16,4 @@ void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong
 /* FS: currentsong berisi playlist lagu pertama, stack kosong, dan queue berisi lagu playlist kedua dst*/
 void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous);
 
+#endif

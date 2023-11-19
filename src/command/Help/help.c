@@ -21,7 +21,7 @@ void help_after() //ketika perintah dipanggil setelah memasuki sesi
     printf("        SONG -> Untuk menambahkan lagu yang dipilih ke dalam queue.\n");
     printf("        PLAYLIST -> Untuk menambahkan lagu yang ada dalam playlist ke dalam queue.\n");
     printf("        SWAP <id1> <id2> -> Untuk mengganti urutan lagu dalam antrian.\n");
-    printf("        REMOVE -> Untuk menghapus lagu dari queue.\n");
+    printf("        REMOVE <id> -> Untuk menghapus lagu dari queue.\n");
     printf("        CLEAR -> Untuk mengosongkan queue.\n");
     printf("4. SONG\n");
     printf("        NEXT -> Untuk memutar lagu yang berada di dalam queue.\n");

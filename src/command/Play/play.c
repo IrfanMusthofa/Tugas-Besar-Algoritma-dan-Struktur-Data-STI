@@ -15,9 +15,9 @@ void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong
     listlagu(map, lagu, picka, &L, pickp);
     valuetype pickl = picklagu(L);
     //define current song
-    nowplay->NamaA = picka;
-    nowplay->NamaP = pickp;
-    nowplay->NamaS = pickl;
+    nowplay->namaA= picka;
+    nowplay->namaP = pickp;
+    nowplay->namaS = pickl;
     //mengosongkan queue dan stack
     CreateQueue(currentqueue);
     CreateEmptyS(previous);
@@ -31,9 +31,9 @@ void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong
 void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous){
     int pilihan = pickplaylist(playlist); 
     address P = playlist.playlist[pilihan].First;
-    nowplay->NamaS = playlist.playlist[pilihan].First->info.namaS;
-    nowplay->NamaP = playlist.playlist[pilihan].First->info.namaP;
-    nowplay->NamaA = playlist.playlist[pilihan].First->info.namaA;
+    nowplay->namaS = playlist.playlist[pilihan].First->info.namaS;
+    nowplay->namaP = playlist.playlist[pilihan].First->info.namaP;
+    nowplay->namaA = playlist.playlist[pilihan].First->info.namaA;
 
     CreateQueue(currentqueue);
 

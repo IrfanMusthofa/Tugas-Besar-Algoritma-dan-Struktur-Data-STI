@@ -1,5 +1,5 @@
-#ifndef __listdefaultadt__
-#define __listdefaultadt__
+#ifndef __quitadt__
+#define __quitadt__
 
 #include "boolean.h"
 #include "mesinkata.h"
