@@ -89,7 +89,7 @@ int main(){
     CreateEmptyS(&history);
     CreateQueue(&antrian);
     CurrentSong LaguSkrg;
-    LaguSkrg.NamaP = "-";
+    LaguSkrg.namaP = "-";
 
     printf(">>> ");
     STARTINPUTKATA();

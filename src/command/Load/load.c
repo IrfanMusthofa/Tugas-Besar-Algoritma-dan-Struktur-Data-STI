@@ -18,15 +18,15 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     // ===== Current Song =====
     ADVWORD();
     if (IsEqual(currentWord,"-")) {
-        LaguSekarang->NamaP = "-";
-        LaguSekarang->NamaA = "-";
-        LaguSekarang->NamaS = "-";
+        LaguSekarang->namaP = "-";
+        LaguSekarang->namaA = "-";
+        LaguSekarang->namaS = "-";
     } else {
-        LaguSekarang->NamaP = WordToString(takewordsemicolon(currentWord, 1));
-        LaguSekarang->NamaA = WordToString(takewordsemicolon(currentWord, 2));
-        LaguSekarang->NamaS = WordToString(takewordsemicolon(currentWord, 3));
+        LaguSekarang->namaP = WordToString(takewordsemicolon(currentWord, 1));
+        LaguSekarang->namaA = WordToString(takewordsemicolon(currentWord, 2));
+        LaguSekarang->namaS = WordToString(takewordsemicolon(currentWord, 3));
 
-        printf("%s %s %s\n\n", LaguSekarang->NamaP, LaguSekarang->NamaA, LaguSekarang->NamaS);
+        printf("%s %s %s\n\n", LaguSekarang->namaP, LaguSekarang->namaA, LaguSekarang->namaS);
     }
 
 

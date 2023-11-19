@@ -10,4 +10,5 @@ int main(){
     char *file = "config.txt";
     STARTCOM(&Penyanyi,&Album,&song, file);
     listdefault(Penyanyi, Album, song);
+    
 }
