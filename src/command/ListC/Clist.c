@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "Clist.h"
-#include "pick.h"
-#include "playlist.h"
+
 
 /* Memilih penyanyi di list default */
 /* IS: List penyanyi terdefinisi */

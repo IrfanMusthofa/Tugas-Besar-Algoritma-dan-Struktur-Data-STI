@@ -2,12 +2,11 @@
 #define __listdefaultadt__
 
 #include "boolean.h"
-#include "mesinkata.h"
-#include "mesinkarakter.h"
-#include "ADT.h"
-#include "list.h"
-#include "pick.h"
-#include "playlist.h"
+#include "../../ADT/MesinKalimat/mesinkata.h"
+#include "../../main/ADT.h"
+#include "../../ADT/List/list.h"
+#include "../../ADT/Playlist/playlist.h"
+#include "../Pick/pick.h"
 
 /* Memilih penyanyi di list default */
 /* IS: List penyanyi terdefinisi */
