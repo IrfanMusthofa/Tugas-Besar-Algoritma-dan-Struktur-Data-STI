@@ -1,0 +1,6 @@
+#include "status.h"
+
+/* Mengecek current song dan queue */
+/* IS: current song dan queue terdefinisi */
+/* FS: menampilkan kondisi current song dan queue */
+void status(CurrentSong lagu, queue Q);
