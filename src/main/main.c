@@ -19,6 +19,7 @@
 #include "../command/ListC/Clist.h"
 #include "../command/Play/play.h"
 #include "../command/Queue/Cqueue.h"
+#include "../command/Status/status.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong){
     // input command
@@ -31,6 +32,8 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         if (IsEqual(input,"QUIT;")){
             break;
         }
+
+        //list
         else if (IsEqual(input,"LIST")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"DEFAULT;")){
@@ -40,6 +43,8 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 listplaylist(inplaylist);
             }
         }
+
+        //play
         else if (IsEqual(input,"PLAY")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
@@ -49,6 +54,8 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 playplaylist(&incursong,inplaylist,&inqueue,&instack);
             }
         }
+
+        //queue
         else if (IsEqual(input,"QUEUE")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
@@ -75,15 +82,26 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 hapustikom(&currentWord);
                 if (validasi>=2){
                     int id = WordToInt(takeword(currentWord,3));
+                    removequeue(id,&inqueue);
                 }
             }
             else if (IsEqual(nextinput,"CLEAR;")){
                 clearqueue(&inqueue);
             }
         }
+
+        //song
         else if (IsEqual(input,"SONG")){
             Word nextinput = takeword(currentWord,2);
+            if (IsEqual(nextinput,"NEXT;")){
+                songnext(&incursong,&inqueue,&instack);
+            }
+            else if (IsEqual(nextinput,"PREVIOUS;")){
+                songprevious(&incursong,&inqueue,&instack);
+            }
         }
+
+        //playlist
         else if (IsEqual(input,"PLAYLIST")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"CREATE;")){
@@ -125,9 +143,20 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
         }
 
+        //status
+        else if (IsEqual(input,"STATUS;")){
+            status(incursong,inqueue);
+        }
 
+        //save
+        else if (IsEqual(input, "SAVE")){
+            hapustikom(&currentWord);
+            char *filename = WordToString(takeword(currentWord,2));
+            //call save
 
+        }
 
+        //help
         else if (IsEqual(input,"HELP;")){
             help_after();
         }
