@@ -5,6 +5,9 @@
 #include "../../main/ADT.h"
 #include "../../ADT/Queue/queue.h"
 
+/* Menambahkan lagu pada queue */
+/* IS: queue, listpenyanyi, mapalbum, set song terdefinisi */
+/* FS: lagu yang dipilih akan ditambahkan ke queue*/
 void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu){
     listp(penyanyi);
     valuetype pickp = pickpenyanyi(penyanyi); int idx;
@@ -21,22 +24,28 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 
     enqueue(currentqueue, pilihan);
 
-    printf("Berhasil menambahkan lagu “%s” oleh “%s” ke queue.\n", pickl, picka);
+    printf("Berhasil menambahkan lagu '%s' oleh '%s' ke queue.\n", pickl, picka);
 }
 
+/* Menambahkan lagu playlist pada queue */
+/* IS: queue, arraydinplaylist terdefinisi */
+/* FS: playlist yang dipilih, lagunya akan ditambahkan ke queue*/
 void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue){
     int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
     while (P != NULL){
         enqueue(currentqueue, P->info);
         P = P->next;
     }
-    printf("Berhasil menambahkan playlist “%s” ke queue.", playlist.playlist[pilihan].namaPlaylist);
+    printf("Berhasil menambahkan playlist '%s' ke queue.", playlist.playlist[pilihan].namaPlaylist);
 }
 
+/* Menukar queue */
+/* IS: queue, indeks terdefinisi */
+/* FS: queue pada urutan indeks 1,2 akan ditukar apabila valid */
 void swapqueue(int indeks1, int indeks2, queue *currentqueue){
     if ((indeks1 - 1 >= 0) && (indeks1 - 1 <= currentqueue->idxTail) && (indeks2 - 1 >= 0) && (indeks2 - 1 <= currentqueue->idxTail) && (indeks1 != indeks2)){
         swapQueueElements(currentqueue, (indeks1-1), (indeks2-1));
-        printf("Lagu “%s” berhasil ditukar dengan “%s”\n", currentqueue->buffer[indeks1 - 1].namaS, currentqueue->buffer[indeks2 - 1].namaS);
+        printf("Lagu '%s' berhasil ditukar dengan '%s'\n", currentqueue->buffer[indeks1 - 1].namaS, currentqueue->buffer[indeks2 - 1].namaS);
     }
     else {
         if (indeks1 - 1 > currentqueue->idxTail && indeks2 - 1 > currentqueue->idxTail) {
@@ -54,17 +63,22 @@ void swapqueue(int indeks1, int indeks2, queue *currentqueue){
     }
 }
 
+/* Menghapuskan queue pada urutan tertentu */
+/* IS: queue, indeks terdefinisi */
+/* FS: queue pada urutan indeks akan terhapus apabila valid */
+// ini indeks yang dimasukkan dari command, jadi hitungan kita 1,2,3..
 void removequeue(int indeks, queue* currentqueue){
     if ((indeks - 1) >= 0 && (indeks - 1) <= currentqueue->idxTail){
         Song removed = currentqueue->buffer[indeks - 1];
         removeAtIndex(currentqueue, indeks - 1);
-        printf("Lagu “%s” oleh “%s” telah dihapus dari queue!\n", removed.namaS, removed.namaP);
+        printf("Lagu '%s' oleh '%s' telah dihapus dari queue!\n", removed.namaS, removed.namaP);
     }
     else {
         printf("Lagu dengan urutan ke %d tidak ada.\n", indeks);
     }
 }
 
+/*Mengkosongkan isi queue*/
 void clearqueue(queue *currentqueue){
     CreateQueue(currentqueue);
     printf("Queue berhasil dikosongkan.\n");
