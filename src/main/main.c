@@ -111,8 +111,9 @@ int main(){
             help_before();
         }
         else if (IsEqual(input,"LOAD")){
-            char *input2 = commWordToString(takeword(currentWord,2));
-            char *filename = ConcateChar("./src/config/",input2);
+            hapustikom(&currentWord);
+            char *input2 = WordToString(takeword(currentWord,2));
+            char *filename = "./src/config/tesload.txt";
             printf("%s\n",filename);
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
