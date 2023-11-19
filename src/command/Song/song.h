@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include "../../main/ADT.h"
 #include "../../ADT/Queue/queue.h"
-#include "../Pick/pick.h"
 #include "../../ADT/Stack/stack.h"
+
 
 /* Lanjut ke lagu berikutnya */
 /* IS : Currentsong, queue, stack terdefinisi */
