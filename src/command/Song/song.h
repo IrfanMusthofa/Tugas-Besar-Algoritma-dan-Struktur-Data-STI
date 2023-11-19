@@ -3,9 +3,9 @@
 
 #include "boolean.h"
 #include <stdio.h>
-#include "../../main/ADT.h"
 #include "../../ADT/Queue/queue.h"
 #include "../../ADT/Stack/stack.h"
+#include "../../main/ADT.h"
 
 
 /* Lanjut ke lagu berikutnya */

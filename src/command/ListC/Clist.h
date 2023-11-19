@@ -7,7 +7,7 @@
 #include "ADT.h"
 #include "list.h"
 #include "pick.h"
-#include "playlist2.h"
+#include "playlist.h"
 
 /* Memilih penyanyi di list default */
 /* IS: List penyanyi terdefinisi */
@@ -32,7 +32,7 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song);
 /* Menampilkan listplaylist */
 /* IS : Arraydinplaylist terdefinisi */
 /* FS : akan ditampilkan  list playlist yang ada*/
-void listplaylist(ArrayDinPlaylist A);
+void Dlistplaylist(ArrayDinPlaylist B);
 
 #endif
 
