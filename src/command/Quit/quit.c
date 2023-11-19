@@ -20,7 +20,7 @@ void quit(ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, Stack history, Ar
         STARTINPUTKATA();
         filename = WordToString(currentWord);
         save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
-        printf("\nThank you for using WayangWave.\n");
+        //printf("\nThank you for using WayangWave.\n");
         exit(0);
     }
     else if(IsEqual(currentWord, 'N'))

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "playlist.h"
+#include "playlist2.h"
 #include "boolean.h"
 #include "../../main/ADT.h"
 

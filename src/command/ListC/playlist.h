@@ -1,5 +1,5 @@
-#ifndef __playlist_h__
-#define __playlist_h__
+#ifndef __playlist2_h__
+#define __playlist2_h__
 
 /*PLAYLIST*/
 
