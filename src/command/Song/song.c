@@ -9,12 +9,15 @@ void songnext(CurrentSong *play, queue *currentqueue, Stack *previous){
         printf("Queue kosong, memutar kembali lagu\n");
         printf("'%s' oleh '%s'", play->namaS, play->namaP);
     } else{
-        Song currentlagu; 
-        currentlagu.namaA = play->namaA;
-        currentlagu.namaP = play->namaP;
-        currentlagu.namaS = play->namaS;
+        valuetype tes = "-";
+        if(! IsEqualString(play->namaP, tes)){
+            Song currentlagu; 
+            currentlagu.namaA = play->namaA;
+            currentlagu.namaP = play->namaP;
+            currentlagu.namaS = play->namaS;
 
-        Push(previous, currentlagu);
+            Push(previous, currentlagu);
+        }
 
         Song nextlagu;
         dequeue(currentqueue, &nextlagu);
