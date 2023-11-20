@@ -18,7 +18,7 @@
 #include "../command/ListC/Clist.h"
 #include "../command/Play/play.h"
 #include "../command/Queue/Cqueue.h"
-//#include "../command/Status/status.h"
+#include "../command/Status/status.h"
 //#include "../command/Save/save.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
@@ -73,7 +73,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 queuelagu(&inqueue,inpenyanyi,inalbum,insong,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                queueplaylist(inplaylist,&inqueue,&inputisplayplaylist);
+                queueplaylist(inplaylist,&inqueue,&innamaplaylist,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"SWAP")){
                 int validasi = currentWord.Length-11;
@@ -170,7 +170,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
 
         //status
         else if (IsEqual(input,"STATUS;")){
-            //status(incursong,inqueue);
+            status(incursong,inqueue,inputisplayplaylist,innamaplaylist);
         }
 
         //save

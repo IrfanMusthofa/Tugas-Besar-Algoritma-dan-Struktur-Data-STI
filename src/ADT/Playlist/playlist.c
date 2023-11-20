@@ -59,12 +59,14 @@ void tukarplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
         if(h2 == y){
             break;
         } 
-        Q = Next(P);
+        Q = Next(Q);
     }
 
     Song temp = Info(P);
     Info(P) = Info(Q);
     Info(Q) = temp;
+
+    printf("Berhasil menukar lagu dengan nama \"%s\" dengan \"%s\" di playlist \"%s\"\n", Info(Q).namaS, Info(P).namaS, array->playlist[idP-1].namaPlaylist);
     
 }
 

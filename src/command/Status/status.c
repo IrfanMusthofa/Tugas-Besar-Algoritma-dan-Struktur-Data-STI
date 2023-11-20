@@ -21,7 +21,7 @@ void status(CurrentSong lagu, queue Q, boolean mutarplaylist, valuetype namaplay
         printf("\nQueue:\n");
         printf("Your queue is empty.");
     }
-    else if(!(IsEqualString(song, lagu.namaP)) && isEmpty(Q))
+    else if(!(IsEqualString(song, lagu.namaP)) && !isEmpty(Q))
     {
         //boolean mutarplaylist;
         //valuetype namaplaylist;
