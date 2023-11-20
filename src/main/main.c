@@ -195,7 +195,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         input = takeword(currentWord,1);
     }
 
-    //quit nya disini aj ya 
+    //quit
     printf("Apakah kamu ingin menyimpan data sesi sekarang (Y/N)? ");
     STARTINPUTKATA();
     //printf("\n");

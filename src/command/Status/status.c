@@ -23,17 +23,21 @@ void status(CurrentSong lagu, queue Q)
     }
     else if(!(IsEqualString(song, lagu.namaP)) && isEmpty(Q))
     {
-        printf("\nNow Playing:\n");
-        printf("%s - %s - %s\n", lagu.namaP, lagu.namaA, lagu.namaS);
-        printf("\nQueue:\n");
-        displayQueue(Q);
-    }
-    else if(!(IsEqualString(song, lagu.namaP)) && isEmpty(Q) && )
-    {
-        printf("\nCurrent Playlist:\n");
-        printf("\nNow Playing:\n");
-        printf("%s - %s - %s\n", lagu.namaP, lagu.namaA, lagu.namaS);
-        printf("\nQueue:\n");
-        displayQueue(Q);
+        boolean mutarplaylist;
+        valuetype namaplaylist;
+        if (!mutarplaylist)//true
+        {
+            printf("\nCurrent Playlist: %s\n", namaplaylist);
+            printf("\nNow Playing:\n");
+            printf("%s - %s - %s\n", lagu.namaP, lagu.namaA, lagu.namaS);
+            printf("\nQueue:\n");
+            displayQueue(Q);
+        }
+        else{
+            printf("\nNow Playing:\n");
+            printf("%s - %s - %s\n", lagu.namaP, lagu.namaA, lagu.namaS);
+            printf("\nQueue:\n");
+            displayQueue(Q);
+        }
     }
 }
