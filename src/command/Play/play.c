@@ -29,21 +29,25 @@ void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong
 /* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, ArrayDinPlaylist dan Stack previous terdefinisi */
 /* FS: currentsong berisi playlist lagu pertama, stack kosong, dan queue berisi lagu playlist kedua dst*/
 void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous){
-    int pilihan = pickplaylist(playlist); 
-    address P = playlist.playlist[pilihan].First;
-    nowplay->namaS = playlist.playlist[pilihan].First->info.namaS;
-    nowplay->namaP = playlist.playlist[pilihan].First->info.namaP;
-    nowplay->namaA = playlist.playlist[pilihan].First->info.namaA;
+    if (IsEmptyArrayDin(playlist)){
+        printf("Playlist kosong, tidak ada yang bisa dimainkan.\n");
+    } else {
+        int pilihan = pickplaylist(playlist); 
+        address P = playlist.playlist[pilihan].First;
+        nowplay->namaS = playlist.playlist[pilihan].First->info.namaS;
+        nowplay->namaP = playlist.playlist[pilihan].First->info.namaP;
+        nowplay->namaA = playlist.playlist[pilihan].First->info.namaA;
 
-    CreateQueue(currentqueue);
+        CreateQueue(currentqueue);
 
-    P = Next(P);
-    while (P != NULL){
-        enqueue(currentqueue, Info(P));
         P = Next(P);
+        while (P != NULL){
+            enqueue(currentqueue, Info(P));
+            P = Next(P);
+        }
+
+        CreateEmptyS(previous);
+
+        printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
     }
-
-    CreateEmptyS(previous);
-
-    printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
 }

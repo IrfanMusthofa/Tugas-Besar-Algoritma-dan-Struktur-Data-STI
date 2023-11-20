@@ -34,47 +34,53 @@ void playlistcreate(ArrayDinPlaylist *array){
 }
 
 void tambahlaguplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, ArrayDinPlaylist *array){
-    listp(Penyanyi);
-    valuetype namaP = pickpenyanyi(Penyanyi);
-    int idP;
-    listalbum(Penyanyi, Album, namaP, &idP);
-    valuetype namaA = pickalbum(Album, idP);
-    ListStatic L= MakeListStatis();
-    listlagu(Album, lagu, namaA, &L, namaP);
-    valuetype namaL = picklagu(L);
-    Song tSong;
-    tSong = CreateSong(namaP, namaA, namaL);
-    listplaylist(*array);
-    int indexP = pickplaylist(*array);
-    valuetype namaPl = array->playlist[indexP].namaPlaylist;
-    PlaylistAddSong(array, indexP, tSong);
-    printf("Lagu dengan judul '%s' pada album %s oleh penyanyi %s berhasil ditambahkan ke dalam playlist %s.", namaL, namaA, namaP, namaPl);
-
+    if (IsEmptyArrayDin(*array)){
+        printf("Playlist kosong, tidak ada yang bisa ditambahkan.\n");
+    } else {
+        listp(Penyanyi);
+        valuetype namaP = pickpenyanyi(Penyanyi);
+        int idP;
+        listalbum(Penyanyi, Album, namaP, &idP);
+        valuetype namaA = pickalbum(Album, idP);
+        ListStatic L= MakeListStatis();
+        listlagu(Album, lagu, namaA, &L, namaP);
+        valuetype namaL = picklagu(L);
+        Song tSong;
+        tSong = CreateSong(namaP, namaA, namaL);
+        listplaylist(*array);
+        int indexP = pickplaylist(*array);
+        valuetype namaPl = array->playlist[indexP].namaPlaylist;
+        PlaylistAddSong(array, indexP, tSong);
+        printf("Lagu dengan judul '%s' pada album %s oleh penyanyi %s berhasil ditambahkan ke dalam playlist %s.", namaL, namaA, namaP, namaPl);
+    }
 }
 
 void tambahalbumplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, ArrayDinPlaylist *array){
-    listp(Penyanyi);
-    valuetype namaP = pickpenyanyi(Penyanyi);
-    int idP;
-    listalbum(Penyanyi, Album, namaP, &idP);
-    valuetype namaA = pickalbum(Album, idP);
-    listplaylist(*array);
-    int indexP = pickplaylist(*array);
-    Song listS[20];
-    int n = 0; //index penanda
+    if(IsEmptyArrayDin(*array)){
+        printf("Playlist kosong, tidak ada album yang bisa ditambahkan.\n");
+    } else {
+        listp(Penyanyi);
+        valuetype namaP = pickpenyanyi(Penyanyi);
+        int idP;
+        listalbum(Penyanyi, Album, namaP, &idP);
+        valuetype namaA = pickalbum(Album, idP);
+        listplaylist(*array);
+        int indexP = pickplaylist(*array);
+        Song listS[50];
+        int n = 0; //index penanda
 
-    IDs id = GetAlbumID(Album, namaA);
-    for (int i = 0; i < lagu.count; i++){
-        if (lagu.Elements[i].Idalbum == id){
-            listS[n] = CreateSong(namaP, namaA, lagu.Elements[i].namalagu);
-            n++;
+        IDs id = GetAlbumID(Album, namaA);
+        for (int i = 0; i < lagu.count; i++){
+            if (lagu.Elements[i].Idalbum == id){
+                listS[n] = CreateSong(namaP, namaA, lagu.Elements[i].namalagu);
+                n++;
+            }
+        }
+
+        for(int j = 0; j < n; j++){
+            PlaylistAddSong(array, indexP, listS[j]);
         }
     }
-
-    for(int j = 0; j < n; j++){
-        PlaylistAddSong(array, indexP, listS[j]);
-    }
-
 }
 
 void swapplaylist(ArrayDinPlaylist *array, int idP, int x, int y){
