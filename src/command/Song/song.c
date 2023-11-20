@@ -37,7 +37,7 @@ void songnext(CurrentSong *play, queue *currentqueue, Stack *previous){
 void songprevious(CurrentSong *play, queue *currentqueue, Stack *previous){
     if (IsEmptyS(*previous)){
         printf("Riwayat lagu kosong, memutar kembali lagu\n");
-        printf("“%s” oleh “%s”\n", play->namaS, play->namaP);
+        printf("'%s' oleh “%s”\n", play->namaS, play->namaP);
     }
     else {
         Song previoussong; 

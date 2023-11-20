@@ -3,6 +3,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+
+
 void enhanceplaylist(ArrayDinPlaylist *array){
     if(IsEmptyArrayDin(*array)){
         printf("Playlist kosong, tidak ada yang bisa dienhance\n");
@@ -28,5 +30,7 @@ void enhanceplaylist(ArrayDinPlaylist *array){
                 }
             }
         }
+
+
     }
 }
