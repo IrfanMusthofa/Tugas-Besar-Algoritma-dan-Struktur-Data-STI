@@ -74,7 +74,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 queuelagu(&inqueue,inpenyanyi,inalbum,insong,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                queueplaylist(inplaylist,&inqueue,&innamaplaylist,&inputisplayplaylist);
+                queueplaylist(inplaylist,&inqueue,&innamaplaylist,&inputisplayplaylist,incursong);
             }
             else if (IsEqual(nextinput,"SWAP")){
                 int validasi = currentWord.Length-11;
