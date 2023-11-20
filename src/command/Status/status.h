@@ -6,6 +6,6 @@
 /* Mengecek current song dan queue */
 /* IS: current song dan queue terdefinisi */
 /* FS: menampilkan kondisi current song dan queue */
-void status(CurrentSong lagu, queue Q);
+void status(CurrentSong lagu, queue Q, boolean mutarplaylist, valuetype namaplaylist);
 
 #endif

@@ -31,13 +31,19 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 /* Menambahkan lagu playlist pada queue */
 /* IS: queue, arraydinplaylist terdefinisi */
 /* FS: playlist yang dipilih, lagunya akan ditambahkan ke queue*/
-void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,boolean* mutarplaylist){
+void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *namaPl,boolean* mutarplaylist){
     int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
     while (P != NULL){
         enqueue(currentqueue, P->info);
         P = P->next;
     }
-    *mutarplaylist = false;
+    if (!isEmpty(*currentqueue)){
+        *mutarplaylist = false;
+    }
+    else{
+        *namaPl = playlist.playlist[pilihan].namaPlaylist;
+        *mutarplaylist = true;
+    }
     printf("Berhasil menambahkan playlist '%s' ke queue.\n", playlist.playlist[pilihan].namaPlaylist);
 }
 
