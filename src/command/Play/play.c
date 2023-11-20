@@ -32,6 +32,23 @@ void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *curren
     if (IsEmptyArrayDin(playlist)){
         printf("Playlist kosong, tidak ada yang bisa dimainkan.\n");
     } else {
+        // stack dibuat kosong
+        CreateEmptyS(previous);
+        valuetype tes = "-";
+        // kalo CS gak kosong, masukkin stack
+        if(!IsEqualString(tes, nowplay->namaP)){
+            Push(previous, *nowplay);
+        }
+        // seluruh isi queue dimasukkin stack
+        if(!isEmpty(*currentqueue)){
+            for (int i = 0; i <= currentqueue->idxTail; i++){
+                Song temp;
+                dequeue(currentqueue, &temp);
+                Push(previous, temp);
+            }
+        }
+
+        // ini milih playlist dan masukkin ke queue sama CS
         int pilihan = pickplaylist(playlist); 
         address P = playlist.playlist[pilihan].First;
         nowplay->namaS = playlist.playlist[pilihan].First->info.namaS;
@@ -49,6 +66,6 @@ void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *curren
         CreateEmptyS(previous);
         *namaPl = playlist.playlist[pilihan].namaPlaylist;
         *mutarplaylist = true;
-    printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
+        printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
 }
 }
