@@ -181,7 +181,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input, "SAVE")){
             hapustikom(&currentWord);
             char *filename = WordToString(takeword(currentWord,2));
-            save(filename,inpenyanyi,inalbum,insong,&inqueue,instack,inplaylist,incursong);
+            save(filename,inpenyanyi,inalbum,insong,inqueue,instack,inplaylist,incursong);
 
         }
 
