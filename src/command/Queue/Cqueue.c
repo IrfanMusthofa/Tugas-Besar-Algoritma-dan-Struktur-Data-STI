@@ -36,7 +36,7 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue){
         enqueue(currentqueue, P->info);
         P = P->next;
     }
-    printf("Berhasil menambahkan playlist '%s' ke queue.", playlist.playlist[pilihan].namaPlaylist);
+    printf("Berhasil menambahkan playlist '%s' ke queue.\n", playlist.playlist[pilihan].namaPlaylist);
 }
 
 /* Menukar queue */

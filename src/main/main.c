@@ -18,9 +18,9 @@
 #include "../command/ListC/Clist.h"
 #include "../command/Play/play.h"
 #include "../command/Queue/Cqueue.h"
-#include "../command/Status/status.h"
+//#include "../command/Status/status.h"
 
-void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong){
+void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
     // input command
     printf(">>> ");
     STARTINPUTKATA();
@@ -47,10 +47,11 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"PLAY")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
-                playsong(&incursong,inpenyanyi,inalbum,insong,&inqueue,&instack);
+                playsong(&incursong,inpenyanyi,inalbum,insong,&inqueue,&instack,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                playplaylist(&incursong,inplaylist,&inqueue,&instack);
+                playplaylist(&incursong,inplaylist,&inqueue,&instack,&innamaplaylist,&inputisplayplaylist);
+                printf("%s\n",innamaplaylist);
             }
         }
 
@@ -108,10 +109,10 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
             else if (IsEqual(nextinput,"ADD")){
                 Word inputadd = takeword(currentWord,3);
-                if (IsEqual(nextinput,"SONG;")){
+                if (IsEqual(inputadd,"SONG;")){
                     tambahlaguplaylist(inpenyanyi,inalbum,insong,&inplaylist);
                 }
-                else if (IsEqual(nextinput,"ALBUM;")){
+                else if (IsEqual(inputadd,"ALBUM;")){
                     tambahalbumplaylist(inpenyanyi,inalbum,insong,&inplaylist);
                 }
             }
@@ -144,7 +145,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
 
         //status
         else if (IsEqual(input,"STATUS;")){
-            status(incursong,inqueue);
+            //status(incursong,inqueue);
         }
 
         //save
@@ -160,15 +161,36 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             help_after();
         }
 
-
-
-
-
         printf(">>> ");
         STARTINPUTKATA();
         input = takeword(currentWord,1);
     }
-    // quit();
+
+    //quit nya disini aj ya 
+    printf("Apakah kamu ingin menyimpan data sesi sekarang (Y/N)? ");
+    STARTINPUTKATA();
+    //printf("\n");
+    while (!(IsEqual(currentWord, "Y") || !IsEqual(currentWord, "N")))
+    {
+        printf("Input tidak valid. Silakan memasukkan 'Y;' jika ingin menyimpan data sesi sekarang dan 'N;' jika tidak ingin menyimpan data sesi sekarang (Y/N): ");
+        STARTINPUTKATA();
+    }
+    if (IsEqual(currentWord, "Y;"))
+    {
+        char *filename;
+        queue *antrian;
+        printf("Masukkan nama file penyimpanan: ");
+        STARTINPUTKATA();
+        filename = WordToString(currentWord);
+        //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
+        //printf("\nThank you for using WayangWave.\n");
+        exit(0);
+    }
+    else if(IsEqual(currentWord, "N;"))
+    {
+        printf("Kamu keluar dari WayangWave.\n");
+        printf("Dadah ^_^/\n");
+    }
 }
                             
 void displaywayangwave(){
@@ -183,7 +205,7 @@ printf(" $$$$$/$$$$/   $$$$$$$/  $$$$$$$ | $$$$$$$/ $$/   $$/  $$$$$$$ |       $
 printf("                        /  /__$$ |                    /  /__$$ |                                                  \n");
 printf("                        $$    $$/                     $$    $$/                                                   \n");
 printf("                         $$$$$$/                       $$$$$$/                                                    \n");
-printf("\n")
+printf("\n");
 printf("                                            CREATED BY GROUP 10 K-2                                               \n");   
 }
 
@@ -196,6 +218,9 @@ int main(){
     Stack history;
     ArrayDinPlaylist playlist = MakeArrayDin();
     CurrentSong LaguSkrg;
+
+    valuetype namaplaylist= "-";
+    boolean isplayplaylist = false;
 
     // kosongkan variabel
     MakeEmpty(&Penyanyi,&Album,&Song);
@@ -220,7 +245,7 @@ int main(){
                 printf("%s\n", Penyanyi.A[i]);
             }
             printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
-            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
+            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
             break;
         }
 
@@ -252,7 +277,7 @@ int main(){
 
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
-                mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
+                mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
                 break;
             }
             else{
@@ -273,29 +298,5 @@ int main(){
 
 void quit(ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, Stack history, ArrayDinPlaylist playlist, CurrentSong LaguSekarang)
 {
-    printf("Apakah kamu ingin menyimpan data sesi sekarang (Y/N)?\n ");
-    STARTINPUTKATA();
-    //printf("\n");
-    while (!(IsEqual(currentWord, 'Y') || IsEqual(currentWord, 'N')))
-    {
-        printf("Input tidak valid. Silakan memasukkan 'Y' jika ingin menyimpan data sesi sekarang dan 'N' jika tidak ingin menyimpan data sesi sekarang (Y/N): \n");
-        STARTINPUTKATA();
-    }
-    if (IsEqual(currentWord, 'Y'))
-    {
-        char *filename;
-        queue *antrian;
-        printf("Masukkan nama file penyimpanan: ");
-        STARTINPUTKATA();
-        filename = WordToString(currentWord);
-        save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
-        //printf("\nThank you for using WayangWave.\n");
-        exit(0);
-    }
-    else if(IsEqual(currentWord, 'N'))
-    {
-        printf("Kamu keluar dari WayangWave.\n");
-        printf("Dadah ^_^/");
-    }
-
+    
 }
