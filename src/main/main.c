@@ -196,7 +196,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     }
 
     //quit
-    printf("Apakah kamu ingin menyimpan data sesi sekarang (Y/N)? ");
+    printf("\nApakah kamu ingin menyimpan data sesi sekarang (Y/N)? ");
     STARTINPUTKATA();
     //printf("\n");
     while (!(IsEqual(currentWord, "Y") || !IsEqual(currentWord, "N")))
@@ -213,14 +213,15 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         filename = WordToString(currentWord);
 
         //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
-        printf("\nThank you for using WayangWave.\n");
-        exit(0);
+        printf("\nData sesi kamu telah berhasil disimpan.\n");
     }
     else if(IsEqual(currentWord, "N;"))
     {
-        printf("Kamu keluar dari WayangWave.\n");
+        printf("\nKamu keluar dari WayangWave.\n");
         printf("Dadah ^_^/\n");
     }
+    printf("Thank you for using WayangWave :D\n");
+    exit(0);
 }
                             
 void displaywayangwave(){
