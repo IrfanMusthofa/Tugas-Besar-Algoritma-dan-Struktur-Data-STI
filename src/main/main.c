@@ -47,7 +47,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 listplaylist(inplaylist);
             }
             else{
-                printf("command tidak sesuai, masukkan command \"HELP;\" untuk melihat list command\n");
+                invalid_command4();
             }
         }
 
@@ -59,6 +59,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
                 playplaylist(&incursong,inplaylist,&inqueue,&instack,&innamaplaylist,&inputisplayplaylist);
+            }
+            else{
+                invalid_command4();
             }
         }
 
@@ -81,7 +84,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                     swapqueue(id1,id2,&inqueue,&inputisplayplaylist);
                 }
                 else{
-                    printf("mohon masukkan input yang sesuai.\n");
+                    invalid_command4();
                 }
             }
             else if (IsEqual(nextinput,"REMOVE")){
@@ -95,7 +98,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             else if (IsEqual(nextinput,"CLEAR;")){
                 clearqueue(&inqueue,&inputisplayplaylist);
             }
-            else{invalid_command1();}
+            else{invalid_command4();}
         }
 
         //song
@@ -106,6 +109,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
             else if (IsEqual(nextinput,"PREVIOUS;")){
                 songprevious(&incursong,&inqueue,&instack);
+            }
+            else{
+                invalid_command4();
             }
         }
 
@@ -123,6 +129,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 else if (IsEqual(inputadd,"ALBUM;")){
                     tambahalbumplaylist(inpenyanyi,inalbum,insong,&inplaylist);
                 }
+                else{
+                    invalid_command4();
+                }
             }
             else if (IsEqual(nextinput,"SWAP")){
                 int validasi = currentWord.Length-14;
@@ -134,8 +143,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                     y = WordToInt(takeword(currentWord,5));
                     swapplaylist(&inplaylist,IDplaylist,x,y);
                 }
-                printf("%s\n",takeword(currentWord,4).TabWord);
-                printf("%d\n%d\n%d\n",IDplaylist,x,y);
+                else{
+                    invalid_command4();
+                }
             }
             else if (IsEqual(nextinput,"REMOVE")){
                 int validasi = currentWord.Length-16;
@@ -143,11 +153,17 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 if (validasi >=4){
                     IDplaylist = WordToInt(takeword(currentWord,3));
                     x = WordToInt(takeword(currentWord,4));
+                    removeplaylist(&inplaylist,IDplaylist,x);
                 }
-                removeplaylist(&inplaylist,IDplaylist,x);
+                else{
+                    invalid_command4();
+                }
             }
             else if (IsEqual(nextinput,"DELETE;")){
                 hapusplaylist(&inplaylist);
+            }
+            else{
+                invalid_command4();
             }
         }
 
@@ -171,7 +187,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         
         //invalid comm 1
         else{
-            invalid_command1();
+            invalid_command5();
         }
         printf(">>> ");
         STARTINPUTKATA();
@@ -283,7 +299,7 @@ int main(){
 
         //invalid command
         else{
-            printf("command tidak valid, masukkan command \"HELP;\" untuk melihat list command\n");
+            invalid_command5();
         }
 
         // input command

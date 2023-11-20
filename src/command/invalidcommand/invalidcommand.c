@@ -23,5 +23,5 @@ void invalid_command4(){
 }
 
 void invalid_command5(){
-    printf("command tidak valid, masukkan command \"HELP;\" untuk melihat list command\n");
+    printf("command tidak deketahui, masukkan command \"HELP;\" untuk melihat list command\n");
 }
