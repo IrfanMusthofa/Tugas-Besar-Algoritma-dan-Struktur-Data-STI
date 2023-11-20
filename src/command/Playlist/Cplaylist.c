@@ -14,10 +14,19 @@ void playlistcreate(ArrayDinPlaylist *array){
     valuetype namaPlaylist;
     while (! hasil)
     {
-        printf("Masukkan nama playlist yang ingin dibuat : ");
-        STARTINPUTKATA();
+        boolean tes = false;
+        while (!tes)
+        {
+            printf("Masukkan nama playlist yang ingin dibuat : ");
+            STARTINPUTKATA();
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                tes = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+            printf("\n");
+        }
         hapustikom(&currentWord);
-        printf("\n");
         Word cek = takenonspace(currentWord);
         if (cek.Length == 0){
             printf("Minimal terdapat 3 karakter selain white space dalam nama playlist. Silakan coba lagi.\n");

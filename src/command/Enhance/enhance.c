@@ -6,6 +6,7 @@
 
 
 void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Album, SetSong song){
+    printf("\n");
     if(IsEmptyArrayDin(*array)){
         printf("Playlist kosong, tidak ada yang bisa dienhance\n");
     } else{
@@ -31,29 +32,28 @@ void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Al
         listplaylist(*array);
         int idxP = pickplaylist(*array);
         // merandom banyak lagu yang akan dimasukkan
-        int banyaklaguplaylist = NbElmt(array->playlist[idxP]);
-        int nlagurandom = rand() % (banyaklaguplaylist - 1 + 1) + 1;
-        int d = 1; // buat numbering aja
         boolean found = false; // penanda kalau ada yang dienhance
-        for (int a = 0; a < nlagurandom; a++){
-            // ngerandomin index yang bakal dimasukkin ke playlist
-            int nilaiAcak = rand() % ((n-1) - 0 + 0) + 0;
-            // dimasukkin ke playlist kalau gak ada lagunya
-            if (!SearchLaguPlaylist(array->playlist[idxP], listlaguconfig[nilaiAcak].namaS)){
-                if(d == 1){
-                    printf("Lagu yang ditambahkan ke playlist '%s' adalah \n", array->playlist[idxP].namaPlaylist);
-                    found = true;
+        if(!IsEmptyListLinier(array->playlist[idxP])){
+            int banyaklaguplaylist = NbElmt(array->playlist[idxP]);
+            int nlagurandom = rand() % (banyaklaguplaylist - 1 + 1) + 1;
+            int d = 1; // buat numbering aja
+            for (int a = 0; a < nlagurandom; a++){
+                // ngerandomin index yang bakal dimasukkin ke playlist
+                int nilaiAcak = rand() % ((n-1) - 0 + 0) + 0;
+                // dimasukkin ke playlist kalau gak ada lagunya
+                if (!SearchLaguPlaylist(array->playlist[idxP], listlaguconfig[nilaiAcak].namaS)){
+                    if(d == 1){
+                        printf("Lagu yang ditambahkan ke playlist '%s' adalah \n", array->playlist[idxP].namaPlaylist);
+                        found = true;
+                    }
+                    InsVLast(&(array->playlist[idxP]), listlaguconfig[nilaiAcak]);
+                    printf("%d. %s - %s - %s\n", d, listlaguconfig[nilaiAcak].namaP, listlaguconfig[nilaiAcak].namaA, listlaguconfig[nilaiAcak].namaS);
+                    d++;
                 }
-                InsVLast(&(array->playlist[idxP]), listlaguconfig[nilaiAcak]);
-                printf("%d. %s - %s - %s\n", d, listlaguconfig[nilaiAcak].namaP, listlaguconfig[nilaiAcak].namaA, listlaguconfig[nilaiAcak].namaS);
-                d++;
             }
         }
         if(!found){
             printf("Tidak ada lagu yang direkomendasikan.\n");
         }
-
-
-
     }
 }
