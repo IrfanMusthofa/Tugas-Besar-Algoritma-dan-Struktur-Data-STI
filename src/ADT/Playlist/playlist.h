@@ -24,16 +24,25 @@ void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist);
 
 void PlaylistAddSong (ArrayDinPlaylist *array, int i, Song lagu);
 /** fungsi untuk menambahkan lagu baru pada playlist tertentu
- * I.S. array terdefinisi, i adalah index playlist, lagu tersefinsi
+ * I.S. array terdefinisi, i adalah index playlist, lagu terdefinisi
  * F.S. lagu berhasil ditambahkan di playlist
  * */
 
 
 void tukarplaylist(ArrayDinPlaylist *array, int idP, int x, int y);
+/* menukar urutan lagu di playlist */
+/* IS: arraydin playlist terdefinisi, indeks playlist idP dimulai dari 1 (urutan playlist), x dan y adalah urutan lagu dimulai dari 1 */
+/* FS: lagu urutan x dan y di playlist idP-1 akan ditukar */
 
 void DeleteLaguPlaylist (ArrayDinPlaylist *array, int idP, int x, Song *lagu);
+/* menghapus lagu di playlist */
+/* IS: arraydin playlist terdefinisi, indeks playlist idP dimulai dari 1 (urutan playlist) */
+/* FS: lagu berisi info dari playlist yang terhapus */
 
 void DeletePlaylist (ArrayDinPlaylist *array, int idP);
+/* menghapus playlist */
+/* IS: arraydin playlist terdefinisi, indeks playlist idP dimulai dari 0 */
+/* FS: playlist dengan indeks idP terhapus */
 
 Song CreateSong(valuetype namapenyanyi, valuetype namaalbum, valuetype namalagu);
 /** fungsi untuk membentuk lagu

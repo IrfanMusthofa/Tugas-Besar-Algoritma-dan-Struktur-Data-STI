@@ -112,8 +112,11 @@ void removeplaylist(ArrayDinPlaylist *array, int idP, int x){
 
 void hapusplaylist(ArrayDinPlaylist *array){
     listplaylist(*array);
-    int idplaylist = pickplaylist(*array);
-    printf("Playlist ID %d dengan judul '%s' berhasil dihapus. \n", (idplaylist + 1), array->playlist[idplaylist].namaPlaylist);
-    DeletePlaylist(array, idplaylist);
-
+    if(IsEmptyArrayDin(*array)){
+        printf("Playlist kosong, tidak ada yang bisa dihapus.\n")
+    } else {
+        int idplaylist = pickplaylist(*array);
+        printf("Playlist ID %d dengan judul '%s' berhasil dihapus. \n", (idplaylist + 1), array->playlist[idplaylist].namaPlaylist);
+        DeletePlaylist(array, idplaylist);
+    }
 }
