@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/taufi/OneDrive/Desktop/Kuliah/NGODING/Tugas-Besar_Algoritma-dan-Struktur-Data_STI/sourcecode/command/Queue",
-      "program": "c:/Users/taufi/OneDrive/Desktop/Kuliah/NGODING/Tugas-Besar_Algoritma-dan-Struktur-Data_STI/sourcecode/command/Queue/build/Debug/outDebug",
+      "cwd": "c:/Users/taufi/OneDrive/Desktop/Kuliah/NGODING/ALSTRUKDAT/Tugas-Besar_Algoritma-dan-Struktur-Data_STI/src/command/Queue",
+      "program": "c:/Users/taufi/OneDrive/Desktop/Kuliah/NGODING/ALSTRUKDAT/Tugas-Besar_Algoritma-dan-Struktur-Data_STI/src/command/Queue/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

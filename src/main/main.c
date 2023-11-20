@@ -75,9 +75,14 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 hapustikom(&currentWord);
                 if (validasi>=2){
                     int id = WordToInt(takeword(currentWord,3));
-                    //
                 }
             }
+            else if (IsEqual(nextinput,"CLEAR;")){
+                clearqueue(&inqueue);
+            }
+        }
+        else if (IsEqual(input,"SONG")){
+            Word nextinput = takeword(currentWord,2);
         }
         else if (IsEqual(input,"PLAYLIST")){
             Word nextinput = takeword(currentWord,2);

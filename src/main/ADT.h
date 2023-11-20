@@ -7,6 +7,7 @@
 
 #define NMAX 20
 #define EMPTY ""
+#define IDX_UNDEF -999
 
 typedef int keytype;
 typedef char* valuetype;
@@ -99,7 +100,6 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song);
 
 //Command START, read file default(config) dan memasukkan nilainya ke variable
 void STARTCOM(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song, char *file);
-
 
 //I.S string penyanyi pastikan ada di list
 //F.S mengembalikan ID penyanyi dari string penyanyi input

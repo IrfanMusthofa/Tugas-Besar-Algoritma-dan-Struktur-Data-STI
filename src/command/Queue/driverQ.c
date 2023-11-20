@@ -1,9 +1,9 @@
-#include "mesinkata.h"
+#include "../../ADT/MesinKalimat/mesinkata.h"
 #include "Cqueue.h"
-#include "ADT.h"
-#include "pick.h"
-#include "queue.h"
-#include "Cplaylist.h"
+#include "../../main/ADT.h"
+#include "../Pick/pick.h"
+#include "../../ADT/Queue/queue.h"
+#include "../Playlist/Cplaylist.h"
 
 int main(){
     ListPenyanyi Penyanyi;

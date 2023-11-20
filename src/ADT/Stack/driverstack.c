@@ -9,22 +9,22 @@ int main(){
     }
     Song input;
     printf("Memasukkan : BLACKPINK-BORN PINK-DUDUDUDU\n");
-    Penyanyi(input) = "BLACKPINK";
-    Album(input) = "BORN PINK";
-    Lagu(input) = "DUDUDUDU";
-
+    PenyanyiS(input) = "BLACKPINK";
+    AlbumS(input) = "BORN PINK";
+    LaguS(input) = "DUDUDUDU";
+    input.namaS = "hubka";
     Push(&testing,input);
     printf("berhasil masuk\n");
     printf("print valuetop untuk memastikan\n");
-    printf("%s\n", Penyanyi(InfoTop(testing)));
-    printf("%s\n", Album(InfoTop(testing)));
-    printf("%s\n", Lagu(InfoTop(testing)));
+    printf("%s\n", PenyanyiS(InfoTop(testing)));
+    printf("%s\n", AlbumS(InfoTop(testing)));
+    printf("%s\n", LaguS(InfoTop(testing)));
 
     Song input2;
     printf("Memasukkan : HITAM MERAH MUDA-LAHIR MERAH-UDUDUDUD\n");
-    Penyanyi(input2) = "HITAM MERAH MUDA";
-    Album(input2) = "LAHIR MERAH";
-    Lagu(input2) = "UDUDUDUD";
+    PenyanyiS(input2) = "HITAM MERAH MUDA";
+    AlbumS(input2) = "LAHIR MERAH";
+    LaguS(input2) = "UDUDUDUD";
     
     Push(&testing,input2);
 
@@ -33,7 +33,7 @@ int main(){
     Pop(&testing,&tespop);
     printf("isi stack saat ini : %d\n",testing.TOP+1);
     printf("mencoba print nilai value yang di pop\n");
-    printf("%s\n", Penyanyi(tespop));
-    printf("%s\n", Album(tespop));
-    printf("%s\n", Lagu(tespop));
+    printf("%s\n", PenyanyiS(tespop));
+    printf("%s\n", AlbumS(tespop));
+    printf("%s\n", LaguS(tespop));
 }
