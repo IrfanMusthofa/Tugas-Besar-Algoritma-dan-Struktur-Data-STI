@@ -170,9 +170,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     }
     // quit();
 }
-    
-
-void displaywayangwave(){                                                                                                                  
+                            
+void displaywayangwave(){
+printf("                                                  WELCOME TO                                                      \n");                                                                                                                 
 printf(" __   __   __   ______   __    __   ______   _______    ______         __   __   __   ______   __     __  ______  \n");
 printf("/  | /  | /  | /      / /  |  /  | /      | /       / /      |       /  | /  | /  | /      / /  /   /  |/      | \n");
 printf("$$ | $$ | $$ | $$$$$$  |$$ |  $$ | $$$$$$  |$$$$$$$  |/$$$$$$  |      $$ | $$ | $$ | $$$$$$  |$$    /$$//$$$$$$  |\n");
@@ -183,7 +183,8 @@ printf(" $$$$$/$$$$/   $$$$$$$/  $$$$$$$ | $$$$$$$/ $$/   $$/  $$$$$$$ |       $
 printf("                        /  /__$$ |                    /  /__$$ |                                                  \n");
 printf("                        $$    $$/                     $$    $$/                                                   \n");
 printf("                         $$$$$$/                       $$$$$$/                                                    \n");
-
+printf("\n")
+printf("                                            CREATED BY GROUP 10 K-2                                               \n");   
 }
 
 int main(){
