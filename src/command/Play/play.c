@@ -5,7 +5,7 @@
 /* Memainkan lagu */
 /* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, dan Stack previous terdefinisi */
 /* FS: currentsong berisi lagu yang dimasukkan, stack dan queue kosong*/
-void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu, queue *currentqueue, Stack *previous){
+void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu, queue *currentqueue, Stack *previous, boolean* mutarplaylist){
     listp(penyanyi);
     valuetype pickp = pickpenyanyi(penyanyi); 
     int idx;
@@ -21,14 +21,14 @@ void playsong(CurrentSong *nowplay, ListPenyanyi penyanyi, MapAlbum map, SetSong
     //mengosongkan queue dan stack
     CreateQueue(currentqueue);
     CreateEmptyS(previous);
-
+    *mutarplaylist = false;
     printf("Memutar lagu '%s' oleh '%s'.\n", pickl, pickp);
 }
 
 /* Memainkan playlist */
 /* IS: CurrentSong, ListPenyanyi, MapAlbum, Setsong, Queue, ArrayDinPlaylist dan Stack previous terdefinisi */
 /* FS: currentsong berisi playlist lagu pertama, stack kosong, dan queue berisi lagu playlist kedua dst*/
-void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous){
+void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *currentqueue, Stack *previous, valuetype *namaPl ,boolean *mutarplaylist){
     if (IsEmptyArrayDin(playlist)){
         printf("Playlist kosong, tidak ada yang bisa dimainkan.\n");
     } else {
@@ -47,7 +47,8 @@ void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *curren
         }
 
         CreateEmptyS(previous);
-
+        *namaPl = playlist.playlist[pilihan].namaPlaylist;
+        *mutarplaylist = true;
     printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
 }
 }

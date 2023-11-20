@@ -20,7 +20,7 @@
 #include "../command/Queue/Cqueue.h"
 //#include "../command/Status/status.h"
 
-void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong){
+void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
     // input command
     printf(">>> ");
     STARTINPUTKATA();
@@ -47,10 +47,11 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"PLAY")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
-                playsong(&incursong,inpenyanyi,inalbum,insong,&inqueue,&instack);
+                playsong(&incursong,inpenyanyi,inalbum,insong,&inqueue,&instack,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                playplaylist(&incursong,inplaylist,&inqueue,&instack);
+                playplaylist(&incursong,inplaylist,&inqueue,&instack,&innamaplaylist,&inputisplayplaylist);
+                printf("%s\n",innamaplaylist);
             }
         }
 
@@ -171,7 +172,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     //printf("\n");
     while (!(IsEqual(currentWord, "Y") || !IsEqual(currentWord, "N")))
     {
-        printf("Input tidak valid. Silakan memasukkan 'Y' jika ingin menyimpan data sesi sekarang dan 'N' jika tidak ingin menyimpan data sesi sekarang (Y/N): \n");
+        printf("Input tidak valid. Silakan memasukkan 'Y;' jika ingin menyimpan data sesi sekarang dan 'N;' jika tidak ingin menyimpan data sesi sekarang (Y/N): ");
         STARTINPUTKATA();
     }
     if (IsEqual(currentWord, "Y;"))
@@ -219,7 +220,7 @@ int main(){
     CurrentSong LaguSkrg;
 
     valuetype namaplaylist= "-";
-    boolean isplaylaylist = false;
+    boolean isplayplaylist = false;
 
     // kosongkan variabel
     MakeEmpty(&Penyanyi,&Album,&Song);
@@ -244,7 +245,7 @@ int main(){
                 printf("%s\n", Penyanyi.A[i]);
             }
             printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
-            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
+            mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
             break;
         }
 
@@ -276,7 +277,7 @@ int main(){
 
             if (Checkload(filename)){
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
-                mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg);
+                mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
                 break;
             }
             else{
