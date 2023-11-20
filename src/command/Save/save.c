@@ -121,7 +121,7 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
 
     // CLOSE FILE
     fclose(fsave);
-    printf("Save file: %s berhasil disimpan!\n", filenane);
+    printf("Save file: %s berhasil disimpan!\n", filename);
     
 }
 /* ========= *** END of save *** ========= */
