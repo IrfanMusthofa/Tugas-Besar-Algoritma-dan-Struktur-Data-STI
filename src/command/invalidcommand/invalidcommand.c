@@ -18,3 +18,10 @@ void invalid_command3()
 {
     printf("Command tidak bisa dieksekusi!\n");
 }
+void invalid_command4(){
+    printf("command tidak sesuai, masukkan command \"HELP;\" untuk melihat list command\n");
+}
+
+void invalid_command5(){
+    printf("command tidak valid, masukkan command \"HELP;\" untuk melihat list command\n");
+}

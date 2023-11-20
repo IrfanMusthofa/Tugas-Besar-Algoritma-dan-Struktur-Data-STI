@@ -32,6 +32,11 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             break;
         }
 
+        //invalid comm 2
+        else if (IsEqual(input,"START;") || IsEqual(input,"LOAD")){
+            invalid_command2();
+        }
+
         //list
         else if (IsEqual(input,"LIST")){
             Word nextinput = takeword(currentWord,2);
@@ -40,6 +45,9 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
                 listplaylist(inplaylist);
+            }
+            else{
+                printf("command tidak sesuai, masukkan command \"HELP;\" untuk melihat list command\n");
             }
         }
 
@@ -160,7 +168,11 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"HELP;")){
             help_after();
         }
-
+        
+        //invalid comm 1
+        else{
+            invalid_command1();
+        }
         printf(">>> ");
         STARTINPUTKATA();
         input = takeword(currentWord,1);
