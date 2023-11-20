@@ -32,19 +32,23 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 /* IS: queue, arraydinplaylist terdefinisi */
 /* FS: playlist yang dipilih, lagunya akan ditambahkan ke queue*/
 void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *namaPl,boolean* mutarplaylist, CurrentSong cs){
-    int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
-    if (isEmpty(*currentqueue) && IsEqualString(cs.namaP,"-")){
-        *namaPl = playlist.playlist[pilihan].namaPlaylist;
-        *mutarplaylist = true;
+    if(IsEmptyArrayDin(playlist)){
+        printf("Tidak ada playlist yang bisa diqueue.\n");
+    } else {
+        int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
+        if (isEmpty(*currentqueue) && IsEqualString(cs.namaP,"-")){
+            *namaPl = playlist.playlist[pilihan].namaPlaylist;
+            *mutarplaylist = true;
+        }
+        else {
+            *mutarplaylist = false;
+        }
+        while (P != NULL){
+            enqueue(currentqueue, P->info);
+            P = P->next;
+        }
+        printf("Berhasil menambahkan playlist '%s' ke queue.\n", playlist.playlist[pilihan].namaPlaylist);
     }
-    else {
-        *mutarplaylist = false;
-    }
-    while (P != NULL){
-        enqueue(currentqueue, P->info);
-        P = P->next;
-    }
-    printf("Berhasil menambahkan playlist '%s' ke queue.\n", playlist.playlist[pilihan].namaPlaylist);
 }
 
 /* Menukar queue */

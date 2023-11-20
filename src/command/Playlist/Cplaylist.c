@@ -10,6 +10,7 @@
 /* IS : arraydinplaylist terdefinisi */
 /* FS : akan terbentuk playlist dengan nama tertentu */
 void playlistcreate(ArrayDinPlaylist *array){
+    printf("\n");
     boolean hasil = false;
     valuetype namaPlaylist;
     while (! hasil)

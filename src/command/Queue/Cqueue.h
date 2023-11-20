@@ -4,7 +4,7 @@
 #include "../../main/ADT.h"
 #include "../../ADT/Queue/queue.h"
 #include <stdio.h>
-
+#include "../../ADT/Playlist/playlist.h"
 /* Menambahkan lagu pada queue */
 /* IS: queue, listpenyanyi, mapalbum, set song terdefinisi */
 /* FS: lagu yang dipilih akan ditambahkan ke queue*/
