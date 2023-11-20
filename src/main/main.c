@@ -19,6 +19,7 @@
 #include "../command/Play/play.h"
 #include "../command/Queue/Cqueue.h"
 #include "../command/Status/status.h"
+#include "../command/Enhance/enhance.h"
 //#include "../command/Save/save.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
@@ -167,7 +168,10 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 invalid_command4();
             }
         }
-
+        //enhance
+        else if(IsEqual(input, "ENHANCE;")){
+            enhanceplaylist(&inplaylist, inpenyanyi, inalbum, insong);
+        }
         //status
         else if (IsEqual(input,"STATUS;")){
             status(incursong,inqueue,inputisplayplaylist,innamaplaylist);
