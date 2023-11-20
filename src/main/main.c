@@ -241,9 +241,6 @@ int main(){
             char *file = "./src/config/config.txt";
             STARTCOM(&Penyanyi,&Album,&Song, file);
 
-            for (int i = 0;i<Penyanyi.neff;i++){
-                printf("%s\n", Penyanyi.A[i]);
-            }
             printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
             mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
             break;
@@ -257,26 +254,13 @@ int main(){
         // load
         else if (IsEqual(input,"LOAD")){
             hapustikom(&currentWord);
-            char *checkCWord = WordToString(currentWord);
-            printf("Current Word setelah hapustikom: %s\n",checkCWord);
             char *input2 = WordToString(takeword(currentWord,2));
-            Word inputke2 = StringtoWord (input2);
-            printf("Banyak char input: %d\n", inputke2.Length);
-
-
-
-            printf("Banyak char word takeword (1 kalimat): %d\n", currentWord.Length);
-            printf("Banyak char word ke 1: %d\n", takeword(currentWord, 1).Length);
-            printf("Banyak char word ke 2: %d\n", takeword(currentWord, 2).Length);
-
             char *filename = ConcateChar("src/config/",input2);
-            printf("Hasil concate src dir + input filename: %s\n",filename);
-
-            Word hasilconcate = StringtoWord(filename);
-            printf("Banyak char hasil concate src dir + input filename: %d\n", hasilconcate.Length);
 
             if (Checkload(filename)){
+                printf("Load file %s..\n",input2);
                 Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
+                printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
                 mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
                 break;
             }
@@ -284,6 +268,7 @@ int main(){
                 printf("tidak ada file dengan nama tersebut\n");
             }
         }
+
         //invalid command
         else{
             printf("command tidak valid, masukkan command \"HELP;\" untuk melihat list command\n");
@@ -294,9 +279,4 @@ int main(){
         STARTINPUTKATA();
         input = takeword(currentWord,1);
     }
-}
-
-void quit(ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, Stack history, ArrayDinPlaylist playlist, CurrentSong LaguSekarang)
-{
-    
 }

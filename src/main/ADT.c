@@ -27,9 +27,7 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
 void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file){
     printf("init");
     STARTWORD(file);
-    printf("\nINI YG BENER%d\n", currentWord.Length);
     printf("ialize\n");
-    printf("starting game STARTCOM..\n");
     int jlhPenyanyi=WordToInt(currentWord);
 
     Penyanyi->neff = jlhPenyanyi; // Banyak Penyanyi
@@ -45,7 +43,6 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
 
         // Banyak Album -> {2} BLACKPINK
         ADVWORD();
-        printf("\nINI YG BENER%d\n", currentWord.Length);
         int jlhalbum = WordToInt(takeword(currentWord,1));
         Album->count += jlhalbum;
 

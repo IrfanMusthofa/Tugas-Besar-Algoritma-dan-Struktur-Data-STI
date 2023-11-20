@@ -25,8 +25,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
         LaguSekarang->namaP = WordToString(takewordsemicolon(currentWord, 1));
         LaguSekarang->namaA = WordToString(takewordsemicolon(currentWord, 2));
         LaguSekarang->namaS = WordToString(takewordsemicolon(currentWord, 3));
-
-        printf("%s %s %s\n\n", LaguSekarang->namaP, LaguSekarang->namaA, LaguSekarang->namaS);
     }
 
 
@@ -34,7 +32,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
     // ========== Queue for Queue ==========
     
     ADVWORD();
-    printf("\nINI YG BENER%d\n", currentWord.Length);
     // Masukkan banyak songs ke Queue queue
     int banyakQueueSongs = WordToInt(currentWord);
 
@@ -52,7 +49,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
         readyToInput.namaP = namaP;
         readyToInput.namaA = namaA;
         readyToInput.namaS = namaS;
-        printf("%s %s %s\n", namaP, namaA, namaS);
         enqueue(QueueSong, readyToInput);
     }
 
@@ -60,7 +56,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
 
     // ========== Stack for History ==========
     ADVWORD();
-    printf("\nINI YG BENER%d\n", currentWord.Length);
     Stack HistoryRAW;
     CreateEmptyS(&HistoryRAW); // Sebelum direverse // Final setelah direverse
 
@@ -75,7 +70,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
         valuetype namaP = WordToString(takewordsemicolon(currentWord, 1));
         valuetype namaA = WordToString(takewordsemicolon(currentWord, 2));
         valuetype namaS = WordToString(takewordsemicolon(currentWord, 3));
-        printf("%s %s %s\n", namaP, namaA, namaS);
         // Masukkan ke History
         Song readyToHistory;
         readyToHistory.namaP = namaP;
@@ -95,7 +89,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
 
     // ========== ArrayDinPLaylist for Playlist ==========
     ADVWORD();
-    printf("\nINI YG BENER%d\n", currentWord.Length);
 
     // Banyak Playlist
     int banyakDinPlaylist = WordToInt(currentWord);
@@ -108,7 +101,6 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
         int banyakLaguPlaylist = WordToInt(takeword(currentWord, 1));
         valuetype namaPlaylist = WordToString(takekata(currentWord));
         CreatePlaylist (DinPlaylist, namaPlaylist);
-        printf("NamaPlaylist%s\n", namaPlaylist);
         // Masukkan Lagu ke Playlist
         for (int l = 0; l < banyakLaguPlaylist; l++) {
             ADVWORD();
@@ -117,7 +109,7 @@ void Load(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *SetSong, char *file,
             valuetype namaP = WordToString(takewordsemicolon(currentWord, 1));
             valuetype namaA = WordToString(takewordsemicolon(currentWord, 2));
             valuetype namaS = WordToString(takewordsemicolon(currentWord, 3));
-            printf("%s %s %s\n", namaP, namaA, namaS);
+
             // Masukkan ke playlist
             Song readyToPlaylist;
             readyToPlaylist.namaP = namaP;
