@@ -14,6 +14,7 @@ int main()
     Delete(&S1, "A");
     PrintSet(S1);
     PrintSet(S2);
+    PrintSet(S3);
 
 
 }

@@ -111,7 +111,7 @@ void PrintSet(Set S)
     printf("{");
     for (i = 0; i < S.Count; i++)
     {
-        printf("%d", S.Elements[i]);
+        printf("%s", S.Elements[i]);
         if (i < S.Count - 1)
         {
             printf(", ");
