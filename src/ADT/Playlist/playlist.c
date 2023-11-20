@@ -3,8 +3,10 @@
 #include "playlist.h"
 #include "boolean.h"
 #include "../../main/ADT.h"
+#include "../MesinKalimat/mesinkata.h"
 
-
+// cara compile : gcc -o mo playlist.c driver.c ../MesinKalimat/mesinkata.c ../MesinKalimat/mesinkarakter.c
+// ./mo
 /***********Playlist************/
 
 void CreatePlaylist (ArrayDinPlaylist *array, valuetype namaplaylist){
