@@ -77,10 +77,42 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     if (LaguSekarang.namaP == '-') fprintf(fsave, "-\n");
     else fprintf(fsave, "%s;%s;%s\n", LaguSekarang.namaP, LaguSekarang.namaA, LaguSekarang.namaS);
 
-    // PRINT OUT Queue
-    if (length(antrian) != 0) fprintf(fsave, "%d\n", length(antrian));
-    
-    
 
+
+    // PRINT OUT Queue
+    if (!isEmpty(antrian)) {
+
+        // PRINT OUT banyak Queue
+        fprintf(fsave, "%d\n", length(antrian));
+    
+        // PRINT OUT lagu Queue 
+        for (int i = 0; i < length(antrian); i++) fprintf(fsave, "%s;%s;%s\n", antrian.buffer[i].namaP, antrian.buffer[i].namaA, antrian.buffer[i].namaS);
+    }
+
+
+
+    // PRINT OUT History
+    if (!IsEmpty(history)) {
+
+        // PRINT OUT banyak History
+        fprintf(fsave, "%d\n", Top(history) + 1);
+        
+        // PRINT OUT lagu History
+        for (int i = Top(history); i >= 0 ; i--) fprintf(fsave, "%s;%s;%s\n", history.T[i].namaP, history.T[i].namaA, history.T[i].namaS);
+    }
+
+    // PRINTOUT Playlist;
+    if (playlist.Neff != 0) {
+        
+        // PRINT OUT banyakPlaylist
+        fprintf(fsave, "%d\n", playlist.Neff);
+
+        // for (int i = 0; i < playlist.Neff; i++) {
+
+        //     fprintf(fsave, "%d\n", playlist.)
+        // }
+
+    }
+    
 }
 /* ========= *** END of save *** ========= */
