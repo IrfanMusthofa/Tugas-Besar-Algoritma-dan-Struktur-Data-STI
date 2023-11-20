@@ -35,7 +35,7 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     // ALGORITMA
 
     // Create file
-    char *savefile = ConcateChar("./src/config/", filename);
+    char *savefile = ConcateChar("../../src/config/", filename);
     fsave = fopen(savefile, "w+");
 
 
@@ -74,7 +74,8 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     }
 
     // PRINT OUT Current Song
-    if (LaguSekarang.namaP == '-') fprintf(fsave, "-\n");
+    valuetype CekKosong = "-";
+    if (IsEqualString(LaguSekarang.namaP, CekKosong)) fprintf(fsave, "-\n");
     else fprintf(fsave, "%s;%s;%s\n", LaguSekarang.namaP, LaguSekarang.namaA, LaguSekarang.namaS);
 
 
@@ -92,7 +93,7 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
 
 
     // PRINT OUT History
-    if (!IsEmpty(history)) {
+    if (!IsEmptyS(history)) {
 
         // PRINT OUT banyak History
         fprintf(fsave, "%d\n", Top(history) + 1);
