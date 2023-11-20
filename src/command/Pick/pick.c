@@ -9,7 +9,7 @@
 /* IS : list penyanyi terdefinisi */
 /* FS : akan ditampilkan list penyanyi yang ada */
 void listp(ListPenyanyi Penyanyi){
-    printf("Daftar Penyanyi :\n");
+    printf("\nDaftar Penyanyi :\n");
     for (int i = 0;i < Penyanyi.neff; i++){
         printf("%d. %s\n", i + 1, Penyanyi.A[i]);
     }
@@ -21,7 +21,7 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
     valuetype singer;
     boolean found = false;
     while(! found){
-        printf("Masukkan nama penyanyi yang dipilih : ");
+        printf("\nMasukkan nama penyanyi yang dipilih : ");
         STARTINPUTKATA();
         hapustikom(&currentWord);
         printf("\n");
@@ -63,7 +63,7 @@ valuetype pickalbum(MapAlbum Album, IDs id){
     valuetype album;
     boolean found = false;
     while(! found){
-        printf("Masukkan nama album yang dipilih : ");
+        printf("\nMasukkan nama album yang dipilih : ");
         STARTINPUTKATA();
         hapustikom(&currentWord);
         printf("\n");
@@ -109,7 +109,7 @@ valuetype picklagu(ListStatic L){
     valuetype lagu;
     boolean found = false;
     while(! found){
-        printf("Masukkan ID lagu yang dipilih : ");
+        printf("\nMasukkan ID lagu yang dipilih : ");
         STARTINPUTKATA();
         hapustikom(&currentWord);
         printf("\n");
@@ -142,7 +142,7 @@ IDs pickplaylist(ArrayDinPlaylist P){
     boolean found = false;
     IDs indexPlaylist;
     while(! found){
-        printf("Masukkan ID Playlist yang dipilih : ");
+        printf("\nMasukkan ID Playlist yang dipilih : ");
         STARTINPUTKATA();
         printf("\n");
         hapustikom(&currentWord);
