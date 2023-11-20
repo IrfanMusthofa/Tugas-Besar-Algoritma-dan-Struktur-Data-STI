@@ -10,8 +10,18 @@ valuetype pickpenyanyilist(ListPenyanyi Penyanyi)
     valuetype singer;
     boolean found = false;
     while(! found){
-        printf("Pilih penyanyi untuk melihat album mereka: ");
-        STARTINPUTKATA();
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("Pilih penyanyi untuk melihat album mereka: ");
+            STARTINPUTKATA();
+            printf("\n");
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
         hapustikom(&currentWord);
         printf("\n");
         singer = WordToString(currentWord);
@@ -38,8 +48,19 @@ valuetype pickalbumlist(MapAlbum Album, IDs id)
     valuetype album;
     boolean found = false;
     while(! found){
-        printf("Pilih album untuk melihat lagu yang ada di album : ");
-        STARTINPUTKATA();
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("Pilih album untuk melihat lagu yang ada di album : ");
+            STARTINPUTKATA();
+            printf("\n");
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
+        
         hapustikom(&currentWord);
         printf("\n");
         album = WordToString(currentWord);
@@ -84,8 +105,18 @@ void listlagudefault(MapAlbum album, SetSong song, valuetype namaA, ListStatic *
 void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 {
     listp(Penyanyi);
-    printf("\nIngin melihat album yang ada? (Y/N) : ");
-    STARTINPUTKATA(); //diinput dengan 'Y' atau 'N'
+    boolean cek = false;
+    while (!cek)
+    {
+        printf("\nIngin melihat album yang ada? (Y/N) : ");
+        STARTINPUTKATA(); //diinput dengan 'Y' atau 'N'
+        printf("\n");
+        if(currentWord.TabWord[currentWord.Length-1] == ';'){
+            cek = true;
+        } else{
+            printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+        }
+    }
     hapustikom(&currentWord);
     valuetype salah = "N";
     valuetype benar = "Y";
@@ -96,8 +127,19 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
         IDs idpenyanyi;
         //menampilkan list album
         listalbum(Penyanyi, album, namap, &idpenyanyi);
-        printf("\nIngin melihat lagu yang ada? (Y/N): ");
-        STARTINPUTKATA();
+            boolean cek = false;
+        while (!cek)
+        {
+            printf("\nIngin melihat lagu yang ada? (Y/N): ");
+            STARTINPUTKATA();
+            printf("\n");
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
+
         hapustikom(&currentWord);
         if (IsEqual(currentWord, benar))
         {

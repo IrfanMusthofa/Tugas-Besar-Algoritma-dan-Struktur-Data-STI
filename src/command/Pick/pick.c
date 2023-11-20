@@ -21,10 +21,19 @@ valuetype pickpenyanyi(ListPenyanyi Penyanyi){
     valuetype singer;
     boolean found = false;
     while(! found){
-        printf("\nMasukkan nama penyanyi yang dipilih : ");
-        STARTINPUTKATA();
-        hapustikom(&currentWord);
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("\nMasukkan Nama Penyanyi yang dipilih : ");
+            STARTINPUTKATA();
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
         printf("\n");
+        hapustikom(&currentWord);
         singer = WordToString(currentWord);
         for (int i = 0; i < Penyanyi.neff; i++){
             if (IsEqual(currentWord, Penyanyi.A[i])){
@@ -63,10 +72,19 @@ valuetype pickalbum(MapAlbum Album, IDs id){
     valuetype album;
     boolean found = false;
     while(! found){
-        printf("\nMasukkan nama album yang dipilih : ");
-        STARTINPUTKATA();
-        hapustikom(&currentWord);
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("\nMasukkan Nama Album yang dipilih : ");
+            STARTINPUTKATA();
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
         printf("\n");
+        hapustikom(&currentWord);
         album = WordToString(currentWord);
         for (int i = 0; i < Album.count; i++){
             if (IsEqual(currentWord, Album.Elements[i].valueAlbum)){
@@ -109,8 +127,17 @@ valuetype picklagu(ListStatic L){
     valuetype lagu;
     boolean found = false;
     while(! found){
-        printf("\nMasukkan ID lagu yang dipilih : ");
-        STARTINPUTKATA();
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("\nMasukkan ID lagu yang dipilih : ");
+            STARTINPUTKATA();
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
         hapustikom(&currentWord);
         printf("\n");
         int ID = WordToInt(currentWord);
@@ -142,10 +169,19 @@ IDs pickplaylist(ArrayDinPlaylist P){
     boolean found = false;
     IDs indexPlaylist;
     while(! found){
-        printf("\nMasukkan ID Playlist yang dipilih : ");
-        STARTINPUTKATA();
-        printf("\n");
+        boolean cek = false;
+        while (!cek)
+        {
+            printf("\nMasukkan ID Playlist yang dipilih : ");
+            STARTINPUTKATA();
+            if(currentWord.TabWord[currentWord.Length-1] == ';'){
+                cek = true;
+            } else{
+                printf("Jangan lupa pakai titik koma. Silakan coba lagi.\n");
+            }
+        }
         hapustikom(&currentWord);
+        printf("\n");
         int ID = WordToInt(currentWord);
         if (ID > 0 && ID <= P.Neff){
             found = true;
