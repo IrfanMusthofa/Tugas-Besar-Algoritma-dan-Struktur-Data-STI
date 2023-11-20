@@ -48,6 +48,6 @@ void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *curren
 
         CreateEmptyS(previous);
 
-        printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
-    }
+    printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
+}
 }
