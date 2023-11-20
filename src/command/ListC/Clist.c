@@ -84,7 +84,7 @@ void listlagudefault(MapAlbum album, SetSong song, valuetype namaA, ListStatic *
 void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 {
     listp(Penyanyi);
-    printf("Ingin melihat album yang ada? (Y/N) : ");
+    printf("\nIngin melihat album yang ada? (Y/N) : ");
     STARTINPUTKATA(); //diinput dengan 'Y' atau 'N'
     hapustikom(&currentWord);
     valuetype salah = "N";
@@ -96,7 +96,7 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
         IDs idpenyanyi;
         //menampilkan list album
         listalbum(Penyanyi, album, namap, &idpenyanyi);
-        printf("Ingin melihat lagu yang ada? (Y/N): ");
+        printf("\nIngin melihat lagu yang ada? (Y/N): ");
         STARTINPUTKATA();
         hapustikom(&currentWord);
         if (IsEqual(currentWord, benar))
@@ -126,7 +126,7 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 /* FS : akan ditampilkan  list playlist yang ada*/
 void Dlistplaylist(ArrayDinPlaylist B)
 {
-    printf("Daftar playlist yang kamu miliki:\n");
+    printf("\nDaftar playlist yang kamu miliki:\n");
     if (IsEmptyArrayDin(B))
     {
         printf("Kamu tidak memiliki playlist.\n");
