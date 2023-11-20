@@ -38,28 +38,46 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     char *savefile = ConcateChar("../../src/config/", filename);
     fsave = fopen(savefile, "w+");
 
+
+    // PRINT OUT Penyanyi, Album, Song
     fprintf(fsave, "%d\n", Penyanyi.neff); // Print Out Banyak Penyanyi
 
-    for (int i = 0; i < Penyanyi.neff - 1; i++) { // Loop sebanyak penyanyi
+    int p = 0; // untuk access album to setsong
+    int q = 0; // untuk access song
 
-        // Print Out Banyak Album & Penyanyi
-        int banyakAlbum = 0;
-        for (int j = 0; i < Album.count; j++) {
-            if (Album.Elements[j].IdPenyanyi == i + 1) banyakAlbum++; // Cek untuk IdPenyanyi yang sama
-        } // IdPenyanyi dihitung dari 1
+    for (int i = 0; i < Penyanyi.neff; i++) { // Loop sebanyak penyanyi
 
-        fprintf(fsave, "%d ", banyakAlbum); // Banyak Album
-        fprintf(fsave, "%s\n", Penyanyi.A[i]); // Nama Penyanyi
-
+        // Print Out banyak Album & Penyanyi ke-i
+        int banyakAlbum = JumlahAlbum(Album, i + 1);
+        fprintf(fsave, "%d %s\n", banyakAlbum, Penyanyi.A[i]); 
+    
 
 
-        // Print Out Banyak Lagu dalam Suatu Album & Nama Album
-        for (int j = 0; i < Album.count; j++) {
-            if (Album.Elements[j].IdPenyanyi == i + 1) {
+        // Loop sebanyak Album 
+        for (int j = 0; j < banyakAlbum; j++) { 
+
+            // Print Out banyak lagu dan nama album ke - j
+            int banyakLagu = JumlahLagu(Song, p + 1);
+            fprintf(fsave, "%d %s\n", banyakLagu, Album.Elements[p].valueAlbum);
+
+
+
+            // Loop sebanyak lagu
+            for (int k = 0; k < banyakLagu; k++) {
+                fprintf(fsave, "%s\n", Song.Elements[q].namalagu); // Print out lagu
                 
-            } // Cek untuk IdPenyanyi yang sama
-        } // IdPenyanyi dihitung dari 1
-    }
-}
+                q++; // Parsing SetSong.Elements
+            }
 
+            p++; // Parsing MapAlbum.Elements[p]
+        }
+    }
+
+    // PRINT OUT Current Song
+    if (LaguSekarang.namaP == '-') fprintf(fsave, "-\n");
+    else fprintf(fsave, "%s;%s;%s\n", LaguSekarang.namaP, LaguSekarang.namaA, LaguSekarang.namaS);
+
+    
+
+}
 /* ========= *** END of save *** ========= */
