@@ -114,6 +114,14 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
         // }
 
     }
+
+
+
+
+
+    // CLOSE FILE
+    fclose(fsave);
+    printf("Save file: %s berhasil disimpan!\n", filenane);
     
 }
 /* ========= *** END of save *** ========= */
