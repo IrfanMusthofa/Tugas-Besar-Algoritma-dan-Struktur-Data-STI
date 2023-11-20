@@ -66,10 +66,8 @@ void dequeue(queue *q, Song *val) {
 
 void displayQueue(queue q) {
     for (int i = 0; i <= q.idxTail; ++i) {
-        if (i > 0) {
-            printf(",");
-        }
-        printf("{%s, %s, %s}\n", q.buffer[i].namaP, q.buffer[i].namaA, q.buffer[i].namaS);
+    
+        printf("%d. %s - %s - %s\n", i+1, q.buffer[i].namaP, q.buffer[i].namaA, q.buffer[i].namaS);
     }
 }
 
