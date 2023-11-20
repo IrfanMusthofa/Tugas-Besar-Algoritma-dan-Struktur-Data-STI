@@ -4,7 +4,7 @@
 /* Mengecek current song dan queue */
 /* IS: current song dan queue terdefinisi */
 /* FS: menampilkan kondisi current song dan queue */
-void status(CurrentSong lagu, queue Q)
+void status(CurrentSong lagu, queue Q, boolean mutarplaylist, valuetype namaplaylist)
 {
     char *song = "-";
     if (IsEqualString(song, lagu.namaP) && isEmpty(Q))
@@ -23,9 +23,9 @@ void status(CurrentSong lagu, queue Q)
     }
     else if(!(IsEqualString(song, lagu.namaP)) && isEmpty(Q))
     {
-        boolean mutarplaylist;
-        valuetype namaplaylist;
-        if (!mutarplaylist)//true
+        //boolean mutarplaylist;
+        //valuetype namaplaylist;
+        if (mutarplaylist) /* true */
         {
             printf("\nCurrent Playlist: %s\n", namaplaylist);
             printf("\nNow Playing:\n");
