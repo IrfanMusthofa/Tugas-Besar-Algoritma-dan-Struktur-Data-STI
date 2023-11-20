@@ -204,7 +204,7 @@ printf(" $$$$$/$$$$/   $$$$$$$/  $$$$$$$ | $$$$$$$/ $$/   $$/  $$$$$$$ |       $
 printf("                        /  /__$$ |                    /  /__$$ |                                                  \n");
 printf("                        $$    $$/                     $$    $$/                                                   \n");
 printf("                         $$$$$$/                       $$$$$$/                                                    \n");
-printf("\n")
+printf("\n");
 printf("                                            CREATED BY GROUP 10 K-2                                               \n");   
 }
 
@@ -219,7 +219,7 @@ int main(){
     CurrentSong LaguSkrg;
 
     valuetype namaplaylist= "-";
-    boolean playlist = false;
+    boolean isplaylaylist = false;
 
     // kosongkan variabel
     MakeEmpty(&Penyanyi,&Album,&Song);

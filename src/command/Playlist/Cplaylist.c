@@ -20,7 +20,7 @@ void playlistcreate(ArrayDinPlaylist *array){
             printf("Minimal terdapat 3 karakter selain white space dalam nama playlist. Silakan coba lagi.\n");
         } 
         else if (cek.Length < 3){
-            printf("Minimal terdapat 3 karakter. Silakan coba lagi.");
+            printf("Minimal terdapat 3 karakter. Silakan coba lagi.\n");
         }
         else{
             namaPlaylist = WordToString(currentWord);
@@ -51,7 +51,7 @@ void tambahlaguplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, Arr
         int indexP = pickplaylist(*array);
         valuetype namaPl = array->playlist[indexP].namaPlaylist;
         PlaylistAddSong(array, indexP, tSong);
-        printf("Lagu dengan judul '%s' pada album %s oleh penyanyi %s berhasil ditambahkan ke dalam playlist %s.", namaL, namaA, namaP, namaPl);
+        printf("Lagu dengan judul '%s' pada album %s oleh penyanyi %s berhasil ditambahkan ke dalam playlist %s.\n", namaL, namaA, namaP, namaPl);
     }
 }
 
@@ -120,7 +120,7 @@ void removeplaylist(ArrayDinPlaylist *array, int idP, int x){
 void hapusplaylist(ArrayDinPlaylist *array){
     listplaylist(*array);
     if(IsEmptyArrayDin(*array)){
-        printf("Playlist kosong, tidak ada yang bisa dihapus.\n")
+        printf("Playlist kosong, tidak ada yang bisa dihapus.\n");
     } else {
         int idplaylist = pickplaylist(*array);
         printf("Playlist ID %d dengan judul '%s' berhasil dihapus. \n", (idplaylist + 1), array->playlist[idplaylist].namaPlaylist);
