@@ -80,6 +80,7 @@ void tambahalbumplaylist(ListPenyanyi Penyanyi, MapAlbum Album, SetSong lagu, Ar
         for(int j = 0; j < n; j++){
             PlaylistAddSong(array, indexP, listS[j]);
         }
+        printf("Album dengan judul '%s' telah ditambahkan ke dalam playlist pengguna '%s'.\n", namaA, array->playlist[indexP].namaPlaylist);
     }
 }
 
