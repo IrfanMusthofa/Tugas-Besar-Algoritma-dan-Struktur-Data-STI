@@ -40,6 +40,9 @@ boolean IsFull(Set S);
 /* Mengirim true jika Set S penuh */
 /* Ciri Set penuh : count bernilai MaxEl */
 
+int lengthSet(Set S);
+/* Mengirimkan banyaknya elemen Set S, mungkin 0 */
+
 /* ********** Operator Dasar Set ********* */
 void Insert(Set *S, infotype Elmt);
 /* Menambahkan Elmt sebagai elemen Set S. */
@@ -58,5 +61,25 @@ boolean IsMember(Set S, infotype Elmt);
 
 void PrintSet(Set S);
 /* Mencetak set S ke layar */
+
+/* ********** Primitif Dasar Set ********* */
+void Union(Set *S1, Set *S2, Set *S3);
+/* Menghasilkan S3 yang merupakan hasil gabungan S1 dan S2 */
+
+void Intersection(Set *S1, Set *S2, Set *S3);
+/* Menghasilkan S3 yang merupakan hasil irisan S1 dan S2 */
+
+void CopySet(Set Sin, Set *Sout);
+/* Menyalin Sin ke Sout */
+
+void Difference(Set *S1, Set *S2, Set *S3);
+/* Menghasilkan S3 yang merupakan hasil selisih S1 dan S2 */
+
+boolean IsSubset(Set S1, Set S2);
+/* Menghasilkan true jika S1 merupakan subset dari S2 */
+
+boolean IsEqual(Set S1, Set S2);
+/* Menghasilkan true jika S1 sama dengan S2 */
+
 
 #endif

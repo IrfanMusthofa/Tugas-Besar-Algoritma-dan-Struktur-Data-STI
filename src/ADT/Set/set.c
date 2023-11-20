@@ -119,3 +119,80 @@ void PrintSet(Set S)
     }
     printf("}\n");
 }
+
+void Union(Set *S1, Set *S2, Set *S3)
+/* Menghasilkan S3 yang merupakan hasil gabungan S1 dan S2 */
+{
+    CreateEmpty(S3);
+    int i = 0;
+    while (i < S1->Count)
+    {
+        Insert(S3, S1->Elements[i]);
+        i++;
+    }
+    i = 0;
+    while (i < S2->Count)
+    {
+        Insert(S3, S2->Elements[i]);
+        i++;
+    }
+}
+
+void Intersection(Set *S1, Set *S2, Set *S3)
+/* Menghasilkan S3 yang merupakan hasil irisan S1 dan S2 */
+{
+    CreateEmpty(S3);
+    int i = 0;
+    while (i < S1->Count)
+    {
+        if (IsMember(*S2, S1->Elements[i]))
+        {
+            Insert(S3, S1->Elements[i]);
+        }
+        i++;
+    }
+}
+
+void CopySet(Set Sin, Set *Sout)
+/* Menyalin Sin ke Sout */
+{
+    CreateEmpty(Sout);
+    int i = 0;
+    while (i < Sin.Count)
+    {
+        Insert(Sout, Sin.Elements[i]);
+        i++;
+    }
+}
+
+void Difference(Set *S1, Set *S2, Set *S3)
+/* Menghasilkan S3 yang merupakan hasil selisih S1 dan S2 */
+{
+    CreateEmpty(S3);
+    int i = 0;
+    while (i < S1->Count)
+    {
+        if (!IsMember(*S2, S1->Elements[i]))
+        {
+            Insert(S3, S1->Elements[i]);
+        }
+        i++;
+    }
+}
+
+boolean IsSubset(Set S1, Set S2)
+/* Menghasilkan true jika S1 merupakan subset dari S2 */
+{
+    int i = 0;
+    while (i < S1.Count && IsMember(S2, S1.Elements[i]))
+    {
+        i++;
+    }
+    return i == S1.Count;
+}
+
+boolean IsEqual(Set S1, Set S2)
+/* Menghasilkan true jika S1 sama dengan S2 */
+{
+    return IsSubset(S1, S2) && IsSubset(S2, S1);
+}
