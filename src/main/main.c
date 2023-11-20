@@ -213,7 +213,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         filename = WordToString(currentWord);
 
         //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
-        printf("\nData sesi kamu telah berhasil disimpan.\n");
+        printf("\nData sesi sekarang milik kamu telah berhasil disimpan.\n");
     }
     else if(IsEqual(currentWord, "N;"))
     {
