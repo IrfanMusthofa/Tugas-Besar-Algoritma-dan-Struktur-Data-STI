@@ -27,7 +27,7 @@ Queue dari lagu, Stack dari riwayat lagu,
 dan ArrayDinPlaylist dari Playlist lagu.
 
 */
-void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, queue *antrian, Stack history, ArrayDinPlaylist playlist, CurrentSong LaguSekarang) {
+void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, queue antrian, Stack history, ArrayDinPlaylist playlist, CurrentSong LaguSekarang) {
 
     // KAMUS LOKAL
     FILE *fsave;
@@ -77,6 +77,9 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     if (LaguSekarang.namaP == '-') fprintf(fsave, "-\n");
     else fprintf(fsave, "%s;%s;%s\n", LaguSekarang.namaP, LaguSekarang.namaA, LaguSekarang.namaS);
 
+    // PRINT OUT Queue
+    if (length(antrian) != 0) fprintf(fsave, "%d\n", length(antrian));
+    
     
 
 }
