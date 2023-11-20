@@ -51,7 +51,6 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
                 playplaylist(&incursong,inplaylist,&inqueue,&instack,&innamaplaylist,&inputisplayplaylist);
-                printf("%s\n",innamaplaylist);
             }
         }
 
@@ -59,10 +58,10 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"QUEUE")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
-                queuelagu(&inqueue,inpenyanyi,inalbum,insong);
+                queuelagu(&inqueue,inpenyanyi,inalbum,insong,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                queueplaylist(inplaylist,&inqueue);
+                queueplaylist(inplaylist,&inqueue,&inputisplayplaylist);
             }
             else if (IsEqual(nextinput,"SWAP")){
                 int validasi = currentWord.Length-11;
@@ -71,10 +70,10 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 if (validasi>=4){
                     id1 = WordToInt(takeword(currentWord,3));
                     id2 = WordToInt(takeword(currentWord,4));
-                    swapqueue(id1,id2,&inqueue);
+                    swapqueue(id1,id2,&inqueue,&inputisplayplaylist);
                 }
                 else{
-                    printf("mohon masukkan input yang sesuai\n");
+                    printf("mohon masukkan input yang sesuai.\n");
                 }
             }
             else if (IsEqual(nextinput,"REMOVE")){
@@ -82,12 +81,13 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 hapustikom(&currentWord);
                 if (validasi>=2){
                     int id = WordToInt(takeword(currentWord,3));
-                    removequeue(id,&inqueue);
+                    removequeue(id,&inqueue,&inputisplayplaylist);
                 }
             }
             else if (IsEqual(nextinput,"CLEAR;")){
-                clearqueue(&inqueue);
+                clearqueue(&inqueue,&inputisplayplaylist);
             }
+            else{invalid_command1();}
         }
 
         //song
