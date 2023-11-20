@@ -20,7 +20,7 @@
 #include "../command/Queue/Cqueue.h"
 #include "../command/Status/status.h"
 #include "../command/Enhance/enhance.h"
-//#include "../command/Save/save.h"
+#include "../command/Save/save.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
     // input command
@@ -180,8 +180,8 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         //save
         else if (IsEqual(input, "SAVE")){
             hapustikom(&currentWord);
-            //char *filename = WordToString(takeword(currentWord,2));
-            //call save
+            char *filename = WordToString(takeword(currentWord,2));
+            save(filename,inpenyanyi,inalbum,insong,&inqueue,instack,inplaylist,incursong);
 
         }
 
