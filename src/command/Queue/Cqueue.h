@@ -13,7 +13,7 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 /* Menambahkan lagu playlist pada queue */
 /* IS: queue, arraydinplaylist terdefinisi */
 /* FS: playlist yang dipilih, lagunya akan ditambahkan ke queue*/
-void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *namaPl,boolean* mutarplaylist);
+void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *namaPl,boolean* mutarplaylist, CurrentSong cs);
 
 /* Menukar queue */
 /* IS: queue, indeks terdefinisi */
