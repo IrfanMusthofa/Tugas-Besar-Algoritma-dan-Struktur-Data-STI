@@ -202,13 +202,15 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     //quit
     printf("\nApakah kamu ingin menyimpan data sesi sekarang (Y/N)? ");
     STARTINPUTKATA();
+    hapustikom(&currentWord);
     //printf("\n");
-    while (!(IsEqual(currentWord, "Y") || !IsEqual(currentWord, "N")))
+    while (!(IsEqual(currentWord, "Y") || IsEqual(currentWord, "N")))
     {
         printf("Input tidak valid. Silakan memasukkan 'Y;' jika ingin menyimpan data sesi sekarang dan 'N;' jika tidak ingin menyimpan data sesi sekarang (Y/N): ");
         STARTINPUTKATA();
+        hapustikom(&currentWord);
     }
-    if (IsEqual(currentWord, "Y;"))
+    if (IsEqual(currentWord, "Y"))
     {
         char *filename;
         printf("Masukkan nama file penyimpanan: ");
@@ -219,7 +221,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
         printf("\nData sesi sekarang milik kamu telah berhasil disimpan.\n");
     }
-    else if(IsEqual(currentWord, "N;"))
+    else if(IsEqual(currentWord, "N"))
     {
         printf("\nKamu keluar dari WayangWave.\n");
         printf("Dadah ^_^/\n");
@@ -300,8 +302,11 @@ int main(){
                 break;
             }
             else{
-                printf("tidak ada file dengan nama tersebut\n");
+                invalid_command3();
             }
+        }
+        if (IsEqual(input,"LIST") || IsEqual(input,"PLAY") || IsEqual(input,"QUEUE") || IsEqual(input,"SONG") || IsEqual(input,"PLAYLIST") || IsEqual(input,"STATUS;") || IsEqual(input,"SAVE") || IsEqual(input,"QUIT;")){
+            invalid_command3();
         }
 
         //invalid command
