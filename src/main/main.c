@@ -19,6 +19,7 @@
 #include "../command/Play/play.h"
 #include "../command/Queue/Cqueue.h"
 //#include "../command/Status/status.h"
+//#include "../command/Save/save.h"
 
 void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue inqueue, Stack instack, ArrayDinPlaylist inplaylist, CurrentSong incursong, valuetype innamaplaylist, boolean inputisplayplaylist){
     // input command
@@ -175,7 +176,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         //save
         else if (IsEqual(input, "SAVE")){
             hapustikom(&currentWord);
-            char *filename = WordToString(takeword(currentWord,2));
+            //char *filename = WordToString(takeword(currentWord,2));
             //call save
 
         }
@@ -206,12 +207,13 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
     if (IsEqual(currentWord, "Y;"))
     {
         char *filename;
-        queue *antrian;
         printf("Masukkan nama file penyimpanan: ");
         STARTINPUTKATA();
+        hapustikom(&currentWord);
         filename = WordToString(currentWord);
+
         //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
-        //printf("\nThank you for using WayangWave.\n");
+        printf("\nThank you for using WayangWave.\n");
         exit(0);
     }
     else if(IsEqual(currentWord, "N;"))
