@@ -35,7 +35,7 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
     // ALGORITMA
 
     // Create file
-    char *savefile = ConcateChar("../../src/config/", filename);
+    char *savefile = ConcateChar("./src/config/", filename);
     fsave = fopen(savefile, "w+");
 
 
