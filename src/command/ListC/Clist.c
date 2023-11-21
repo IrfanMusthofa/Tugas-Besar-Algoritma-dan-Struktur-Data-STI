@@ -168,7 +168,7 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 /* FS : akan ditampilkan  list playlist yang ada*/
 void Dlistplaylist(ArrayDinPlaylist B)
 {
-    printf("Daftar playlist yang kamu miliki:\n");
+    printf("\nDaftar playlist yang kamu miliki:\n");
     if (IsEmptyArrayDin(B))
     {
         printf("Kamu tidak memiliki playlist.\n");
