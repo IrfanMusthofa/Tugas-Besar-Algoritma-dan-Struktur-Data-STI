@@ -227,6 +227,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         printf("Dadah ^_^/\n");
     }
     printf("Thank you for using WayangWave :D\n");
+    printf("\n");
     exit(0);
 }
                             
