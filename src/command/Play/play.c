@@ -62,8 +62,8 @@ void playplaylist(CurrentSong *nowplay, ArrayDinPlaylist playlist, queue *curren
             enqueue(currentqueue, Info(P));
             P = Next(P);
         }
-
-        CreateEmptyS(previous);
+        // tergantung stacknya jadi dibikin kosong gak
+        // CreateEmptyS(previous);
         *namaPl = playlist.playlist[pilihan].namaPlaylist;
         *mutarplaylist = true;
         printf("Memutar playlist '%s'.\n", playlist.playlist[pilihan].namaPlaylist);
