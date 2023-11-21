@@ -2,7 +2,7 @@
 ### IF2111 Algoritma dan Struktur Data
                    
 ## Deskripsi Singkat Program WayangWave
-WayangWave merupakan sebuah program aplikasi yang berbasis _command-line interface_ yang dibuat dengan menggunakan bahasa pemrograman C, yang memungkinkan penggunanya untuk merasakan pengalaman layanan pemutaran musik. Program ini memiliki lima fungsi atau fitur utama, seperti memutar lagu, menampilkan daftar lagu, membuat dan menghapus playlist, mengatur penyusunan urutan pemutaran lagu, dan menayangkan status dari aplikasi. Selain itu, terdapat pula tambahan fitur berupa memilih playlist yang ingin ditambahkan dengan lagu-lagu random.
+WayangWave merupakan sebuah program aplikasi yang berbasis _command-line interface_ yang dibuat dengan menggunakan bahasa pemrograman C, yang memungkinkan penggunanya untuk merasakan pengalaman layanan pemutaran musik. Program ini memiliki lima fungsi atau fitur utama, seperti memutar lagu, menampilkan daftar lagu, membuat dan menghapus playlist, mengatur penyusunan urutan pemutaran lagu, dan menayangkan status dari aplikasi. Selain itu, terdapat pula tambahan fitur berupa memilih playlist yang ingin ditambahkan dengan lagu-lagu _random_.
 <br/>
 Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 
