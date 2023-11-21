@@ -46,7 +46,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 listdefault(inpenyanyi,inalbum,insong);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
-                listplaylist(inplaylist);
+                Dlistplaylist(inplaylist);
             }
             else{
                 invalid_command4();
