@@ -47,5 +47,7 @@ void help_after() //ketika perintah dipanggil setelah memasuki sesi
     printf("\n");
     printf("8. QUIT                    -> Untuk keluar dari aplikasi WayangWave.\n");
     printf("\n");
-    printf("9. HELP                    -> Untuk menampilkan daftar command yang ingin dieksekusi beserta deskripsinya.\n");
+    printf("9. ENHANCE                 -> Untuk menampilkan daftar playlist dengan tambahan lagu rekomendasi random dari penyanyi random dan album random.\n");
+    printf("/n");
+    printf("10. HELP                    -> Untuk menampilkan daftar command yang ingin dieksekusi beserta deskripsinya.\n");
 }
