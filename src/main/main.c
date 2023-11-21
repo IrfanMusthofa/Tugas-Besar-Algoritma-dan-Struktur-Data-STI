@@ -71,7 +71,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         else if (IsEqual(input,"QUEUE")){
             Word nextinput = takeword(currentWord,2);
             if (IsEqual(nextinput,"SONG;")){
-                queuelagu(&inqueue,inpenyanyi,inalbum,insong,&inputisplayplaylist);
+                queuelagu(&inqueue,inpenyanyi,inalbum,insong,&inputisplayplaylist,innamaplaylist,inplaylist);
             }
             else if (IsEqual(nextinput,"PLAYLIST;")){
                 queueplaylist(inplaylist,&inqueue,&innamaplaylist,&inputisplayplaylist,incursong);

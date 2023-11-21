@@ -8,7 +8,7 @@
 /* Menambahkan lagu pada queue */
 /* IS: queue, listpenyanyi, mapalbum, set song terdefinisi */
 /* FS: lagu yang dipilih akan ditambahkan ke queue*/
-void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu,boolean* mutarplaylist);
+void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu,boolean* mutarplaylist,valuetype namaPl, ArrayDinPlaylist listpl);
 
 /* Menambahkan lagu playlist pada queue */
 /* IS: queue, arraydinplaylist terdefinisi */

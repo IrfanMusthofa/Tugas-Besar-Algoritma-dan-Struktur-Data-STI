@@ -207,6 +207,9 @@ Word takeword(Word command, int ke)
 	int i = 0;
 	int j = 0;
 	/*ALGORITMA*/
+	while (command.TabWord[i]==' '){
+		i++;
+	}
 	while (j != ke - 1 && i < command.Length)
 	{
 		if (command.TabWord[i] == ' ')

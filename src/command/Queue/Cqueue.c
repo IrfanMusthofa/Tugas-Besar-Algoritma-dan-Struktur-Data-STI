@@ -4,11 +4,12 @@
 #include "boolean.h"
 #include "../../main/ADT.h"
 #include "../../ADT/Queue/queue.h"
+#include "../../ADT/Playlist/playlist.h"
 
 /* Menambahkan lagu pada queue */
 /* IS: queue, listpenyanyi, mapalbum, set song terdefinisi */
 /* FS: lagu yang dipilih akan ditambahkan ke queue*/
-void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu,boolean* mutarplaylist){
+void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong lagu,boolean* mutarplaylist,valuetype namaPl, ArrayDinPlaylist listpl){
     listp(penyanyi);
     valuetype pickp = pickpenyanyi(penyanyi); int idx;
     listalbum(penyanyi, map, pickp, &idx);
@@ -24,7 +25,27 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 
     enqueue(currentqueue, pilihan);
 
-    *mutarplaylist = false;
+    if (mutarplaylist){
+        int j=0;
+        for (int i=0;i<Length(listpl);i++){
+            if (IsEqualString(namaPl,listpl.playlist[i].namaPlaylist)){
+                j = i;
+                printf("%s\n", listpl.playlist[j].namaPlaylist);
+                break;
+            }
+        }
+        printf("%s\n",pilihan.namaS);
+        address P = First(listpl.playlist[j]);
+        while (P!=NULL){
+            if (IsEqualString(P->info.namaS,pilihan.namaS)){
+                break;
+            }
+            P = Next(P);
+        }
+        if (P==NULL){
+            *mutarplaylist = false;
+        }
+    }
     printf("Berhasil menambahkan lagu '%s' oleh '%s' ke queue.\n", pickl, picka);
 }
 
