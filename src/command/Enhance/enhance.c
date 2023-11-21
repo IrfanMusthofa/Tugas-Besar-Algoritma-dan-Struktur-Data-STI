@@ -4,7 +4,9 @@
 #include <stdlib.h>
 
 
-
+/* Menambahkan lagu random ke playlist */
+/* IS: Arraydin playlist terdefinisi */
+/* FS: Playlist ketambahan beberapa lagu random*/
 void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Album, SetSong song){
     printf("\n");
     if(IsEmptyArrayDin(*array)){
