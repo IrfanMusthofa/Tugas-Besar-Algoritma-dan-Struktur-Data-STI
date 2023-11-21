@@ -10,8 +10,8 @@ void songnext(CurrentSong *play, queue *currentqueue, Stack *previous){
         if(IsEqualString(play->namaP, tes)){
             printf("Tidak ada lagu yang dimainkan. Queue kosong.\n");
         } else{
-        printf("Queue kosong, memutar kembali lagu\n");
-        printf("'%s' oleh '%s'\n", play->namaS, play->namaP);
+            printf("Queue kosong, memutar kembali lagu\n");
+            printf("'%s' oleh '%s'\n", play->namaS, play->namaP);
         }
     } else{
         if(! IsEqualString(play->namaP, tes)){
