@@ -102,22 +102,28 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
         for (int i = Top(history); i >= 0 ; i--) fprintf(fsave, "%s;%s;%s\n", history.T[i].namaP, history.T[i].namaA, history.T[i].namaS);
     }
 
-    // PRINTOUT Playlist;
+    // PRINT OUT Playlist;
     if (playlist.Neff != 0) {
         
-        // PRINT OUT banyakPlaylist
+        // PRINT OUT banyak Playlist
         fprintf(fsave, "%d\n", playlist.Neff);
 
-        // for (int i = 0; i < playlist.Neff; i++) {
+        // Loop sebanyak playlist yang ada
+        for (int i = 0; i < playlist.Neff; i++) {
 
-        //     fprintf(fsave, "%d\n", playlist.)
-        // }
-
+            // PRINT OUT banyak lagu dan nama sebuah Playlist
+            int nbLagu = NbElmt(playlist.playlist[i]);
+            fprintf(fsave, "%d %s\n", nbLagu, playlist.playlist[i].namaPlaylist);
+            
+            
+            address Lagu = First(playlist.playlist[i]); // Playlist ke-i
+            // PRINT OUT lagu dalam playlist
+            for (int j = 0; j < nbLagu; j++) {
+                fprintf(fsave, "%s;%s;%s\n", Info(Lagu).namaP, Info(Lagu).namaA, Info(Lagu).namaS);
+                Lagu = Next(Lagu);
+            }
+        }
     }
-
-
-
-
 
     // CLOSE FILE
     fclose(fsave);
