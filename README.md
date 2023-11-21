@@ -76,6 +76,9 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 
 ## Save File yang Tersedia
 > src/config/1.txt
+
 > src/config/123.txt
+
 > src/config/savefile.txt
+
 > src/config/tesload.txt
