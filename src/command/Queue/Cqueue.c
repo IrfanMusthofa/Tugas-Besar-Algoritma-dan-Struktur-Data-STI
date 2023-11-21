@@ -34,7 +34,6 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
                 break;
             }
         }
-        printf("%s\n",pilihan.namaS);
         address P = First(listpl.playlist[j]);
         while (P!=NULL){
             if (IsEqualString(P->info.namaS,pilihan.namaS)){
