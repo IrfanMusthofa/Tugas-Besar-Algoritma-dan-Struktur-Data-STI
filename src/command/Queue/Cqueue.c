@@ -25,12 +25,11 @@ void queuelagu(queue* currentqueue, ListPenyanyi penyanyi, MapAlbum map, SetSong
 
     enqueue(currentqueue, pilihan);
 
-    if (mutarplaylist){
+    if (*mutarplaylist){
         int j=0;
         for (int i=0;i<Length(listpl);i++){
             if (IsEqualString(namaPl,listpl.playlist[i].namaPlaylist)){
                 j = i;
-                printf("%s\n", listpl.playlist[j].namaPlaylist);
                 break;
             }
         }
@@ -56,11 +55,7 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *nam
         printf("Tidak ada playlist yang bisa diqueue.\n");
     } else {
         int pilihan = pickplaylist(playlist); address P = playlist.playlist[pilihan].First;
-        if (isEmpty(*currentqueue) && IsEqualString(cs.namaP,"-")){
-            *namaPl = playlist.playlist[pilihan].namaPlaylist;
-            *mutarplaylist = true;
-        }
-        else if (!isEmpty(*currentqueue) && IsEqualString((*namaPl),playlist.playlist[pilihan].namaPlaylist) ) {
+        if (*mutarplaylist && IsEqualString((*namaPl),playlist.playlist[pilihan].namaPlaylist)) {
             *mutarplaylist = true;
         }
         else{
@@ -102,11 +97,10 @@ void swapqueue(int indeks1, int indeks2, queue *currentqueue){
 /* IS: queue, indeks terdefinisi */
 /* FS: queue pada urutan indeks akan terhapus apabila valid */
 // ini indeks yang dimasukkan dari command, jadi hitungan kita 1,2,3..
-void removequeue(int indeks, queue* currentqueue, boolean* mutarplaylist){
+void removequeue(int indeks, queue* currentqueue){
     if ((indeks - 1) >= 0 && (indeks - 1) <= currentqueue->idxTail){
         Song removed = currentqueue->buffer[indeks - 1];
         removeAtIndex(currentqueue, indeks - 1);
-        *mutarplaylist = false;
         printf("Lagu '%s' oleh '%s' telah dihapus dari queue!\n", removed.namaS, removed.namaP);
     }
     else {
@@ -115,9 +109,8 @@ void removequeue(int indeks, queue* currentqueue, boolean* mutarplaylist){
 }
 
 /*Mengkosongkan isi queue*/
-void clearqueue(queue *currentqueue, boolean* mutarplaylist){
+void clearqueue(queue *currentqueue){
     CreateQueue(currentqueue);
-    *mutarplaylist = false;
     printf("Queue berhasil dikosongkan.\n");
 }
 

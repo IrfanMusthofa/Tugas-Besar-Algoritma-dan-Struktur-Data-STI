@@ -24,9 +24,9 @@ void swapqueue(int indeks1, int indeks2, queue *currentqueue);
 /* IS: queue, indeks terdefinisi */
 /* FS: queue pada urutan indeks akan terhapus apabila valid */
 // ini indeks yang dimasukkan dari command, jadi hitungan kita 1,2,3..
-void removequeue(int indeks, queue* currentqueue, boolean* mutarplaylist);
+void removequeue(int indeks, queue* currentqueue);
 
 /*Mengkosongkan isi queue*/
-void clearqueue(queue *currentqueue, boolean* mutarplaylist);
+void clearqueue(queue *currentqueue);
 
 #endif

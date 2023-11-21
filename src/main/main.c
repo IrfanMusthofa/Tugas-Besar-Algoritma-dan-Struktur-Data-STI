@@ -94,11 +94,11 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 hapustikom(&currentWord);
                 if (validasi>=2){
                     int id = WordToInt(takeword(currentWord,3));
-                    removequeue(id,&inqueue,&inputisplayplaylist);
+                    removequeue(id,&inqueue);
                 }
             }
             else if (IsEqual(nextinput,"CLEAR;")){
-                clearqueue(&inqueue,&inputisplayplaylist);
+                clearqueue(&inqueue);
             }
             else{invalid_command4();}
         }
