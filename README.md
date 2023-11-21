@@ -41,7 +41,7 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
          "make compile"
 
      - Setelah program selesai di-compile, ketik:
-       
+       <br/>
          "./main"
      
 - Program WayangWave pun telah dapat dijalankan
