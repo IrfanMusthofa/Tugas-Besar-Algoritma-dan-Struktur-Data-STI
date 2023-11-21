@@ -17,4 +17,4 @@ run: test
 	./main
 
 clean:
-	-rm -f *.o main
+	-rm -f *.o WayangWave
