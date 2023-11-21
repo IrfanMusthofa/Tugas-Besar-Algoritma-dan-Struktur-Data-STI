@@ -15,7 +15,7 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 
 ## Cara Kompilasi Program
 ### Windows
-#### - Pakai chocolatey
+#### - Menggunakan chocolatey
 - Program dapat dijalankan di command prompt Anda dengan memiliki package make. <br/>
   --> Package make dapat diperoleh dengan menginstall chocolatey terlebih dahulu. <br/>
   --> Untuk langkah-langkah menginstall chocolatey dapat mengikuti link berikut:
@@ -27,7 +27,7 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
   <br/>
   2.) Untuk menginstall package make:
       <br/>
-      choco install make
+        "choco install make"
       <br/>
   3.) Tunggu hingga package make selesai diinstall
   <br/>
@@ -45,9 +45,9 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
        <br/>
          "./main"
      
-- Program WayangWave pun telah dapat dijalankan
+- Program WayangWave pun telah dapat dijalankan pada perangkat Anda
   
-#### - Pakai chocolatey
+#### - Menggunakan WSL
 
 ### MAC
 
