@@ -9,6 +9,7 @@
 /* FS: Playlist ketambahan beberapa lagu random*/
 void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Album, SetSong song){
     printf("\n");
+    srand(time(NULL));
     if(IsEmptyArrayDin(*array)){
         printf("Playlist kosong, tidak ada yang bisa dienhance\n");
     } else{
@@ -41,7 +42,7 @@ void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Al
             int d = 1; // buat numbering aja
             for (int a = 0; a < nlagurandom; a++){
                 // ngerandomin index yang bakal dimasukkin ke playlist
-                int nilaiAcak = rand() % ((n-1) - 0 + 0) + 0;
+                int nilaiAcak = rand() % ((n-1) - 0 + 1) + 0;
                 // dimasukkin ke playlist kalau gak ada lagunya
                 if (!SearchLaguPlaylist(array->playlist[idxP], listlaguconfig[nilaiAcak].namaS)){
                     if(d == 1){
@@ -59,3 +60,4 @@ void enhanceplaylist(ArrayDinPlaylist *array, ListPenyanyi Penyanyi, MapAlbum Al
         }
     }
 }
+
