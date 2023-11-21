@@ -7,21 +7,25 @@ void invalid_command1()
     printf("Command tidak diketahui!\n");
 }
 
-/* Mengeksekusi sesudah memasuki sesi*/
+/*command tidak ada tikom*/
 void invalid_command2()
 {
-    printf("Command tidak bisa dieksekusi!\n");
+    printf("Command tidak bisa dieksekusi, jangan lupa setiap command diakhiri dengan titik koma (;).\n");
 }
 
-/*Mengeksekusi sebelum memasuki sesi*/
+/*Mengeksekusi sebelum/sesudah memasuki sesi*/
 void invalid_command3()
 {
     printf("Command tidak bisa dieksekusi!\n");
 }
 void invalid_command4(){
-    printf("command tidak sesuai, masukkan command \"HELP;\" untuk melihat list command\n");
+    printf("Command tidak sesuai, masukkan command \"HELP;\" untuk melihat list command.\n");
 }
 
 void invalid_command5(){
-    printf("command tidak deketahui, masukkan command \"HELP;\" untuk melihat list command\n");
+    printf("Command tidak deketahui, masukkan command \"HELP;\" untuk melihat list command\n");
+}
+
+void invalid_command6(){
+    printf("Tidak ada file dengan nama tersebut.\n");
 }

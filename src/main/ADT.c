@@ -27,7 +27,7 @@ void MakeEmpty(ListPenyanyi *Penyanyi,MapAlbum *Album,SetSong *Song){
 void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file){
     printf("init");
     STARTWORD(file);
-    printf("ialize\n");
+    printf("ialize..\n");
     int jlhPenyanyi=WordToInt(currentWord);
 
     Penyanyi->neff = jlhPenyanyi; // Banyak Penyanyi

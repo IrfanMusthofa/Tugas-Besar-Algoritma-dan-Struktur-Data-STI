@@ -36,7 +36,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
 
         //invalid comm 2
         else if (IsEqual(input,"START;") || IsEqual(input,"LOAD")){
-            invalid_command2();
+            invalid_command3();
         }
 
         //list
@@ -77,24 +77,37 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 queueplaylist(inplaylist,&inqueue,&innamaplaylist,&inputisplayplaylist,incursong);
             }
             else if (IsEqual(nextinput,"SWAP")){
-                int validasi = currentWord.Length-11;
-                hapustikom(&currentWord);
-                int id1 = -99, id2 = -99;
-                if (validasi>=4){
-                    id1 = WordToInt(takeword(currentWord,3));
-                    id2 = WordToInt(takeword(currentWord,4));
-                    swapqueue(id1,id2,&inqueue);
+                if (currentWord.TabWord[currentWord.Length-1]==';'){
+                    int validasi = currentWord.Length-11;
+                    hapustikom(&currentWord);
+                    int id1 = -99, id2 = -99;
+                    if (validasi>=4){
+                        id1 = WordToInt(takeword(currentWord,3));
+                        id2 = WordToInt(takeword(currentWord,4));
+                        swapqueue(id1,id2,&inqueue);
+                    }
+                    else{
+                        invalid_command4();
+                    }
                 }
                 else{
-                    invalid_command4();
+                    invalid_command2();
                 }
             }
             else if (IsEqual(nextinput,"REMOVE")){
-                int validasi = currentWord.Length-13;
-                hapustikom(&currentWord);
-                if (validasi>=2){
-                    int id = WordToInt(takeword(currentWord,3));
-                    removequeue(id,&inqueue);
+                if (currentWord.TabWord[currentWord.Length-1]==';'){
+                    int validasi = currentWord.Length-13;
+                    hapustikom(&currentWord);
+                    if (validasi>=2){
+                        int id = WordToInt(takeword(currentWord,3));
+                        removequeue(id,&inqueue);
+                    }
+                    else{
+                        invalid_command4();
+                    }
+                }
+                else{
+                    invalid_command2();
                 }
             }
             else if (IsEqual(nextinput,"CLEAR;")){
@@ -136,30 +149,41 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 }
             }
             else if (IsEqual(nextinput,"SWAP")){
-                int validasi = currentWord.Length-14;
-                hapustikom(&currentWord);
-                int IDplaylist = -99, x = -99,y=-99;
-                if(validasi >= 6){
-                    IDplaylist = WordToInt(takeword(currentWord,3));
-                    x = WordToInt(takeword(currentWord,4));
-                    y = WordToInt(takeword(currentWord,5));
-                    swapplaylist(&inplaylist,IDplaylist,x,y);
+                if (currentWord.TabWord[currentWord.Length-1]==';'){
+                    int validasi = currentWord.Length-14;
+                    hapustikom(&currentWord);
+                    int IDplaylist = -99, x = -99,y=-99;
+                    if(validasi >= 6){
+                        IDplaylist = WordToInt(takeword(currentWord,3));
+                        x = WordToInt(takeword(currentWord,4));
+                        y = WordToInt(takeword(currentWord,5));
+                        swapplaylist(&inplaylist,IDplaylist,x,y);
+                    }
+                    else{
+                        invalid_command4();
+                    }
                 }
                 else{
-                    invalid_command4();
+                    invalid_command2();
                 }
             }
             else if (IsEqual(nextinput,"REMOVE")){
-                int validasi = currentWord.Length-16;
-                int IDplaylist = -99, x = -99;
-                if (validasi >=4){
-                    IDplaylist = WordToInt(takeword(currentWord,3));
-                    x = WordToInt(takeword(currentWord,4));
-                    removeplaylist(&inplaylist,IDplaylist,x);
+                if (currentWord.TabWord[currentWord.Length-1]==';'){
+                    int validasi = currentWord.Length-16;
+                    hapustikom(&currentWord);
+                    int IDplaylist = -99, x = -99;
+                    if (validasi >=4){
+                        IDplaylist = WordToInt(takeword(currentWord,3));
+                        x = WordToInt(takeword(currentWord,4));
+                        removeplaylist(&inplaylist,IDplaylist,x);
+                    }
+                    else{
+                        invalid_command4();
+                    }
                 }
                 else{
-                    invalid_command4();
-                }
+                    invalid_command2();
+                }                
             }
             else if (IsEqual(nextinput,"DELETE;")){
                 hapusplaylist(&inplaylist);
@@ -179,10 +203,14 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
 
         //save
         else if (IsEqual(input, "SAVE")){
-            hapustikom(&currentWord);
-            char *filename = WordToString(takeword(currentWord,2));
-            save(filename,inpenyanyi,inalbum,insong,inqueue,instack,inplaylist,incursong);
-
+            if (currentWord.TabWord[currentWord.Length-1]==';'){
+                hapustikom(&currentWord);
+                char *filename = WordToString(takeword(currentWord,2));
+                save(filename,inpenyanyi,inalbum,insong,inqueue,instack,inplaylist,incursong);
+            }
+            else{
+                invalid_command2();
+            }
         }
 
         //help
@@ -291,22 +319,27 @@ int main(){
 
         // load
         else if (IsEqual(input,"LOAD")){
-            hapustikom(&currentWord);
-            char *input2 = WordToString(takeword(currentWord,2));
-            char *filename = ConcateChar("src/config/",input2);
+            if (currentWord.TabWord[currentWord.Length-1]==';'){
+                hapustikom(&currentWord);
+                char *input2 = WordToString(takeword(currentWord,2));
+                char *filename = ConcateChar("src/config/",input2);
 
-            if (Checkload(filename)){
-                printf("Load file %s..\n",input2);
-                Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
-                printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
-                mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
-                break;
+                if (Checkload(filename)){
+                    printf("Load file %s..\n",input2);
+                    Load(&Penyanyi,&Album,&Song,filename,&antrian,&history,&playlist,&LaguSkrg);
+                    printf("Berhasil masuk kedalam aplikasi, selamat menikmati!\n");
+                    mainafter(Penyanyi,Album,Song,antrian,history,playlist,LaguSkrg,namaplaylist,isplayplaylist);
+                    break;
+                }
+                else{
+                    invalid_command6();
+                }
             }
             else{
-                invalid_command3();
+                invalid_command2();
             }
         }
-        if (IsEqual(input,"LIST") || IsEqual(input,"PLAY") || IsEqual(input,"QUEUE") || IsEqual(input,"SONG") || IsEqual(input,"PLAYLIST") || IsEqual(input,"STATUS;") || IsEqual(input,"SAVE") || IsEqual(input,"QUIT;")){
+        else if (IsEqual(input,"LIST") || IsEqual(input,"PLAY") || IsEqual(input,"QUEUE") || IsEqual(input,"SONG") || IsEqual(input,"PLAYLIST") || IsEqual(input,"STATUS;") || IsEqual(input,"SAVE") || IsEqual(input,"QUIT;")){
             invalid_command3();
         }
 

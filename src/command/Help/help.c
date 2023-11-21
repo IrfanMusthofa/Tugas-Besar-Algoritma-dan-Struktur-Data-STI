@@ -41,7 +41,7 @@ void help_after() //ketika perintah dipanggil setelah memasuki sesi
     printf("                           -> Untuk menghapus lagu urutan n pada playlist <idplaylist>.\n");
     printf("            DELETE         -> Untuk melakukan penghapusan suatu existing playlist dalam daftar playlist pengguna.\n");
     printf("\n");
-    printf("6. STATUS                  -> Untuk menampilkan lagu yang sedang dimainkan beserta Queue song yang ada dan dari playlist mana lagu itu diputar.\n");
+    printf("6. STATUS                  -> Untuk menampilkan lagu yang sedang dimainkan, queue song saat ini dan dari playlist mana lagu itu diputar.\n");
     printf("\n");
     printf("7. SAVE <namafile.txt>     -> Untuk menyimpan state aplikasi terbaru ke dalam suatu file.\n");
     printf("\n");
