@@ -219,7 +219,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         hapustikom(&currentWord);
         filename = WordToString(currentWord);
 
-        //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
+        save(filename,inpenyanyi,inalbum,insong,inqueue,instack,inplaylist,incursong);
         printf("\nData sesi sekarang milik kamu telah berhasil disimpan.\n");
         printf("Thank you for using WayangWave :D\n");
     }

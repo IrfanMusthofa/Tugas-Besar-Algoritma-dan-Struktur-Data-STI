@@ -47,7 +47,7 @@ typedef struct
 // stack buat history
 typedef struct
 {
-    Song T[NMAX];
+    Song T[NMAX*3];
     int TOP;
 } Stack;
 
@@ -55,7 +55,7 @@ typedef struct
 // queue buat queue
 typedef struct
 {
-    Song buffer [NMAX];
+    Song buffer [NMAX*3];
     int idxTail;
 } queue;
 
