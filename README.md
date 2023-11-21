@@ -23,12 +23,12 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
   
 - Jika chocolatey telah terinstall pada PATH dalam Environmental Variables Device Anda, dapat dilakukan prosedur berikut:
   <br/>
-  1.) Buka Windows powershell dalam device Anda dan run as administrator
+  1.) Buka Windows Powershell dalam device Anda dan run as administrator
   <br/>
   2.) Untuk menginstall package make:
-  <br/>
+      <br/>
       choco install make
-  <br/>
+      <br/>
   3.) Tunggu hingga package make selesai diinstall
   <br/>
   4.) Setelah package make terinstall, Anda dapat mengompilasi program dengan menjalankan prosedur berikut:
