@@ -6,7 +6,7 @@ WayangWave merupakan sebuah program aplikasi yang berbasis _command-line interfa
 <br/>
 Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 
-## Nama Anggota Kelompok 10 K-02 "Riza":
+## Nama Anggota Kelompok 10 K-02 "Kelompok Pak Riza Lovers":
 **1. Muhammad Rifa Ansyari (18222004) <br/>
 2. Irfan Musthofa (18222056) <br/>
 3. Taufiq Ramadhan Ahmad (18222060) <br/>
