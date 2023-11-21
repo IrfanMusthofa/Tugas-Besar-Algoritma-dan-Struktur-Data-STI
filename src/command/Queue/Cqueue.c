@@ -60,7 +60,10 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *nam
             *namaPl = playlist.playlist[pilihan].namaPlaylist;
             *mutarplaylist = true;
         }
-        else {
+        else if (!isEmpty(*currentqueue) && IsEqualString((*namaPl),playlist.playlist[pilihan].namaPlaylist) ) {
+            *mutarplaylist = true;
+        }
+        else{
             *mutarplaylist = false;
         }
         while (P != NULL){
@@ -74,10 +77,9 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *nam
 /* Menukar queue */
 /* IS: queue, indeks terdefinisi */
 /* FS: queue pada urutan indeks 1,2 akan ditukar apabila valid */
-void swapqueue(int indeks1, int indeks2, queue *currentqueue, boolean* mutarplaylist){
+void swapqueue(int indeks1, int indeks2, queue *currentqueue){
     if ((indeks1 - 1 >= 0) && (indeks1 - 1 <= currentqueue->idxTail) && (indeks2 - 1 >= 0) && (indeks2 - 1 <= currentqueue->idxTail) && (indeks1 != indeks2)){
         swapQueueElements(currentqueue, (indeks1-1), (indeks2-1));
-        *mutarplaylist = false;
         printf("Lagu '%s' berhasil ditukar dengan '%s'\n", currentqueue->buffer[indeks1 - 1].namaS, currentqueue->buffer[indeks2 - 1].namaS);
     }
     else {

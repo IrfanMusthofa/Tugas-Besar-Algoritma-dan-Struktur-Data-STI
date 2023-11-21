@@ -18,7 +18,7 @@ void queueplaylist(ArrayDinPlaylist playlist, queue* currentqueue,valuetype *nam
 /* Menukar queue */
 /* IS: queue, indeks terdefinisi */
 /* FS: queue pada urutan indeks 1,2 akan ditukar apabila valid */
-void swapqueue(int indeks1, int indeks2, queue *currentqueue, boolean* mutarplaylist);
+void swapqueue(int indeks1, int indeks2, queue *currentqueue);
 
 /* Menghapuskan queue pada urutan tertentu */
 /* IS: queue, indeks terdefinisi */

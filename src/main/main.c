@@ -83,7 +83,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
                 if (validasi>=4){
                     id1 = WordToInt(takeword(currentWord,3));
                     id2 = WordToInt(takeword(currentWord,4));
-                    swapqueue(id1,id2,&inqueue,&inputisplayplaylist);
+                    swapqueue(id1,id2,&inqueue);
                 }
                 else{
                     invalid_command4();
