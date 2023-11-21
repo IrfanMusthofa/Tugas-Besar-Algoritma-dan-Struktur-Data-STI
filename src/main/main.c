@@ -209,7 +209,7 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
         printf("Input tidak valid. Silakan memasukkan 'Y' jika ingin menyimpan data sesi sekarang dan 'N' jika tidak ingin menyimpan data sesi sekarang (Y/N): ");
         STARTINPUTKATA();
         hapustikom(&currentWord);
-        Word YN = takeword(currentWord,1);
+        YN = takeword(currentWord,1);
     }
     if (IsEqual(YN, "Y"))
     {
