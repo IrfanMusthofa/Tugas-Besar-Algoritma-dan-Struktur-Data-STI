@@ -14,11 +14,11 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 5. Farah Aulia (18222096)**
 
 ## Cara Kompilasi Program
-### Windows
+### Untuk Windows
 #### - Menggunakan chocolatey
-- Program dapat dijalankan di command prompt Anda dengan memiliki package make. <br/>
-  --> Package make dapat diperoleh dengan menginstall chocolatey terlebih dahulu. <br/>
-  --> Untuk langkah-langkah menginstall chocolatey dapat mengikuti link berikut:
+- Program dapat dijalankan di command prompt Anda dengan memiliki package make <br/>
+  --> Package make dapat diperoleh dengan menginstall chocolatey terlebih dahulu <br/>
+  --> Untuk langkah-langkah menginstall chocolatey dapat mengikuti dari link berikut ini:
       https://chocolatey.org/install
   
 - Jika chocolatey telah terinstall pada PATH dalam Environmental Variables Device Anda, dapat dilakukan prosedur berikut:
@@ -45,9 +45,27 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
        <br/>
          "./main"
      
-- Program WayangWave pun telah dapat dijalankan pada perangkat Anda
+- Program WayangWave pun telah dapat dijalankan pada perangkat terminal Anda
   
 #### - Menggunakan WSL
+- Program dapat dijalankan di command prompt atau terminal Anda dengan memiliki package make <br/>
+  --> Package make dapat diperoleh dengan menginstall Windows Subsystem for Linux (WSL) terlebih dahulu <br/>
+  --> Untuk langkah-langkah menginstall WSL dapat mengikuti dari link berikut ini: <br/>
+      https://learn.microsoft.com/id-id/windows/wsl/install-manual atau https://learn.microsoft.com/id-id/windows/wsl/install
 
-### MAC
+- Jika telah terinstall, masuk ke folder Tugas-Besar_Algoritma-dan-Struktur-Data_STI yang telah Anda download atau clone dari github repository
+  
+- Buka windows terminal dalam folder tersebut atau buka terminal baru di aplikasi VS Code
+  
+- Untuk dapat mengompilasi program ini, ketik:
+       <br/>
+         "make"
 
+- Tunggu program selesai di-compile
+
+- Program WayangWave pun telah dapat dijalankan pada perangkat terminal Anda
+  
+### Untuk MAC & Linux
+- Masuk ke folder Tugas-Besar_Algoritma-dan-Struktur-Data_STI yang telah Anda download atau clone dari github repository
+- Buka terminal dalam folder tersebut atau buka terminal baru di aplikasi VS Code
+- Program WayangWave pun telah dapat langsung dijalankan pada perangkat terminal Anda
