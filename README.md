@@ -69,3 +69,13 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 - Masuk ke folder Tugas-Besar_Algoritma-dan-Struktur-Data_STI yang telah Anda download atau clone dari github repository
 - Buka terminal dalam folder tersebut atau buka terminal baru di aplikasi VS Code
 - Program WayangWave pun telah dapat langsung dijalankan dengan mengetik "./WayangWave" pada perangkat terminal Anda
+
+
+## File Konfigurasi yang Tersedia
+> src/config/config.txt
+
+## Save File yang Tersedia
+> src/config/1.txt
+> src/config/123.txt
+> src/config/savefile.txt
+> src/config/tesload.txt
