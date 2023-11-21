@@ -168,13 +168,13 @@ void listdefault(ListPenyanyi Penyanyi, MapAlbum album, SetSong song)
 /* FS : akan ditampilkan  list playlist yang ada*/
 void Dlistplaylist(ArrayDinPlaylist B)
 {
+    printf("\nDaftar playlist yang kamu miliki:\n");
     if (IsEmptyArrayDin(B))
     {
         printf("Kamu tidak memiliki playlist.\n");
     }
     else
     {
-        printf("\nDaftar playlist yang kamu miliki:\n");
         for (int i = 0;i < B.Neff; i++){
             printf("    %d. %s\n", i + 1, B.playlist[i].namaPlaylist);
         }
