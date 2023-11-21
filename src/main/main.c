@@ -221,14 +221,13 @@ void mainafter(ListPenyanyi inpenyanyi, MapAlbum inalbum, SetSong insong, queue 
 
         //save(filename,Penyanyi,Album,Song,antrian,history,playlist,LaguSekarang);
         printf("\nData sesi sekarang milik kamu telah berhasil disimpan.\n");
+        printf("Thank you for using WayangWave :D\n");
     }
     else if(IsEqual(YN, "N"))
     {
         printf("\nKamu keluar dari WayangWave.\n");
         printf("Dadah ^_^/\n");
     }
-    printf("Thank you for using WayangWave :D\n");
-    printf("\n");
     exit(0);
 }
                             
