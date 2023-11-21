@@ -7,11 +7,11 @@ WayangWave merupakan sebuah program aplikasi yang berbasis _command-line interfa
 Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 
 ## Nama Anggota Kelompok 10 K-02 "A Magic Tea Pot":
-**1. Muhammad Rifa Ansyari (18222004) <br/>
-2. Irfan Musthofa (18222056) <br/>
-3. Taufiq Ramadhan Ahmad (18222060) <br/>
-4. Kerlyn Deslia Andeskar (18222090) <br/>
-5. Farah Aulia (18222096)**
+**1. Muhammad Rifa Ansyari     (18222004) <br/>
+2. Irfan Musthofa              (18222056) <br/>
+3. Taufiq Ramadhan Ahmad       (18222060) <br/>
+4. Kerlyn Deslia Andeskar      (18222090) <br/>
+5. Farah Aulia                 (18222096)**
 
 ## Cara Kompilasi Program
 ### Untuk Windows
@@ -68,4 +68,4 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 ### Untuk MAC & Linux
 - Masuk ke folder Tugas-Besar_Algoritma-dan-Struktur-Data_STI yang telah Anda download atau clone dari github repository
 - Buka terminal dalam folder tersebut atau buka terminal baru di aplikasi VS Code
-- Program WayangWave pun telah dapat langsung dijalankan pada perangkat terminal Anda
+- Program WayangWave pun telah dapat langsung dijalankan dengan mengetik "./WayangWave" pada perangkat terminal Anda
