@@ -81,10 +81,10 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
 
 
     // PRINT OUT Queue
-    if (!isEmpty(antrian)) {
 
-        // PRINT OUT banyak Queue
-        fprintf(fsave, "%d\n", length(antrian));
+    // PRINT OUT banyak Queue
+    fprintf(fsave, "%d\n", length(antrian));
+    if (!isEmpty(antrian)) {
     
         // PRINT OUT lagu Queue 
         for (int i = 0; i < length(antrian); i++) fprintf(fsave, "%s;%s;%s\n", antrian.buffer[i].namaP, antrian.buffer[i].namaA, antrian.buffer[i].namaS);
@@ -93,21 +93,21 @@ void save(char *filename, ListPenyanyi Penyanyi, MapAlbum Album, SetSong Song, q
 
 
     // PRINT OUT History
-    if (!IsEmptyS(history)) {
 
-        // PRINT OUT banyak History
-        fprintf(fsave, "%d\n", Top(history) + 1);
-        
+    // PRINT OUT banyak History
+    fprintf(fsave, "%d\n", Top(history) + 1);
+    if (!IsEmptyS(history)) {
+ 
         // PRINT OUT lagu History
         for (int i = Top(history); i >= 0 ; i--) fprintf(fsave, "%s;%s;%s\n", history.T[i].namaP, history.T[i].namaA, history.T[i].namaS);
     }
 
     // PRINT OUT Playlist;
+
+    // PRINT OUT banyak Playlist
+    fprintf(fsave, "%d\n", playlist.Neff);
     if (playlist.Neff != 0) {
         
-        // PRINT OUT banyak Playlist
-        fprintf(fsave, "%d\n", playlist.Neff);
-
         // Loop sebanyak playlist yang ada
         for (int i = 0; i < playlist.Neff; i++) {
 
