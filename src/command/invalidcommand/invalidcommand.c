@@ -23,7 +23,7 @@ void invalid_command4(){
 }
 
 void invalid_command5(){
-    printf("Command tidak deketahui, masukkan command \"HELP;\" untuk melihat list command\n");
+    printf("Command tidak diketahui, masukkan command \"HELP;\" untuk melihat list command\n");
 }
 
 void invalid_command6(){
