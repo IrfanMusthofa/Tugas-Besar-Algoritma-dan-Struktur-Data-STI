@@ -82,3 +82,118 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 > src/config/savefile.txt
 
 > src/config/tesload.txt
+
+## Struktur Program
+Tugas-Besar_Algoritma-dan-Struktur-Data_STI
+ ┣ docs
+ ┃ ┣ IF2111_TB_02_10.pdf
+ ┃ ┗ Kelompok10_K02_A Magic Teapot.pdf
+ ┣ src
+ ┃ ┣ ADT
+ ┃ ┃ ┣ List
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driverl.c
+ ┃ ┃ ┃ ┣ list.c
+ ┃ ┃ ┃ ┗ list.h
+ ┃ ┃ ┣ MesinKalimat
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driverkata.c
+ ┃ ┃ ┃ ┣ file.txt
+ ┃ ┃ ┃ ┣ mesinkarakter.c
+ ┃ ┃ ┃ ┣ mesinkarakter.h
+ ┃ ┃ ┃ ┣ mesinkata.c
+ ┃ ┃ ┃ ┗ mesinkata.h
+ ┃ ┃ ┣ Playlist
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driver.c
+ ┃ ┃ ┃ ┣ playlist.c
+ ┃ ┃ ┃ ┗ playlist.h
+ ┃ ┃ ┣ Queue
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driver.c
+ ┃ ┃ ┃ ┣ queue.c
+ ┃ ┃ ┃ ┗ queue.h
+ ┃ ┃ ┣ Set
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driverset.c
+ ┃ ┃ ┃ ┣ set.c
+ ┃ ┃ ┃ ┗ set.h
+ ┃ ┃ ┣ Stack
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driverstack.c
+ ┃ ┃ ┃ ┣ stack.c
+ ┃ ┃ ┃ ┗ stack.h
+ ┃ ┃ ┣ map
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ drivermap.c
+ ┃ ┃ ┃ ┣ map.c
+ ┃ ┃ ┃ ┗ map.h
+ ┃ ┃ ┗ .DS_Store
+ ┃ ┣ command
+ ┃ ┃ ┣ Enhance
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ enhance.c
+ ┃ ┃ ┃ ┗ enhance.h
+ ┃ ┃ ┣ Help
+ ┃ ┃ ┃ ┣ help.c
+ ┃ ┃ ┃ ┗ help.h
+ ┃ ┃ ┣ ListC
+ ┃ ┃ ┃ ┣ Clist.c
+ ┃ ┃ ┃ ┣ Clist.h
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┗ driverlistC.c
+ ┃ ┃ ┣ Load
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ load.c
+ ┃ ┃ ┃ ┗ load.h
+ ┃ ┃ ┣ Pick
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ pick.c
+ ┃ ┃ ┃ ┗ pick.h
+ ┃ ┃ ┣ Play
+ ┃ ┃ ┃ ┣ driverPlay.c
+ ┃ ┃ ┃ ┣ play.c
+ ┃ ┃ ┃ ┗ play.h
+ ┃ ┃ ┣ Playlist
+ ┃ ┃ ┃ ┣ Cplaylist.c
+ ┃ ┃ ┃ ┣ Cplaylist.h
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┗ main2.c
+ ┃ ┃ ┣ Queue
+ ┃ ┃ ┃ ┣ Cqueue.c
+ ┃ ┃ ┃ ┣ Cqueue.h
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┗ driverQ.c
+ ┃ ┃ ┣ Save
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ save.c
+ ┃ ┃ ┃ ┗ save.h
+ ┃ ┃ ┣ Song
+ ┃ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┃ ┣ driverS.c
+ ┃ ┃ ┃ ┣ song.c
+ ┃ ┃ ┃ ┗ song.h
+ ┃ ┃ ┣ Status
+ ┃ ┃ ┃ ┣ status.c
+ ┃ ┃ ┃ ┗ status.h
+ ┃ ┃ ┣ invalidcommand
+ ┃ ┃ ┃ ┣ invalidcommand.c
+ ┃ ┃ ┃ ┗ invalidcommand.h
+ ┃ ┃ ┗ .DS_Store
+ ┃ ┣ config
+ ┃ ┃ ┣ .DS_Store
+ ┃ ┃ ┣ 1.txt
+ ┃ ┃ ┣ 123.txt
+ ┃ ┃ ┣ config.txt
+ ┃ ┃ ┣ savefile.txt
+ ┃ ┃ ┗ tesload.txt
+ ┃ ┣ main
+ ┃ ┃ ┣ ADT.c
+ ┃ ┃ ┣ ADT.h
+ ┃ ┃ ┣ boolean.h
+ ┃ ┃ ┗ main.c
+ ┃ ┗ .DS_Store
+ ┣ .DS_Store
+ ┣ README.md
+ ┣ WayangWave
+ ┗ makefile
