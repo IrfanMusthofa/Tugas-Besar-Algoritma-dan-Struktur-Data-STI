@@ -81,9 +81,19 @@ void STARTCOM(ListPenyanyi *Penyanyi, MapAlbum *Album, SetSong *Song, char *file
                 valuetype namaL = WordToString(currentWord);
 
                 // Masukkan ke Song
-                Song->Elements[count2].Idalbum = count1;
-                Song->Elements[count2].namalagu = namaL;
-                count2++;
+                boolean foundl = false;
+                for (int l = 0; l<count2;l++){
+                    if (IsEqualString(Song->Elements[l].namalagu,namaL))
+                    {
+                        foundl = true;
+                        break;
+                    }
+                }
+                if (!foundl){
+                    Song->Elements[count2].Idalbum = count1;
+                    Song->Elements[count2].namalagu = namaL;
+                    count2++;
+                }
             }
         }
     }
