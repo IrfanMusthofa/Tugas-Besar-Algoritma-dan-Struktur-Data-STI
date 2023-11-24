@@ -3,8 +3,8 @@
 
 int main(){
     Stack testing;
-    CreateEmpty(&testing);
-    if (IsEmpty(testing)){
+    CreateEmptyS(&testing);
+    if (IsEmptyS(testing)){
         printf("stack testing kosong\n");
     }
     Song input;

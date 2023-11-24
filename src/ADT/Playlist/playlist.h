@@ -6,6 +6,7 @@
 /*INCLUDE*/
 #include "boolean.h"
 #include "../../main/ADT.h"
+#include "../MesinKalimat/mesinkata.h"
 
 #define Lagu(P) (P)->info.namaS
 #define Album(P) (P)->info.namaA

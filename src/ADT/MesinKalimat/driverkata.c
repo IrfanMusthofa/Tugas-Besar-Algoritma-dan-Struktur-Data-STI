@@ -9,7 +9,6 @@ int main()
 	
 	/* Tes Mesin Karakter */
 	printf("Tes Mesin Karakter\n");
-	printf("----------------------\n");
 
 	printf("Tes START dari file\n");
 	START(file);
@@ -31,9 +30,7 @@ int main()
 	printf("----------------------\n\n");
 
 	/* Tes Mesin Kata */
-	printf("----------------------\n");
 	printf("Tes Mesin Kata\n");
-	printf("----------------------\n");
 
 	printf("Tes STARTWORD dari file\n");
 	STARTWORD(file);
@@ -47,7 +44,7 @@ int main()
 	Word w1 = takenonspace(currentWord);
 	char *kata2 = WordToString(w1);
 	printf("kata2 = %s\n", kata2);
-	printf("----------------------\n");
+
 
 	ADVWORD();
 	printf("Tes WordToInt dari currentWord\n");
@@ -55,7 +52,7 @@ int main()
 	char *kata3 = WordToString(currentWord);
 	printf("kata sekarang = %s\n", kata3);
 	printf("kata (dalam format int) = %d\n", kata_int);
-	printf("----------------------\n");
+
 
 	printf("Tes ADVWORD\n");
 	while (!EOP)
@@ -64,11 +61,11 @@ int main()
 		kata = WordToString(currentWord);
 		printf("kata = %s\n", kata);
 	}
-	printf("----------------------\n");
+
 
 	printf("Tes STARTINPUTKATA dari inputan pengguna\n");
 	STARTINPUTKATA();
-	printf("----------------------\n");
+
 
 	printf("Tes IsEqual\n");
 	printf("Tes apakah currentWord dan kata sama.\n");
@@ -84,13 +81,12 @@ int main()
 	kata = WordToString(currentWord);
 	printf("kata = %s\n", kata);
 	printf("IsEqual = %d\n", IsEqual(currentWord, cW));
-	printf("----------------------\n");
+
 
 	printf("Tes IsInWord\n");
 	printf("Tes apakah huruf c ada di dalam currentWord.\n");
 	printf("currentWord = %s\n", kata);
 	printf("IsInWord = %d\n", IsInWord("C", currentWord));
-	printf("----------------------\n");
 
 	printf("Tes takeWord\n");
 	printf("Tes mengambil kata kedua dari currentWord\n");
@@ -98,7 +94,6 @@ int main()
 	Word take2 = takeword(currentWord, 2);
 	kata = WordToString(take2);
 	printf("kata kedua = %s\n", kata);
-	printf("----------------------\n");
 
 	printf("Tes StringtoWord\n");
 	printf("Tes mengubah char* ke word, lalu mengubahnya lagi ke char*.\n");
@@ -108,19 +103,12 @@ int main()
 	char* akhir = WordToString(kata1);
 	printf("awal = %s\n", awal);
 	printf("akhir = %s\n", akhir);
-	printf("----------------------\n");
+
 
 	printf("Tes ConcateChar\n");
 	printf("Tes menggabungkan dua buah string, yaitu char* awal dan char* akhir tadi.\n");
 	char* awal_akhir = ConcateChar(awal, akhir);
 	printf("awal_akhir = %s\n", awal_akhir);
-	printf("----------------------\n");
-
-	printf("Tes ConcateChar\n");
-	printf("Tes menggabungkan dua buah string, yaitu char* awal dan char* akhir tadi.\n");
-	char* awal_akhir = ConcateChar(awal, akhir);
-	printf("awal_akhir = %s\n", awal_akhir);
-	printf("----------------------\n");
 
 	printf("Tes hapustikom\n");
 	STARTINPUTKATA();

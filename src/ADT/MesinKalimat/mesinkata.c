@@ -407,7 +407,7 @@ boolean IsEqualString(char* c1, char *c2)
  }
  return equal;
 }
-
+/* mengambil word yang dipisahkan semicolon*/
 Word takewordsemicolon(Word command, int ke)
 {
 	/*KAMUS LOKAL*/
@@ -446,6 +446,7 @@ Word takewordsemicolon(Word command, int ke)
 	return w;
 }
 
+/* mengambil word titik koma*/
 char *commWordToString(Word word)
 {
 	/*KAMUS LOKAL*/
