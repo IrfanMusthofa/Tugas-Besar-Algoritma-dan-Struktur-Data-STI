@@ -84,6 +84,7 @@ Program ini menggunakan aplikasi ADT dalam bahasa pemrograman C.
 > src/config/tesload.txt
 
 ## Struktur Program
+```
 Tugas-Besar_Algoritma-dan-Struktur-Data_STI
  ┣ docs
  ┃ ┣ IF2111_TB_02_10.pdf
@@ -197,3 +198,4 @@ Tugas-Besar_Algoritma-dan-Struktur-Data_STI
  ┣ README.md
  ┣ WayangWave
  ┗ makefile
+```
